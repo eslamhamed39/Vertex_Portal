@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="root_doc">
+	<name>Eslma.kml</name>
+	<Schema name="shap" id="shap">
+		<SimpleField type="int" name="ID"></SimpleField>
+		<SimpleField type="string" name="REQUESTNUM"></SimpleField>
+		<SimpleField type="string" name="GOV"></SimpleField>
+		<SimpleField type="string" name="SEC"></SimpleField>
+		<SimpleField type="string" name="SSEC"></SimpleField>
+		<SimpleField type="string" name="STREETNAME"></SimpleField>
+		<SimpleField type="string" name="PROPERTY_N"></SimpleField>
+		<SimpleField type="string" name="ADDEDDATE"></SimpleField>
+		<SimpleField type="string" name="DUE_DATE"></SimpleField>
+		<SimpleField type="string" name="UNITTYPE"></SimpleField>
+		<SimpleField type="string" name="FLOOR_NUMB"></SimpleField>
+		<SimpleField type="string" name="FLOOR_N_T"></SimpleField>
+		<SimpleField type="string" name="APART_NUM"></SimpleField>
+		<SimpleField type="string" name="SURVEYNUM"></SimpleField>
+		<SimpleField type="string" name="PHONE"></SimpleField>
+		<SimpleField type="string" name="NORTH_B"></SimpleField>
+		<SimpleField type="string" name="SOUTH_B"></SimpleField>
+		<SimpleField type="string" name="EAST_B"></SimpleField>
+		<SimpleField type="string" name="WEST_B"></SimpleField>
+		<SimpleField type="float" name="NORTH_L"></SimpleField>
+		<SimpleField type="float" name="SOUTH_L"></SimpleField>
+		<SimpleField type="float" name="EAST_L"></SimpleField>
+		<SimpleField type="float" name="WEST_L"></SimpleField>
+		<SimpleField type="float" name="AREA_LAND"></SimpleField>
+		<SimpleField type="float" name="AREA_BUILD"></SimpleField>
+		<SimpleField type="float" name="MANWR"></SimpleField>
+		<SimpleField type="float" name="SEALM"></SimpleField>
+		<SimpleField type="float" name="CORRIDOR"></SimpleField>
+		<SimpleField type="float" name="ELEVATOR"></SimpleField>
+		<SimpleField type="string" name="KET3A"></SimpleField>
+		<SimpleField type="string" name="HOD"></SimpleField>
+		<SimpleField type="string" name="USAGE"></SimpleField>
+		<SimpleField type="string" name="DESCRIP"></SimpleField>
+		<SimpleField type="float" name="NORTH_L1"></SimpleField>
+		<SimpleField type="float" name="SOUTH_L1"></SimpleField>
+		<SimpleField type="float" name="EAST_L1"></SimpleField>
+		<SimpleField type="float" name="WEST_L1"></SimpleField>
+		<SimpleField type="float" name="AREA_AP1"></SimpleField>
+		<SimpleField type="string" name="NORTH_L2"></SimpleField>
+		<SimpleField type="string" name="SOUTH_L2"></SimpleField>
+		<SimpleField type="string" name="EAST_L2"></SimpleField>
+		<SimpleField type="string" name="WEST_L2"></SimpleField>
+		<SimpleField type="string" name="AREA_AP2"></SimpleField>
+		<SimpleField type="string" name="NORTH_L3"></SimpleField>
+		<SimpleField type="string" name="SOUTH_L3"></SimpleField>
+		<SimpleField type="string" name="EAST_L3"></SimpleField>
+		<SimpleField type="string" name="WEST_L3"></SimpleField>
+		<SimpleField type="string" name="AREA_AP3"></SimpleField>
+		<SimpleField type="string" name="NORTH_L4"></SimpleField>
+		<SimpleField type="string" name="SOUTH_L4"></SimpleField>
+		<SimpleField type="string" name="EAST_L4"></SimpleField>
+		<SimpleField type="string" name="WEST_L4"></SimpleField>
+		<SimpleField type="string" name="AREA_AP4"></SimpleField>
+		<SimpleField type="string" name="NORTH_L5"></SimpleField>
+		<SimpleField type="string" name="SOUTH_L5"></SimpleField>
+		<SimpleField type="string" name="EAST_L5"></SimpleField>
+		<SimpleField type="string" name="WEST_L5"></SimpleField>
+		<SimpleField type="string" name="AREA_AP5"></SimpleField>
+		<SimpleField type="string" name="NORTH_L6"></SimpleField>
+		<SimpleField type="string" name="SOUTH_L6"></SimpleField>
+		<SimpleField type="string" name="EAST_L6"></SimpleField>
+		<SimpleField type="string" name="WEST_L6"></SimpleField>
+		<SimpleField type="string" name="AREA_AP6"></SimpleField>
+		<SimpleField type="float" name="X"></SimpleField>
+		<SimpleField type="float" name="Y"></SimpleField>
+		<SimpleField type="float" name="TOTALAREA"></SimpleField>
+		<SimpleField type="float" name="TOTALAPART"></SimpleField>
+		<SimpleField type="string" name="OVERLAP"></SimpleField>
+		<SimpleField type="string" name="NORTH_LG"></SimpleField>
+		<SimpleField type="string" name="SOUTH_LG"></SimpleField>
+		<SimpleField type="string" name="EAST_LG"></SimpleField>
+		<SimpleField type="string" name="WEST_LG"></SimpleField>
+		<SimpleField type="string" name="AREA_G"></SimpleField>
+		<SimpleField type="int" name="COMCODE"></SimpleField>
+		<SimpleField type="string" name="SURVEY_REV"></SimpleField>
+	</Schema>
+	<Folder>
+		<name>shap</name>
+		<Placemark>
+			<name>عادل صبري محمد الشعار</name>
+			<Style>
+				<LineStyle>
+					<color>ff0000ff</color>
+				</LineStyle>
+				<PolyStyle>
+					<fill>0</fill>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#shap">
+					<SimpleData name="ID">168891</SimpleData>
+					<SimpleData name="REQUESTNUM">01-0140-0-00000185642</SimpleData>
+					<SimpleData name="GOV">محافظة القاهرة</SimpleData>
+					<SimpleData name="SEC">قسم اول مدينه نصر</SimpleData>
+					<SimpleData name="SSEC">شياخه المنطقه السادسه</SimpleData>
+					<SimpleData name="STREETNAME">عمارات اول مايو طريق النصر</SimpleData>
+					<SimpleData name="PROPERTY_N">9مدخل أ</SimpleData>
+					<SimpleData name="ADDEDDATE">2024/02/27</SimpleData>
+					<SimpleData name="DUE_DATE">2024/03/01</SimpleData>
+					<SimpleData name="UNITTYPE">وحدة</SimpleData>
+					<SimpleData name="FLOOR_NUMB">1</SimpleData>
+					<SimpleData name="FLOOR_N_T">الاول فوق الارضي</SimpleData>
+					<SimpleData name="APART_NUM">101</SimpleData>
+					<SimpleData name="SURVEYNUM">3</SimpleData>
+					<SimpleData name="PHONE">01223609471</SimpleData>
+					<SimpleData name="NORTH_B">ممر بعرض 9.05</SimpleData>
+					<SimpleData name="SOUTH_B">ممر بعرض 10.85</SimpleData>
+					<SimpleData name="EAST_B">ممر بعرض 10.85</SimpleData>
+					<SimpleData name="WEST_B">ممر بعرض 10</SimpleData>
+					<SimpleData name="NORTH_L">25.3</SimpleData>
+					<SimpleData name="SOUTH_L">25.3</SimpleData>
+					<SimpleData name="EAST_L">49.3</SimpleData>
+					<SimpleData name="WEST_L">49.3</SimpleData>
+					<SimpleData name="AREA_LAND">1217.86</SimpleData>
+					<SimpleData name="AREA_BUILD">1217.86</SimpleData>
+					<SimpleData name="MANWR">69.23</SimpleData>
+					<SimpleData name="SEALM">24.35</SimpleData>
+					<SimpleData name="CORRIDOR">89.07</SimpleData>
+					<SimpleData name="ELEVATOR">9.8</SimpleData>
+					<SimpleData name="KET3A">بدون</SimpleData>
+					<SimpleData name="USAGE">سكنى</SimpleData>
+					<SimpleData name="DESCRIP">عقار مكون من 11دور فوق الارضي 
+العقار منفصل (قائم بذاته)</SimpleData>
+					<SimpleData name="NORTH_L1">12.52</SimpleData>
+					<SimpleData name="SOUTH_L1">12.52</SimpleData>
+					<SimpleData name="EAST_L1">8.42</SimpleData>
+					<SimpleData name="WEST_L1">8.42</SimpleData>
+					<SimpleData name="AREA_AP1">95</SimpleData>
+					<SimpleData name="X">31.3384660186</SimpleData>
+					<SimpleData name="Y">30.068022</SimpleData>
+					<SimpleData name="TOTALAREA">123.22</SimpleData>
+					<SimpleData name="TOTALAPART">95</SimpleData>
+					<SimpleData name="COMCODE">86</SimpleData>
+					<SimpleData name="SURVEY_REV">جاري المراجعة</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								31.338588,30.068262,0 31.338636,30.067821,0 31.33836,30.067765,0 31.338285,30.068223,0 31.338588,30.068262,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark>
+			<Style>
+				<LineStyle>
+					<color>ff0000ff</color>
+				</LineStyle>
+				<PolyStyle>
+					<fill>0</fill>
+				</PolyStyle>
+			</Style>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								28.8753078202376,30.7240815829358,0 30.7238547471083,31.4102132575435,0 31.9562193650222,31.4452657506424,0 32.5929410842776,31.0061701190274,0 32.4491652121877,29.9440831354587,0 32.8804928284575,28.9064999431057,0 33.2707416241302,27.312304268662,0 31.9767587753207,26.4880515424369,0 30.4979212338241,26.4880515424369,0 29.3682536674031,26.6533823442162,0 28.3618225627735,26.9467127191012,0 28.8753078202376,30.7240815829358,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
