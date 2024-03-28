@@ -84,9 +84,6 @@ function time() {
     setTimeout(() => {
         const box = document.querySelector('.status');
         box.innerHTML = '';
-        login_Success.innerHTML = '';
-        login_SuccessHome.innerHTML = '';
-        redMessage.innerHTML = '';
         // success_panel.classList.replace("d-inline-block", "d-none");
 
 
@@ -120,22 +117,7 @@ function mapContent(){
         // style: `https://api.tomtom.com/style/1/style/22.2.1-9?key={Your_API_Key}&map=2/basic_street-light&traffic_incidents=2/incidents_light&traffic_flow=2/flow_relative-light&poi=2/poi_light`
     });
 
-    var geojsonData = {
-        "type": "FeatureCollection",
-        "features": [
-            {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [-74.0066, 40.7135]
-                },
-                "properties": {
-                    "name": "Marker 1"
-                }
-            }
-        ]
-    };
-    //...
+    
     map.on("load", function () {
         //...
         map.addLayer({

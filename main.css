@@ -200,7 +200,7 @@ img {
 .status,
 .redMessage {
     /* transform: translate(-50%); */
-    margin-top: 15px;
+    margin-top: 5px;
     text-align: center;
     width: 100%;
     position: absolute;
@@ -221,16 +221,14 @@ img {
     border-radius: 35px;
     --bs-bg-opacity:.5;
     background-color: #00000065 !important;
-
 }
+
 .bg-light2{
     border-radius: 35px;
     --bs-bg-opacity:.5;
     background-color: #ffffffb2 !important;
 
 }
-
-
 .v_logo{
     width: 70px;
     margin-bottom: 20px;
