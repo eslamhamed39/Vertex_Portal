@@ -615,3 +615,14 @@ img, svg {
     
     
 }
+
+.watermark{
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 7%;
+}
+.watermark img{
+    width:100%;
+    opacity: 0.5;
+}

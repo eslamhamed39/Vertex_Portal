@@ -239,7 +239,7 @@ function mapContent(){
     document.getElementById('Home').addEventListener('click', function() {
         var latAndLong = {lat: 4.012114320491342, lng: 21.667170602629522}; 
         var newZoomLevel = 2.2; 
-        var duration = 5000;
+        var duration = 4000;
         map.flyTo({
             center: latAndLong,
             zoom: newZoomLevel,
@@ -332,7 +332,7 @@ scrollIt(x);
 function scrollIt(x){
     let transform = x
     document.querySelector('.after').style.width = transform+"px";
-    document.querySelector('.scroller').style.left = transform-20+"px";
+    document.querySelector('.scroller').style.left = transform-18+"px";
 }
 scrollIt(150);
 document.querySelector('.scroller').addEventListener('touchstart',function(){
