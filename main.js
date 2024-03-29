@@ -260,11 +260,6 @@ function mapContent(){
         });
     });
 
-    // function handleClick(){
-    //     // const detect_detils = document.getElementById('dialog_detect');
-    //     // detect_detils.classList.replace("d-none", "d-block");
-        
-    // }
     map.on('click', 'Project', function (e) {
         toggleDiv2();
     });
@@ -276,6 +271,12 @@ function mapContent(){
     });
     map.on('click', 'Zamalek', function (e) {
         toggleDiv2();
+        const element1 = document.getElementById("img1");
+        const element2 = document.getElementById("img2");
+        const element3 = document.getElementById("news");
+        element1.setAttribute("src", "../Geo File/Polygon Create/Zamalek/1.jpg")
+        element2.setAttribute("src", "../Geo File/Polygon Create/Zamalek/2.jpg")
+        element3.setAttribute("src", "../Geo File/Polygon Create/Zamalek/Screenshot.png")
     });
     map.on('mouseenter', 'Zamalek', function () {
         map.getCanvas().style.cursor = 'pointer';
@@ -309,20 +310,11 @@ function mapContent(){
 
 
 // *=======================================> Slider Comparison imege <===================================//
-// I hope this over-commenting helps. Let's do this!
-// Let's use the 'active' variable to let us know when we're using it
 let active = false;
-
-// First we'll have to set up our event listeners
-// We want to watch for clicks on our scroller
 document.querySelector('.scroller').addEventListener('mousedown',function(){
 active = true;
-// Add our scrolling class so the scroller has full opacity while active
 document.querySelector('.scroller').classList.add('scrolling');
 });
-// We also want to watch the body for changes to the state,
-// like moving around and releasing the click
-// so let's set up our event listeners
 document.body.addEventListener('mouseup',function(){
 active = false;
 document.querySelector('.scroller').classList.remove('scrolling');
@@ -331,31 +323,18 @@ document.body.addEventListener('mouseleave',function(){
 active = false;
 document.querySelector('.scroller').classList.remove('scrolling');
 });
-
-// Let's figure out where their mouse is at
 document.body.addEventListener('mousemove',function(e){
 if (!active) return;
-// Their mouse is here...
 let x = e.pageX;
-// but we want it relative to our wrapper
 x -= document.querySelector('.wrapper').getBoundingClientRect().left;
-// Okay let's change our state
 scrollIt(x);
 });
-
-// Let's use this function
 function scrollIt(x){
-    let transform = Math.max(0,(Math.min(x,document.querySelector('.wrapper').offsetWidth)));
+    let transform = x
     document.querySelector('.after').style.width = transform+"px";
     document.querySelector('.scroller').style.left = transform-20+"px";
 }
-
-// Let's set our opening state based off the width, 
-// we want to show a bit of both images so the user can see what's going on
 scrollIt(150);
-
-// And finally let's repeat the process for touch events
-// first our middle scroller...
 document.querySelector('.scroller').addEventListener('touchstart',function(){
 active = true;
 document.querySelector('.scroller').classList.add('scrolling');
