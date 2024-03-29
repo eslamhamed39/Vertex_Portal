@@ -14,14 +14,6 @@ const home_status = document.getElementById('home_status');
 
 
 // -------------------------- sidebar detection list --------------------//
-// function showDiv() {
-//     var div = document.querySelector('.list_detection');
-//     div.style.display = 'block';
-// }
-// function hideDiv() {
-//     var div = document.querySelector('.list_detection');
-//     div.style.display = 'none';
-// }
 function toggleDiv() {
     var div = document.querySelector('.list_detection');
     if (div.style.display === 'none' || div.style.display === '') {
@@ -42,6 +34,10 @@ function clickOutsideDiv(event) {
         div.style.display = 'none';
         document.removeEventListener('click', clickOutsideDiv);
     }
+    else if(div.contains(event.target)){
+        div.style.display = 'none';
+        document.removeEventListener('click', clickOutsideDiv);
+    }
 }
 
 // ------------------------------Get Value Function--------------------------------
@@ -55,14 +51,6 @@ function getValue() {
 var account = [{
     username: "vertex",
     password: "123",
-    namePerson: "Eslam Hamed Kamel",
-    idPreson: "240898",
-},
-{
-    username: "eslamhamed39@gmail.com",
-    password: "H..e..e",
-    namePerson: "omar",
-    idPreson: "10925",
 }]
 var name_id = '';
 var isFound = "";
@@ -225,36 +213,23 @@ function mapContent(){
         });
     });
 
+    function handleClick(){
+        alert("Hello, world!");
+    }
 
+    map.on('click', 'overlay', function (e) {
+        // Run the handleClick function when the polygon is clicked
+        handleClick();
+    });
+    map.on('mouseenter', 'overlay', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+    
+    // Revert cursor style when not hovering over the fill layer
+    map.on('mouseleave', 'overlay', function () {
+        map.getCanvas().style.cursor = '';
+    });
 
-
-
-
-
-
-    // Add GeoJSON layer to the map
-  
-    // var marker = new tt.Marker().setLngLat(latAndLong).addTo(map);
-     // FOR CUSTOM MARKER
-    //var customMarker = document.createElement('div');
-    //customMarker.id = 'marker';
-    //var marker = new tt.Marker({element: customMarker}).setLngLat(latAndLong).addTo(map);
-    // var popupOffsets = {
-    //     top: [0, 0],
-    //     bottom: [0, 0],
-    //     'bottom-right': [0, 0],
-    //     'bottom-left': [0, 0],
-    //     left: [25, -35],
-    //     right: [-25, -35]
-    // }
-    // var popup = new tt.Popup({offset: popupOffsets}).setHTML(yourAddress);
-    // marker.setPopup(popup).togglePopup();
-// map.on('click', function(e) {
-    //     var lat = e.lngLat.lat;
-    //     var lng = e.lngLat.lng;
-    //     marker.setLngLat({lat: lat, lng: lng});
-    //     popup.setLngLat({lat: lat, lng: lng});
-    //
 
 }
 
