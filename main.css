@@ -6,23 +6,23 @@
     box-sizing: border-box;
 }
 
-/* body {
+body {
     background-color: #080710;
     background-image: url(satellite-imagery-of-africa-desktop-wallpaper.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-} */
+}
 
-/* .background {
+.background {
     width: 430px;
     height: 520px;
     position: absolute;
     transform: translate(-50%, -50%);
-    /* background-color: #e5e5e5; 
+    /* background-color: #e5e5e5;  */
     left: 50%;
     top: 50%;
-} */
+}
 
 .background .shape {
     height: 200px;
@@ -402,12 +402,8 @@ h5 {
 canvas[Attributes] {
     aspect-ratio: 1920 / 1080;
 }
-.Log_out{
-    color: #fff;
-    border-radius: 5px;
-    text-align: center;
-    width: 90%;
-}
+
+
 .logContainer{
     width: 95%;
 }
@@ -423,6 +419,18 @@ canvas[Attributes] {
     background-color: #dde7fcd5;
     position: absolute;
     left: 100px;
+    z-index:1019 ;
+    border-radius: 30px;
+    display: none;
+    animation: fadeIn 0.6s ;
+}
+.list_detection1{
+    width: 250px;
+    height:auto;
+    background-color: #dde7fcd5;
+    position: absolute;
+    left: 100px;
+    top: 300px;
     z-index:1019 ;
     border-radius: 30px;
     display: none;
@@ -478,10 +486,53 @@ canvas[Attributes] {
 .list_detection ul li a:hover{
     color: #fff;
 }
+
 .list_detection ul li:hover{
     background-color: #0000003d;
 }
 
+.nav-link.active{
+    color: #fff;
+    background-color: #00000054 !important;
+    border-radius: 30px !important;
+    animation:  0.5s ;
+    transition: all 0.5s linear;
+}
+
+.list_detection1 ul {
+    margin-top: 20;
+    margin-bottom: 0.2rem;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    width: auto;
+    padding: 10px 0;
+}
+.list_detection1 ul li{
+    width: 95%;
+    border-radius: 30px;
+    padding: 5px;
+    text-align: center;
+}
+.list_detection1 ul li a:hover{
+    color: #fff;
+}
+
+.list_detection1 ul li:hover{
+    background-color: #0000003d;
+}
+.list_detection1 ul li.Log_out1:hover{
+    background-color: #ff0000a8;
+    color: #fff;
+}
 
 /* ^-------------------- Slider style -------------------- */
 .wrapper{
@@ -568,8 +619,6 @@ top:100%;
 .scroller:after{
 bottom:100%;
 }
-
-/* If you want to cahnge the colors, make sure you change the fill in the svgs to match */
 .scroller{
 border: 3px solid #fff;
 }
@@ -577,7 +626,6 @@ border: 3px solid #fff;
 .scroller:after{
 background: #fff;
 }
-
 #dialog_detect{
     position: absolute;
     top:10%;
@@ -589,7 +637,6 @@ background: #fff;
     animation: detect_card 0.8s ;
     display: none;
 }
-
 @keyframes detect_card {
     from {
         opacity: 0;
@@ -599,7 +646,6 @@ background: #fff;
         opacity: 1;
         left: 10%;
     }}
-
 img, svg {
     vertical-align: baseline;
 }
@@ -611,20 +657,23 @@ img, svg {
     width: 500px;
     height: 100px;
     border-radius: 40px;
-
-    
-    
 }
-
 .watermark{
     position: absolute;
     bottom: 25px;
     right: 25px;
     width: 7%;
-    
 }
 .watermark img{
     width:100%;
     opacity: 0.5;
-    
+}
+
+
+#dropdownUser3 i:hover{
+    color: #fff;
+}
+.nav-pills .nav-link {
+    border-radius: 10px;
+    transition: all 0.8s;
 }
