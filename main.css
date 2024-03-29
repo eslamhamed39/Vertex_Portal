@@ -230,8 +230,9 @@ img {
 
 }
 .v_logo{
-    width: 70px;
-    margin-bottom: 20px;
+    text-align: center;
+    width: 80%;
+    margin: 15px;
 }
 ul{
     margin-top: 20;
