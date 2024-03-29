@@ -120,7 +120,7 @@ function switchPage() {
 
 function mapContent(){
     var api_key = 'YZlbkr2ee2sbGy3dZsWG85VE4mPsibyQ';
-    var latAndLong = {lat: 13.965739243442671, lng: 22.219676022819534}; 
+    var latAndLong = {lat: 4.012114320491342, lng: 21.667170602629522};  
     var zoomLevel = 2.2;
     var map = tt.map({
         container: 'map',
@@ -135,12 +135,11 @@ function mapContent(){
     });
 
 
-    //....................................... polygon creation --------------------------------
+//....................................... polygon creation --------------------------------
     map.on("load", function () {
-
-        // ~------------------------------------- Start fill Layer --------------------------------//
+    // ~------------------------------------- Start fill Layer --------------------------------//
         map.addLayer({
-        id: "overlay",
+        id: "Project",
         type: "fill",
         source: {
             type: "geojson",
@@ -155,7 +154,7 @@ function mapContent(){
                 //     [22.018411483956736, 36.84802038684241],
                 //     [31.042284929970393, 32.37637391072008],
                 // ],
-                [[ 31.222639597632419, 30.073602485309159 ], [ 31.216130250453588, 30.067792020004561 ], [ 31.215486629608939, 30.065969058623654 ], [ 31.215369607637186, 30.063918186935926 ], [ 31.216422805382972, 30.060677216650205 ], [ 31.217446747635826, 30.056448603705729 ], [ 31.218090368480475, 30.053485934953077 ], [ 31.219202077212127, 30.04948492536429 ], [ 31.220050486507354, 30.045812970531934 ], [ 31.221249961717838, 30.041533072083258 ], [ 31.221981349041304, 30.039127130826724 ], [ 31.223063802280031, 30.038418000151108 ], [ 31.224321788476384, 30.038392673961692 ], [ 31.225433497208058, 30.038797892215641 ], [ 31.226369672982091, 30.039912233869071 ], [ 31.227422870727878, 30.042470107079687 ], [ 31.228710112417179, 30.044825318070941 ], [ 31.228505323966608, 30.047788245911487 ], [ 31.227569148192572, 30.051991905979083 ], [ 31.226720738897367, 30.054600111379337 ], [ 31.225930840588017, 30.05647392527883 ], [ 31.225316475236312, 30.059537787825029 ], [ 31.224117000025831, 30.063639670219629 ], [ 31.223151568758851, 30.067716063950741 ], [ 31.22280050284359, 30.070855532249638 ], [ 31.222639597632419, 30.073602485309159 ]],
+                [[ 39.201496256786378, -6.688107122809686 ], [ 39.202522027507413, -6.687276290529025 ], [ 39.202657791279336, -6.687405001523991 ], [ 39.202778470187695, -6.687560271885499 ], [ 39.203385978783167, -6.688363182309756 ], [ 39.202102394030632, -6.688635585885923 ], [ 39.20177875514004, -6.688461247614671 ], [ 39.201496256786378, -6.688107122809686 ]],
                 ],
             },
             },
@@ -168,7 +167,7 @@ function mapContent(){
         },
         });
         // ~------------------------------------- End fill Layer --------------------------------//
-
+        
         // !-------------------------------------Start Out line Layer --------------------------------//
         map.addLayer({
             'id': 'myOutlineLayer',
@@ -193,19 +192,67 @@ function mapContent(){
             }
         });
         // !------------------------------------- End Out line Layer --------------------------------//
+        map.addLayer({
+            id: "Zamalek",
+            type: "fill",
+            source: {
+                type: "geojson",
+                data: {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                    // [
+                    //     [31.463121345638648, 24.92721487935429],
+                    //     [22.004038451409006, 24.994649117851637],
+                    //     [22.018411483956736, 36.84802038684241],
+                    //     [31.042284929970393, 32.37637391072008],
+                    // ],
+                    [[ 31.222554993498246, 30.073612485925189 ], [ 31.215720180017769, 30.067271695857119 ], [ 31.215337430462856, 30.065662774055152 ], [ 31.215337430462856, 30.064148470820335 ], [ 31.215644997069472, 30.063527363184392 ], [ 31.218488279477366, 30.052364507335859 ], [ 31.219212769706292, 30.048495370142582 ], [ 31.21960918888816, 30.04689797584258 ], [ 31.221208535242592, 30.041336476207032 ], [ 31.221796329201911, 30.03921829105677 ], [ 31.222684854954377, 30.038437272814978 ], [ 31.224092826531351, 30.038318936180691 ], [ 31.225405110719603, 30.038863283528222 ], [ 31.226580698638241, 30.040366140027157 ], [ 31.22774261692992, 30.042910293949713 ], [ 31.22860380342847, 30.04590402860989 ], [ 31.228084357603951, 30.048720186531629 ], [ 31.226895100058346, 30.054257608073151 ], [ 31.225828869155396, 30.056375471629764 ], [ 31.224584933101948, 30.061593031578766 ], [ 31.222985586747519, 30.06821810822878 ], [ 31.222807881597035, 30.072713443397046 ], [ 31.222780542343099, 30.073517850254273 ], [ 31.222554993498246, 30.073612485925189 ]],
+                    ],
+                },
+                },
+            },
+            layout: {},
+            paint: {
+                "fill-color": "#216bc0",
+                "fill-opacity": 0.4,
+                'fill-outline-color': 'white', // Outline color// Outline width    
+            },
+            });
     })
-    //.......................................End polygon creation --------------------------------
+//.......................................End polygon creation --------------------------------
 
-    // ------------------------------Zoom in Function--------------------------------//
-    document.getElementById('Cairo').addEventListener('click', function() {
-        var newCoordinates = [31.2208334075325,30.057160708204872]; 
+ // ------------------------------Zoom in Function--------------------------------//
+    document.getElementById('Project').addEventListener('click', function() {
+        var newCoordinates1 = [39.2022738,-6.6880111]; 
+        var newZoomLevel = 16; 
+        var duration = 4000;
+        map.flyTo({
+            center: newCoordinates1,
+            zoom: newZoomLevel,
+            duration: duration,
+            pitch: 45,
+            bearing: 0,
+        });
+    });
+    document.getElementById('Home').addEventListener('click', function() {
+        var latAndLong = {lat: 4.012114320491342, lng: 21.667170602629522}; 
+        var newZoomLevel = 2.2; 
+        var duration = 5000;
+        map.flyTo({
+            center: latAndLong,
+            zoom: newZoomLevel,
+            duration: duration,
+            pitch: 0,
+        });
+    });
+    document.getElementById('Zamalek').addEventListener('click', function() {
+        var newCoordinates3 = [31.221113,30.058825]; 
         var newZoomLevel = 13; 
         var duration = 4000;
-        
-        // map.setCenter(newCoordinates);
-        // map.setZoom(newZoomLevel);
         map.flyTo({
-            center: newCoordinates,
+            center: newCoordinates3,
             zoom: newZoomLevel,
             duration: duration,
             pitch: 45,
@@ -213,25 +260,114 @@ function mapContent(){
         });
     });
 
-    function handleClick(){
-        alert("Hello, world!");
-    }
-
-    map.on('click', 'overlay', function (e) {
-        // Run the handleClick function when the polygon is clicked
-        handleClick();
+    // function handleClick(){
+    //     // const detect_detils = document.getElementById('dialog_detect');
+    //     // detect_detils.classList.replace("d-none", "d-block");
+        
+    // }
+    map.on('click', 'Project', function (e) {
+        toggleDiv2();
     });
-    map.on('mouseenter', 'overlay', function () {
+    map.on('mouseenter', 'Project', function () {
         map.getCanvas().style.cursor = 'pointer';
     });
-    
-    // Revert cursor style when not hovering over the fill layer
-    map.on('mouseleave', 'overlay', function () {
+    map.on('mouseleave', 'Project', function () {
+        map.getCanvas().style.cursor = '';
+    });
+    map.on('click', 'Zamalek', function (e) {
+        toggleDiv2();
+    });
+    map.on('mouseenter', 'Zamalek', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('mouseleave', 'Zamalek', function () {
         map.getCanvas().style.cursor = '';
     });
 
-
+    function toggleDiv2() {
+        var div = document.querySelector('.dialog_detect');
+        if (div.style.display === 'none' || div.style.display === '') {
+            div.style.display = 'block';
+            // Add event listener to hide div when clicking outside
+            setTimeout(function() {
+                document.addEventListener('click', clickOutsideDiv);
+            }, 1);
+        } else {
+            div.style.display = 'none';
+            // Remove event listener when div is hidden
+            document.removeEventListener('click', clickOutsideDiv);
+        }
+    }
+    function clickOutsideDiv(event) {
+        var div = document.querySelector('.dialog_detect');
+        if (!div.contains(event.target)) {
+            div.style.display = 'none';
+            document.removeEventListener('click', clickOutsideDiv);
+        }
+    }
 }
+
+
+// *=======================================> Slider Comparison imege <===================================//
+// I hope this over-commenting helps. Let's do this!
+// Let's use the 'active' variable to let us know when we're using it
+let active = false;
+
+// First we'll have to set up our event listeners
+// We want to watch for clicks on our scroller
+document.querySelector('.scroller').addEventListener('mousedown',function(){
+active = true;
+// Add our scrolling class so the scroller has full opacity while active
+document.querySelector('.scroller').classList.add('scrolling');
+});
+// We also want to watch the body for changes to the state,
+// like moving around and releasing the click
+// so let's set up our event listeners
+document.body.addEventListener('mouseup',function(){
+active = false;
+document.querySelector('.scroller').classList.remove('scrolling');
+});
+document.body.addEventListener('mouseleave',function(){
+active = false;
+document.querySelector('.scroller').classList.remove('scrolling');
+});
+
+// Let's figure out where their mouse is at
+document.body.addEventListener('mousemove',function(e){
+if (!active) return;
+// Their mouse is here...
+let x = e.pageX;
+// but we want it relative to our wrapper
+x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+// Okay let's change our state
+scrollIt(x);
+});
+
+// Let's use this function
+function scrollIt(x){
+    let transform = Math.max(0,(Math.min(x,document.querySelector('.wrapper').offsetWidth)));
+    document.querySelector('.after').style.width = transform+"px";
+    document.querySelector('.scroller').style.left = transform-20+"px";
+}
+
+// Let's set our opening state based off the width, 
+// we want to show a bit of both images so the user can see what's going on
+scrollIt(150);
+
+// And finally let's repeat the process for touch events
+// first our middle scroller...
+document.querySelector('.scroller').addEventListener('touchstart',function(){
+active = true;
+document.querySelector('.scroller').classList.add('scrolling');
+});
+document.body.addEventListener('touchend',function(){
+active = false;
+document.querySelector('.scroller').classList.remove('scrolling');
+});
+document.body.addEventListener('touchcancel',function(){
+active = false;
+document.querySelector('.scroller').classList.remove('scrolling');
+});
 
 
 

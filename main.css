@@ -6,23 +6,23 @@
     box-sizing: border-box;
 }
 
-body {
+/* body {
     background-color: #080710;
     background-image: url(satellite-imagery-of-africa-desktop-wallpaper.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-}
+} */
 
-.background {
+/* .background {
     width: 430px;
     height: 520px;
     position: absolute;
     transform: translate(-50%, -50%);
-    /* background-color: #e5e5e5; */
+    /* background-color: #e5e5e5; 
     left: 50%;
     top: 50%;
-}
+} */
 
 .background .shape {
     height: 200px;
@@ -423,7 +423,7 @@ canvas[Attributes] {
     background-color: #dde7fcd5;
     position: absolute;
     left: 100px;
-    z-index:1021 ;
+    z-index:1019 ;
     border-radius: 30px;
     display: none;
     animation: fadeIn 0.6s ;
@@ -480,4 +480,138 @@ canvas[Attributes] {
 }
 .list_detection ul li:hover{
     background-color: #0000003d;
+}
+
+
+/* ^-------------------- Slider style -------------------- */
+.wrapper{
+width: 500px;
+height: 300px;
+position: absolute;
+overflow:hidden;
+bottom: 0px;
+margin: 15px;
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+border-radius: 40px;
+
+}
+
+/* Our image information */
+.before,
+.after {
+width:100%;
+height:100%;
+background-repeat:no-repeat;
+background-color: white;
+background-size: cover;
+background-position: center;
+position: absolute;
+top:0;
+left:0;
+pointer-events:none;
+overflow: hidden;
+}
+
+.content-image{
+width:500px;
+height:100%;
+}
+
+.after{
+width:100%;
+}
+
+.scroller{
+width: 30px;
+height:30px;
+position: absolute;
+left:100px;
+top:50%;
+transform:translateY(-50%);
+border-radius:50%;
+background-color: transparent;
+opacity:0.9;
+pointer-events:auto;
+cursor: pointer;
+}
+
+.scroller:hover{
+opacity:1;
+}
+
+.scrolling{
+pointer-events:none;
+opacity:1;
+z-index: 1;
+}
+
+.scroller__thumb{
+width:100%;
+height:100%;
+padding:5px;
+}
+
+.scroller:before,
+.scroller:after{
+content:" ";
+display: block;
+width: 2px;
+height: 9999px;
+position: absolute;
+left: 50%;
+z-index: 30;
+transition:0.1s;
+}
+.scroller:before{
+top:100%;
+}
+.scroller:after{
+bottom:100%;
+}
+
+/* If you want to cahnge the colors, make sure you change the fill in the svgs to match */
+.scroller{
+border: 3px solid #fff;
+}
+.scroller:before,
+.scroller:after{
+background: #fff;
+}
+
+#dialog_detect{
+    position: absolute;
+    top:10%;
+    left: 10%;
+    width: 530px;
+    height: 445px;
+    background-color: #ffffff9c;
+    border-radius: 40px;
+    animation: detect_card 0.8s ;
+    display: none;
+}
+
+@keyframes detect_card {
+    from {
+        opacity: 0;
+        left: 7%;
+    }
+    to {
+        opacity: 1;
+        left: 10%;
+    }}
+
+img, svg {
+    vertical-align: baseline;
+}
+.dialog_detect a{
+    position: absolute;
+    margin: 15px;
+}
+.dialog_detect a img{
+    width: 500px;
+    height: 100px;
+    border-radius: 40px;
+
+    
+    
 }
