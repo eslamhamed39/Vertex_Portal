@@ -12,7 +12,37 @@ const loginPage = document.getElementById('loginPage');
 const map_section = document.getElementById('map_section');
 const home_status = document.getElementById('home_status');
 
-// btn.addEventListener('click',getValue());
+
+// -------------------------- sidebar detection list --------------------//
+// function showDiv() {
+//     var div = document.querySelector('.list_detection');
+//     div.style.display = 'block';
+// }
+// function hideDiv() {
+//     var div = document.querySelector('.list_detection');
+//     div.style.display = 'none';
+// }
+function toggleDiv() {
+    var div = document.querySelector('.list_detection');
+    if (div.style.display === 'none' || div.style.display === '') {
+        div.style.display = 'block';
+        // Add event listener to hide div when clicking outside
+        setTimeout(function() {
+            document.addEventListener('click', clickOutsideDiv);
+        }, 1);
+    } else {
+        div.style.display = 'none';
+        // Remove event listener when div is hidden
+        document.removeEventListener('click', clickOutsideDiv);
+    }
+}
+function clickOutsideDiv(event) {
+    var div = document.querySelector('.list_detection');
+    if (!div.contains(event.target)) {
+        div.style.display = 'none';
+        document.removeEventListener('click', clickOutsideDiv);
+    }
+}
 
 // ------------------------------Get Value Function--------------------------------
 function getValue() {
@@ -85,8 +115,6 @@ function time() {
         const box = document.querySelector('.status');
         box.innerHTML = '';
         // success_panel.classList.replace("d-inline-block", "d-none");
-
-
     }, 4000);
 }
 function btnTime() {
@@ -100,8 +128,6 @@ function switchPage() {
     loginPage.classList.replace("d-block", "d-none");
     window.location.pathname = "/Home.html";
 }
-
-dfgdfgh
 //-------------------- Map Part ----------------------//
 
 function mapContent(){
@@ -113,14 +139,18 @@ function mapContent(){
         key: api_key,
         center: latAndLong,
         zoom: zoomLevel,
-        style: `https://api.tomtom.com/style/1/style/*?map=2/basic_street-satellite&poi=2/poi_dynamic-satellite&key=${api_key}`,
-        // style: `https://api.tomtom.com/style/1/style/22.2.1-9?key={Your_API_Key}&map=2/basic_street-light&traffic_incidents=2/incidents_light&traffic_flow=2/flow_relative-light&poi=2/poi_light`
+        // ============== style without label name =============//
+        style: `https://api.tomtom.com/style/2/custom/style/dG9tdG9tQEBAVVRVTzI1SHRBR3MxQXRBaDtiYWI4ZjY0Yi1lZDkwLTRjYTEtYTlkYy1mYjcxODIyNzdlMzA=/drafts/0.json`,
+        
+        // ============== style with label name =============//
+        // style: `https://api.tomtom.com/style/1/style/*?map=2/basic_street-satellite&poi=2/poi_dynamic-satellite&key=${api_key}`,
     });
 
 
-    //...
+    //....................................... polygon creation --------------------------------
     map.on("load", function () {
-        //...
+
+        // ~------------------------------------- Start fill Layer --------------------------------//
         map.addLayer({
         id: "overlay",
         type: "fill",
@@ -131,28 +161,69 @@ function mapContent(){
             geometry: {
                 type: "Polygon",
                 coordinates: [
-                [
-                    [31.463121345638648, 24.92721487935429],
-                    [22.004038451409006, 24.994649117851637],
-                    [22.018411483956736, 36.84802038684241],
-                    [31.042284929970393, 32.37637391072008],
-                ],
+                // [
+                //     [31.463121345638648, 24.92721487935429],
+                //     [22.004038451409006, 24.994649117851637],
+                //     [22.018411483956736, 36.84802038684241],
+                //     [31.042284929970393, 32.37637391072008],
+                // ],
+                [[ 31.222639597632419, 30.073602485309159 ], [ 31.216130250453588, 30.067792020004561 ], [ 31.215486629608939, 30.065969058623654 ], [ 31.215369607637186, 30.063918186935926 ], [ 31.216422805382972, 30.060677216650205 ], [ 31.217446747635826, 30.056448603705729 ], [ 31.218090368480475, 30.053485934953077 ], [ 31.219202077212127, 30.04948492536429 ], [ 31.220050486507354, 30.045812970531934 ], [ 31.221249961717838, 30.041533072083258 ], [ 31.221981349041304, 30.039127130826724 ], [ 31.223063802280031, 30.038418000151108 ], [ 31.224321788476384, 30.038392673961692 ], [ 31.225433497208058, 30.038797892215641 ], [ 31.226369672982091, 30.039912233869071 ], [ 31.227422870727878, 30.042470107079687 ], [ 31.228710112417179, 30.044825318070941 ], [ 31.228505323966608, 30.047788245911487 ], [ 31.227569148192572, 30.051991905979083 ], [ 31.226720738897367, 30.054600111379337 ], [ 31.225930840588017, 30.05647392527883 ], [ 31.225316475236312, 30.059537787825029 ], [ 31.224117000025831, 30.063639670219629 ], [ 31.223151568758851, 30.067716063950741 ], [ 31.22280050284359, 30.070855532249638 ], [ 31.222639597632419, 30.073602485309159 ]],
                 ],
             },
             },
         },
         layout: {},
         paint: {
-            "fill-color": "#db356c",
-            "fill-opacity": 0.5,
-            "fill-outline-color": "black",
+            "fill-color": "#216bc0",
+            "fill-opacity": 0.4,
+            'fill-outline-color': 'white', // Outline color// Outline width    
         },
-        })
+        });
+        // ~------------------------------------- End fill Layer --------------------------------//
+
+        // !-------------------------------------Start Out line Layer --------------------------------//
+        map.addLayer({
+            'id': 'myOutlineLayer',
+            'type': 'line',
+            'source': {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'Polygon',
+                        'coordinates': [
+                            [[ 31.222639597632419, 30.073602485309159 ], [ 31.216130250453588, 30.067792020004561 ], [ 31.215486629608939, 30.065969058623654 ], [ 31.215369607637186, 30.063918186935926 ], [ 31.216422805382972, 30.060677216650205 ], [ 31.217446747635826, 30.056448603705729 ], [ 31.218090368480475, 30.053485934953077 ], [ 31.219202077212127, 30.04948492536429 ], [ 31.220050486507354, 30.045812970531934 ], [ 31.221249961717838, 30.041533072083258 ], [ 31.221981349041304, 30.039127130826724 ], [ 31.223063802280031, 30.038418000151108 ], [ 31.224321788476384, 30.038392673961692 ], [ 31.225433497208058, 30.038797892215641 ], [ 31.226369672982091, 30.039912233869071 ], [ 31.227422870727878, 30.042470107079687 ], [ 31.228710112417179, 30.044825318070941 ], [ 31.228505323966608, 30.047788245911487 ], [ 31.227569148192572, 30.051991905979083 ], [ 31.226720738897367, 30.054600111379337 ], [ 31.225930840588017, 30.05647392527883 ], [ 31.225316475236312, 30.059537787825029 ], [ 31.224117000025831, 30.063639670219629 ], [ 31.223151568758851, 30.067716063950741 ], [ 31.22280050284359, 30.070855532249638 ], [ 31.222639597632419, 30.073602485309159 ]],
+                        ]
+                    }
+                }
+            },
+            'layout': {},
+            'paint': {
+                'line-color': '#0011ff', // Outline color
+                'line-width': 2.5 // Outline width
+            }
+        });
+        // !------------------------------------- End Out line Layer --------------------------------//
     })
-  //...
+    //.......................................End polygon creation --------------------------------
 
-
-
+    // ------------------------------Zoom in Function--------------------------------//
+    document.getElementById('Cairo').addEventListener('click', function() {
+        var newCoordinates = [31.2208334075325,30.057160708204872]; 
+        var newZoomLevel = 13; 
+        var duration = 4000;
+        
+        // map.setCenter(newCoordinates);
+        // map.setZoom(newZoomLevel);
+        map.flyTo({
+            center: newCoordinates,
+            zoom: newZoomLevel,
+            duration: duration,
+            pitch: 45,
+            bearing: 0,
+        });
+    });
 
 
 
@@ -186,3 +257,6 @@ function mapContent(){
     //
 
 }
+
+
+
