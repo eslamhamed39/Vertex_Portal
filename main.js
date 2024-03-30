@@ -169,39 +169,10 @@ function mapContent(){
         // ============== style with label name =============//
         // style: `https://api.tomtom.com/style/1/style/*?map=2/basic_street-satellite&poi=2/poi_dynamic-satellite&key=${api_key}`,
     });
-
-
 //....................................... polygon creation --------------------------------
     map.on("load", function () {
         // ~------------------------------------- Pursuing Project layer --------------------------------//
-        map.addLayer({
-        id: "Project",
-        type: "fill",
-        source: {
-            type: "geojson",
-            data: {
-            type: "Feature",
-            geometry: {
-                type: "Polygon",
-                coordinates: [
-                // [
-                //     [31.463121345638648, 24.92721487935429],
-                //     [22.004038451409006, 24.994649117851637],
-                //     [22.018411483956736, 36.84802038684241],
-                //     [31.042284929970393, 32.37637391072008],
-                // ],
-                [[ 39.201496256786378, -6.688107122809686 ], [ 39.202522027507413, -6.687276290529025 ], [ 39.202657791279336, -6.687405001523991 ], [ 39.202778470187695, -6.687560271885499 ], [ 39.203385978783167, -6.688363182309756 ], [ 39.202102394030632, -6.688635585885923 ], [ 39.20177875514004, -6.688461247614671 ], [ 39.201496256786378, -6.688107122809686 ]],
-                ],
-            },
-            },
-        },
-        layout: {},
-        paint: {
-            "fill-color": "#216bc0",
-            "fill-opacity": 0.4,
-            'fill-outline-color': 'white', // Outline color// Outline width    
-        },
-        });
+        map.addLayer(globalData);
         map.addLayer({
             'id': 'myOutlineLayer',
             'type': 'line',
@@ -317,6 +288,12 @@ function mapContent(){
 
     map.on('click', 'Project', function (e) {
         toggleDiv2();
+        const element1 = document.getElementById("img1");
+        const element2 = document.getElementById("img2");
+        const element3 = document.getElementById("news");
+        element1.setAttribute("src", "../Geo File/Polygon Create/2-2022.jpg")
+        element2.setAttribute("src", "../Geo File/Polygon Create/6-2023.jpg")
+        element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png")
     });
     map.on('mouseenter', 'Project', function () {
         map.getCanvas().style.cursor = 'pointer';
@@ -434,3 +411,12 @@ document.body.addEventListener('click', event => {
     }
 });
 
+
+let globalData; // Declare global variable
+
+fetch('./Layer/Pursuing_projects.json')
+    .then(response => response.json())
+    .then(data => {
+        globalData = data;
+    })
+    .catch(error => console.error('Error fetching JSON:', error));
