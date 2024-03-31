@@ -247,13 +247,51 @@ function mapContent(){
             }
         });
     })
-//.......................................End polygon creation --------------------------------
 
- // ------------------------------Zoom in Function--------------------------------//
+    // -------------------------------- Hover section  -----------------------//
+    map.on('mouseenter', 'Zamalek', function () {
+        map.setPaintProperty('Zamalek', 'fill-color', '#b8cdff'); // Change to red fill color on hover
+        map.setPaintProperty('myOutlineLayer2', 'line-color', '#182ead'); // Change to red fill color on hover
+    });
+    
+    // Revert fill color when not hovering over the fill layer
+    map.on('mouseleave', 'Zamalek', function () {
+        map.setPaintProperty('Zamalek', 'fill-color', '#216bc0'); // Revert to original fill color
+        map.setPaintProperty('myOutlineLayer2', 'line-color', '#fff'); // Revert to original fill color
+    });
+    map.on('mouseenter', 'Project', function () {
+        map.setPaintProperty('Project', 'fill-color', '#b8cdff'); // Change to red fill color on hover
+        map.setPaintProperty('myOutlineLayer', 'line-color', '#182ead'); // Change to red fill color on hover
+    });
+    
+    // Revert fill color when not hovering over the fill layer
+    map.on('mouseleave', 'Project', function () {
+        map.setPaintProperty('Project', 'fill-color', '#216bc0'); // Revert to original fill color
+        map.setPaintProperty('myOutlineLayer', 'line-color', '#fff'); // Revert to original fill color
+    });
+
+    // var layers = map.getStyle().layers;
+
+    // // Loop through each layer
+    // layers.forEach(function(layer) {
+    //     // Check if the layer type is 'fill'
+    //         var layerId = layer.id;
+    //         // Change fill color when hovering over the layer
+    //         map.on('mouseenter', layerId, function () {
+    //             map.setPaintProperty(layerId, 'fill-color', '#b8cdff'); // Change to red fill color on hover
+    //         });
+    //         // Revert fill color when not hovering over the layer
+    //         map.on('mouseleave', layerId, function () {
+    //             map.setPaintProperty(layerId, 'fill-color', '#216bc0'); // Revert to original fill color
+    //         });
+        
+    // });                                                             
+    //.......................................End polygon creation --------------------------------
+    // ------------------------------Zoom in Function--------------------------------//
     document.getElementById('Project').addEventListener('click', function() {
         var newCoordinates1 = [39.2022738,-6.6880111]; 
         var newZoomLevel = 16; 
-        var duration = 4000;
+        var duration = 5000;
         map.flyTo({
             center: newCoordinates1,
             zoom: newZoomLevel,
@@ -276,7 +314,7 @@ function mapContent(){
     document.getElementById('Zamalek').addEventListener('click', function() {
         var newCoordinates3 = [31.221113,30.058825]; 
         var newZoomLevel = 13; 
-        var duration = 4000;
+        var duration = 5000;
         map.flyTo({
             center: newCoordinates3,
             zoom: newZoomLevel,
@@ -285,7 +323,6 @@ function mapContent(){
             bearing: 0,
         });
     });
-
     map.on('click', 'Project', function (e) {
         toggleDiv2();
         const element1 = document.getElementById("img1");
@@ -316,7 +353,6 @@ function mapContent(){
     map.on('mouseleave', 'Zamalek', function () {
         map.getCanvas().style.cursor = '';
     });
-
     function toggleDiv2() {
         var div = document.querySelector('.dialog_detect');
         if (div.style.display === 'none' || div.style.display === '') {
@@ -364,7 +400,7 @@ scrollIt(x);
 function scrollIt(x){
     let transform = x
     document.querySelector('.after').style.width = transform+"px";
-    document.querySelector('.scroller').style.left = transform-18+"px";
+    document.querySelector('.scroller').style.left = transform-16+"px";
 }
 scrollIt(150);
 document.querySelector('.scroller').addEventListener('touchstart',function(){

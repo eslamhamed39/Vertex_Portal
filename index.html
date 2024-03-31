@@ -13,7 +13,7 @@
     <!--Stylesheet-->
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="media.css">
-    <script onload="mapContent();" src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js" defer></script>
+    <!-- <script onload="mapContent();" src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js" defer></script> -->
 </head>
 <body>
     <div class=" vw-100 vh-100" >
@@ -36,7 +36,7 @@
                 <h5 class="status"></h5>
             </div>
             <div class="btn_1">
-                <button onclick="getValue()" class="btn_login1" >Login</button>
+                <button onclick="getValue()" type="submit" class="btn_login1" id="login" >Login</button>
             </div>
         </div>
         <!-- &--------------------------------------Home Section--------------------------------------- -->
@@ -45,7 +45,6 @@
         <!-- <div class="d-none" id="logoutPage"> -->
         <!-- </div> -->
     </div>
-    
     <!-- ----------------------------------------Logout Section--------------------------------------- -->
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
