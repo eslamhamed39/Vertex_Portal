@@ -3,83 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation</title>
-    <link rel="stylesheet" href="main.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
+    <title>Document</title>
     <style>
-        .active {
-            background-color: #e9ecef; /* Change to your desired active state styling */
-        }
+        * {
+            outline: 0;
+            font-family: sans-serif
+            }
+            body {
+            background-color: #fafafa
+            }
+            span.msg,
+            span.choose {
+            color: #555;
+            padding: 5px 0 10px;
+            display: inherit
+            }
+            .container {
+            width: 500px;
+            margin: 50px auto 0;
+            text-align: center
+            }
+
+            /*Styling Selectbox*/
+            .dropdown {
+            width: 300px;
+            display: inline-block;
+            background-color: #fff;
+            border-radius: 2px;
+            box-shadow: 0 0 2px rgb(204, 204, 204);
+            transition: all .5s ease;
+            position: relative;
+            font-size: 14px;
+            color: #474747;
+            height: 100%;
+            text-align: left
+            }
+            .dropdown .select {
+                cursor: pointer;
+                display: block;
+                padding: 10px
+            }
+            .dropdown .select > i {
+                font-size: 13px;
+                color: #888;
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+                float: right;
+                line-height: 20px
+            }
+            .dropdown:hover {
+                box-shadow: 0 0 4px rgb(204, 204, 204)
+            }
+            .dropdown:active {
+                background-color: #f8f8f8
+            }
+            .dropdown.active:hover,
+            .dropdown.active {
+                box-shadow: 0 0 4px rgb(204, 204, 204);
+                border-radius: 2px 2px 0 0;
+                background-color: #f8f8f8
+            }
+            .dropdown.active .select > i {
+                transform: rotate(-90deg)
+            }
+            .dropdown .dropdown-menu {
+                position: absolute;
+                background-color: #fff;
+                width: 100%;
+                left: 0;
+                margin-top: 1px;
+                box-shadow: 0 1px 2px rgb(204, 204, 204);
+                border-radius: 0 1px 2px 2px;
+                overflow: hidden;
+                display: none;
+                max-height: 144px;
+                overflow-y: auto;
+                z-index: 9
+            }
+            .dropdown .dropdown-menu li {
+                padding: 10px;
+                transition: all .2s ease-in-out;
+                cursor: pointer
+            } 
+            .dropdown .dropdown-menu {
+                padding: 0;
+                list-style: none
+            }
+            .dropdown .dropdown-menu li:hover {
+                background-color: #f2f2f2
+            }
+            .dropdown .dropdown-menu li:active {
+                background-color: #e2e2e2
+            }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.dropdown').click(function () {
+                $(this).attr('tabindex', 1).focus();
+                $(this).toggleClass('active');
+                $(this).find('.dropdown-menu').slideToggle(300);
+            });
+
+            $('.dropdown').focusout(function () {
+                $(this).removeClass('active');
+                $(this).find('.dropdown-menu').slideUp(300);
+            });
+
+            $('.dropdown .dropdown-menu li').click(function () {
+                $(this).parents('.dropdown').find('span').text($(this).text());
+                $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+            });
+
+            $('.dropdown-menu li').click(function () {
+                var input = '<strong>' + $(this).parents('.dropdown').find('input').val() + '</strong>',
+                msg = '<span class="msg">Hidden input value: ';
+                $('.msg').html(msg + input + '</span>');
+            }); 
+        });
+    </script>
 </head>
 <body>
-
-<div class="bg-light sticky-top Side_bar container_sidebar d-flex flex-column align-items-center">
-    <a href="/" class="d-block link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
-        <img src="https://i.ibb.co/tZXHjwQ/Asset-1.png" class="v_logo" alt="v-Logo">
-    </a>
-    <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light2 align-items-center sticky-top">
-        <ul class="p-3 d-flex nav nav-pills nav-flush flex-sm-column flex-row align-items-center flex-nowrap mb-auto mx-auto text-center align-items-center">
-            <li class="nav-item li1 active"> <!-- Add active class to the initially active element -->
-                <a href="#" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home" id="Home">
-                    <i class="bi bi-house fs-3"></i> 
-                </a>
-            </li>
-            <li class="nav-item li1">
-                <a href="#" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home" id="detect">
-                    <i class="bi bi-broadcast-pin fs-3"></i> 
-                </a>
-            </li>
-            <li class="li2">
-                <a href="#" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
-                    <i class="bi-speedometer2 fs-3"></i>
-                </a>
-            </li>
-        </ul>
-        <div class="dropdown li6">
-            <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi-person-circle h2"></i>
-            </a>
-            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
-                <li><a class="dropdown-item" href="#">New project...</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <div class="logContainer d-flex justify-content-center align-items-center">
-                    <li class="li_logout"><a class="dropdown-item bg-danger Log_out" href="/Login.html">Log Out</a></li>
-                </div>
+    <div class="container">
+        <span class="choose">Choose Gender</span>
+      
+          <div class="dropdown">
+            <div class="select">
+              <span>Select Gender</span>
+              <i class="fa fa-chevron-left"></i>
+            </div>
+            <input type="hidden" name="gender">
+            <ul class="dropdown-menu">
+              <li id="male">Male</li>
+              <li id="female">Female</li>
             </ul>
-        </div>
+          </div>
+      
+      <span class="msg"></span>
     </div>
-    <div class="list_detection dropdown">
-        <ul class="d-flex flex-column align-items-center justify-content-center shadow" aria-labelledby="dropdownUser3">
-            <li><a class="dropdown-item1" id="Project" href="#">Pursuing projects</a></li>
-            <li><a class="dropdown-item1" id="Zamalek" href="#">Zamalek</a></li>
-            <li><a class="dropdown-item1" href="#">Profile</a></li>
-        </ul>
-    </div>
-</div>
-
-<script>
-    function setActive(elementId) {
-        // Remove active class from all elements
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.classList.remove('active');
-        });
-
-        // Add active class to the clicked element
-        document.getElementById(elementId).parentElement.classList.add('active');
-    }
-
-    // Add event listeners to all navigation items
-    document.querySelectorAll('.nav-item').forEach(item => {
-        item.addEventListener('click', event => {
-            setActive(event.currentTarget.id);
-        });
-    });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-
 </body>
 </html>

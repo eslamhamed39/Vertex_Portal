@@ -19,7 +19,7 @@ function toggleDiv() {
     if (div.style.display === 'none' || div.style.display === '') {
         div.style.display = 'block';
         // Add event listener to hide div when clicking outside
-        setTimeout(function() {
+        setTimeout(function () {
             document.addEventListener('click', clickOutsideDiv1);
         }, 1);
     } else {
@@ -34,7 +34,7 @@ function clickOutsideDiv1(event) {
         div.style.display = 'none';
         document.removeEventListener('click', clickOutsideDiv1);
     }
-    else if(div.contains(event.target)){
+    else if (div.contains(event.target)) {
         div.style.display = 'none';
         document.removeEventListener('click', clickOutsideDiv1);
     }
@@ -45,7 +45,7 @@ function toggleDiv3() {
     if (div.style.display === 'none' || div.style.display === '') {
         div.style.display = 'block';
         // Add event listener to hide div when clicking outside
-        setTimeout(function() {
+        setTimeout(function () {
             document.addEventListener('click', clickOutsideDiv2);
         }, 1);
     } else {
@@ -69,7 +69,7 @@ function clickOutsideDiv2(event) {
         });
 
     }
-    else if(div.contains(event.target)){
+    else if (div.contains(event.target)) {
         div.style.display = 'none';
         document.removeEventListener('click', clickOutsideDiv2);
 
@@ -154,9 +154,9 @@ function switchPage() {
 }
 //-------------------- Map Part ----------------------//
 
-function mapContent(){
+function mapContent() {
     var api_key = 'YZlbkr2ee2sbGy3dZsWG85VE4mPsibyQ';
-    var latAndLong = {lat: 4.012114320491342, lng: 21.667170602629522};  
+    var latAndLong = { lat: 4.012114320491342, lng: 21.667170602629522 };
     var zoomLevel = 2.2;
     var map = tt.map({
         container: 'map',
@@ -165,11 +165,11 @@ function mapContent(){
         zoom: zoomLevel,
         // ============== style without label name =============//
         style: `https://api.tomtom.com/style/2/custom/style/dG9tdG9tQEBAVVRVTzI1SHRBR3MxQXRBaDtiYWI4ZjY0Yi1lZDkwLTRjYTEtYTlkYy1mYjcxODIyNzdlMzA=/drafts/0.json`,
-        
+
         // ============== style with label name =============//
         // style: `https://api.tomtom.com/style/1/style/*?map=2/basic_street-satellite&poi=2/poi_dynamic-satellite&key=${api_key}`,
     });
-//....................................... polygon creation --------------------------------
+    //....................................... polygon creation --------------------------------
     map.on("load", function () {
         // ~------------------------------------- Pursuing Project layer --------------------------------//
         map.addLayer(globalData);
@@ -184,7 +184,7 @@ function mapContent(){
                     'geometry': {
                         'type': 'Polygon',
                         'coordinates': [
-                            [[ 39.201496256786378, -6.688107122809686 ], [ 39.202522027507413, -6.687276290529025 ], [ 39.202657791279336, -6.687405001523991 ], [ 39.202778470187695, -6.687560271885499 ], [ 39.203385978783167, -6.688363182309756 ], [ 39.202102394030632, -6.688635585885923 ], [ 39.20177875514004, -6.688461247614671 ], [ 39.201496256786378, -6.688107122809686 ]],
+                            [[39.201496256786378, -6.688107122809686], [39.202522027507413, -6.687276290529025], [39.202657791279336, -6.687405001523991], [39.202778470187695, -6.687560271885499], [39.203385978783167, -6.688363182309756], [39.202102394030632, -6.688635585885923], [39.20177875514004, -6.688461247614671], [39.201496256786378, -6.688107122809686]],
                         ]
                     }
                 }
@@ -202,19 +202,19 @@ function mapContent(){
             source: {
                 type: "geojson",
                 data: {
-                type: "Feature",
-                geometry: {
-                    type: "Polygon",
-                    coordinates: [
-                    // [
-                    //     [31.463121345638648, 24.92721487935429],
-                    //     [22.004038451409006, 24.994649117851637],
-                    //     [22.018411483956736, 36.84802038684241],
-                    //     [31.042284929970393, 32.37637391072008],
-                    // ],
-                    [[ 31.222554993498246, 30.073612485925189 ], [ 31.215720180017769, 30.067271695857119 ], [ 31.215337430462856, 30.065662774055152 ], [ 31.215337430462856, 30.064148470820335 ], [ 31.215644997069472, 30.063527363184392 ], [ 31.218488279477366, 30.052364507335859 ], [ 31.219212769706292, 30.048495370142582 ], [ 31.21960918888816, 30.04689797584258 ], [ 31.221208535242592, 30.041336476207032 ], [ 31.221796329201911, 30.03921829105677 ], [ 31.222684854954377, 30.038437272814978 ], [ 31.224092826531351, 30.038318936180691 ], [ 31.225405110719603, 30.038863283528222 ], [ 31.226580698638241, 30.040366140027157 ], [ 31.22774261692992, 30.042910293949713 ], [ 31.22860380342847, 30.04590402860989 ], [ 31.228084357603951, 30.048720186531629 ], [ 31.226895100058346, 30.054257608073151 ], [ 31.225828869155396, 30.056375471629764 ], [ 31.224584933101948, 30.061593031578766 ], [ 31.222985586747519, 30.06821810822878 ], [ 31.222807881597035, 30.072713443397046 ], [ 31.222780542343099, 30.073517850254273 ], [ 31.222554993498246, 30.073612485925189 ]],
-                    ],
-                },
+                    type: "Feature",
+                    geometry: {
+                        type: "Polygon",
+                        coordinates: [
+                            // [
+                            //     [31.463121345638648, 24.92721487935429],
+                            //     [22.004038451409006, 24.994649117851637],
+                            //     [22.018411483956736, 36.84802038684241],
+                            //     [31.042284929970393, 32.37637391072008],
+                            // ],
+                            [[31.222554993498246, 30.073612485925189], [31.215720180017769, 30.067271695857119], [31.215337430462856, 30.065662774055152], [31.215337430462856, 30.064148470820335], [31.215644997069472, 30.063527363184392], [31.218488279477366, 30.052364507335859], [31.219212769706292, 30.048495370142582], [31.21960918888816, 30.04689797584258], [31.221208535242592, 30.041336476207032], [31.221796329201911, 30.03921829105677], [31.222684854954377, 30.038437272814978], [31.224092826531351, 30.038318936180691], [31.225405110719603, 30.038863283528222], [31.226580698638241, 30.040366140027157], [31.22774261692992, 30.042910293949713], [31.22860380342847, 30.04590402860989], [31.228084357603951, 30.048720186531629], [31.226895100058346, 30.054257608073151], [31.225828869155396, 30.056375471629764], [31.224584933101948, 30.061593031578766], [31.222985586747519, 30.06821810822878], [31.222807881597035, 30.072713443397046], [31.222780542343099, 30.073517850254273], [31.222554993498246, 30.073612485925189]],
+                        ],
+                    },
                 },
             },
             layout: {},
@@ -235,7 +235,7 @@ function mapContent(){
                     'geometry': {
                         'type': 'Polygon',
                         'coordinates': [
-                            [[ 31.222554993498246, 30.073612485925189 ], [ 31.215720180017769, 30.067271695857119 ], [ 31.215337430462856, 30.065662774055152 ], [ 31.215337430462856, 30.064148470820335 ], [ 31.215644997069472, 30.063527363184392 ], [ 31.218488279477366, 30.052364507335859 ], [ 31.219212769706292, 30.048495370142582 ], [ 31.21960918888816, 30.04689797584258 ], [ 31.221208535242592, 30.041336476207032 ], [ 31.221796329201911, 30.03921829105677 ], [ 31.222684854954377, 30.038437272814978 ], [ 31.224092826531351, 30.038318936180691 ], [ 31.225405110719603, 30.038863283528222 ], [ 31.226580698638241, 30.040366140027157 ], [ 31.22774261692992, 30.042910293949713 ], [ 31.22860380342847, 30.04590402860989 ], [ 31.228084357603951, 30.048720186531629 ], [ 31.226895100058346, 30.054257608073151 ], [ 31.225828869155396, 30.056375471629764 ], [ 31.224584933101948, 30.061593031578766 ], [ 31.222985586747519, 30.06821810822878 ], [ 31.222807881597035, 30.072713443397046 ], [ 31.222780542343099, 30.073517850254273 ], [ 31.222554993498246, 30.073612485925189 ]],
+                            [[31.222554993498246, 30.073612485925189], [31.215720180017769, 30.067271695857119], [31.215337430462856, 30.065662774055152], [31.215337430462856, 30.064148470820335], [31.215644997069472, 30.063527363184392], [31.218488279477366, 30.052364507335859], [31.219212769706292, 30.048495370142582], [31.21960918888816, 30.04689797584258], [31.221208535242592, 30.041336476207032], [31.221796329201911, 30.03921829105677], [31.222684854954377, 30.038437272814978], [31.224092826531351, 30.038318936180691], [31.225405110719603, 30.038863283528222], [31.226580698638241, 30.040366140027157], [31.22774261692992, 30.042910293949713], [31.22860380342847, 30.04590402860989], [31.228084357603951, 30.048720186531629], [31.226895100058346, 30.054257608073151], [31.225828869155396, 30.056375471629764], [31.224584933101948, 30.061593031578766], [31.222985586747519, 30.06821810822878], [31.222807881597035, 30.072713443397046], [31.222780542343099, 30.073517850254273], [31.222554993498246, 30.073612485925189]],
                         ]
                     }
                 }
@@ -253,7 +253,7 @@ function mapContent(){
         map.setPaintProperty('Zamalek', 'fill-color', '#b8cdff'); // Change to red fill color on hover
         map.setPaintProperty('myOutlineLayer2', 'line-color', '#182ead'); // Change to red fill color on hover
     });
-    
+
     // Revert fill color when not hovering over the fill layer
     map.on('mouseleave', 'Zamalek', function () {
         map.setPaintProperty('Zamalek', 'fill-color', '#216bc0'); // Revert to original fill color
@@ -263,7 +263,7 @@ function mapContent(){
         map.setPaintProperty('Project', 'fill-color', '#b8cdff'); // Change to red fill color on hover
         map.setPaintProperty('myOutlineLayer', 'line-color', '#182ead'); // Change to red fill color on hover
     });
-    
+
     // Revert fill color when not hovering over the fill layer
     map.on('mouseleave', 'Project', function () {
         map.setPaintProperty('Project', 'fill-color', '#216bc0'); // Revert to original fill color
@@ -284,13 +284,13 @@ function mapContent(){
     //         map.on('mouseleave', layerId, function () {
     //             map.setPaintProperty(layerId, 'fill-color', '#216bc0'); // Revert to original fill color
     //         });
-        
+
     // });                                                             
     //.......................................End polygon creation --------------------------------
     // ------------------------------Zoom in Function--------------------------------//
-    document.getElementById('Project').addEventListener('click', function() {
-        var newCoordinates1 = [39.2022738,-6.6880111]; 
-        var newZoomLevel = 16; 
+    document.getElementById('Project').addEventListener('click', function () {
+        var newCoordinates1 = [39.2022738, -6.6880111];
+        var newZoomLevel = 16;
         var duration = 5000;
         map.flyTo({
             center: newCoordinates1,
@@ -300,9 +300,9 @@ function mapContent(){
             bearing: 0,
         });
     });
-    document.getElementById('Home').addEventListener('click', function() {
-        var latAndLong = {lat: 4.012114320491342, lng: 21.667170602629522}; 
-        var newZoomLevel = 2.2; 
+    document.getElementById('Home').addEventListener('click', function () {
+        var latAndLong = { lat: 4.012114320491342, lng: 21.667170602629522 };
+        var newZoomLevel = 2.2;
         var duration = 4000;
         map.flyTo({
             center: latAndLong,
@@ -311,9 +311,9 @@ function mapContent(){
             pitch: 0,
         });
     });
-    document.getElementById('Zamalek').addEventListener('click', function() {
-        var newCoordinates3 = [31.221113,30.058825]; 
-        var newZoomLevel = 13; 
+    document.getElementById('Zamalek').addEventListener('click', function () {
+        var newCoordinates3 = [31.221113, 30.058825];
+        var newZoomLevel = 13;
         var duration = 5000;
         map.flyTo({
             center: newCoordinates3,
@@ -358,7 +358,7 @@ function mapContent(){
         if (div.style.display === 'none' || div.style.display === '') {
             div.style.display = 'block';
             // Add event listener to hide div when clicking outside
-            setTimeout(function() {
+            setTimeout(function () {
                 document.addEventListener('click', clickOutsideDiv);
             }, 1);
         } else {
@@ -379,41 +379,41 @@ function mapContent(){
 
 // *=======================================> Slider Comparison imege <===================================//
 let active = false;
-document.querySelector('.scroller').addEventListener('mousedown',function(){
-active = true;
-document.querySelector('.scroller').classList.add('scrolling');
+document.querySelector('.scroller').addEventListener('mousedown', function () {
+    active = true;
+    document.querySelector('.scroller').classList.add('scrolling');
 });
-document.body.addEventListener('mouseup',function(){
-active = false;
-document.querySelector('.scroller').classList.remove('scrolling');
+document.body.addEventListener('mouseup', function () {
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
 });
-document.body.addEventListener('mouseleave',function(){
-active = false;
-document.querySelector('.scroller').classList.remove('scrolling');
+document.body.addEventListener('mouseleave', function () {
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
 });
-document.body.addEventListener('mousemove',function(e){
-if (!active) return;
-let x = e.pageX;
-x -= document.querySelector('.wrapper').getBoundingClientRect().left;
-scrollIt(x);
+document.body.addEventListener('mousemove', function (e) {
+    if (!active) return;
+    let x = e.pageX;
+    x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+    scrollIt(x);
 });
-function scrollIt(x){
+function scrollIt(x) {
     let transform = x
-    document.querySelector('.after').style.width = transform+"px";
-    document.querySelector('.scroller').style.left = transform-16+"px";
+    document.querySelector('.after').style.width = transform + "px";
+    document.querySelector('.scroller').style.left = transform - 16 + "px";
 }
-scrollIt(150);
-document.querySelector('.scroller').addEventListener('touchstart',function(){
-active = true;
-document.querySelector('.scroller').classList.add('scrolling');
+scrollIt(250);
+document.querySelector('.scroller').addEventListener('touchstart', function () {
+    active = true;
+    document.querySelector('.scroller').classList.add('scrolling');
 });
-document.body.addEventListener('touchend',function(){
-active = false;
-document.querySelector('.scroller').classList.remove('scrolling');
+document.body.addEventListener('touchend', function () {
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
 });
-document.body.addEventListener('touchcancel',function(){
-active = false;
-document.querySelector('.scroller').classList.remove('scrolling');
+document.body.addEventListener('touchcancel', function () {
+    active = false;
+    document.querySelector('.scroller').classList.remove('scrolling');
 });
 
 
@@ -456,3 +456,48 @@ fetch('./Layer/Pursuing_projects.json')
         globalData = data;
     })
     .catch(error => console.error('Error fetching JSON:', error));
+
+
+
+
+
+// *-------------------------- Select options------------------------//
+
+$(document).ready(function () {
+    $('.dropdown_date').click(function () {
+        $(this).attr('tabindex', 1).focus();
+        $(this).toggleClass('active');
+        var $dropdownMenu = $(this).find('.dropdown-menu');
+        if ($dropdownMenu.is(':hidden')) {
+            $dropdownMenu.css({
+                'display': 'block',
+                'height': '0',
+                'overflow': 'hidden'
+            }).animate({
+                'height': $dropdownMenu[0].scrollHeight + 'px'
+            }, 300);
+        } else {
+            $dropdownMenu.animate({
+                'height': '0'
+            }, 300, function() {
+                $dropdownMenu.css('display', 'none');
+            });
+        }
+    });
+
+    $('.dropdown_date').focusout(function () {
+        $(this).removeClass('active');
+        $(this).find('.dropdown-menu').slideUp(300);
+    });
+
+    $('.dropdown_date .dropdown-menu li').click(function () {
+        $(this).parents('.dropdown').find('span').text($(this).text());
+        $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+    });
+
+    $('.dropdown-menu li').click(function () {
+        var input = '<strong>' + $(this).parents('.dropdown').find('input').val() + '</strong>',
+            msg = '<span class="msg">Hidden input value: ';
+        $('.msg').html(msg + input + '</span>');
+    });
+});
