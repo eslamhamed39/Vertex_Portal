@@ -462,42 +462,34 @@ fetch('./Layer/Pursuing_projects.json')
 
 
 // *-------------------------- Select options------------------------//
+const optionMenu = document.querySelector(".select-menu"),
+    selectBtn = optionMenu.querySelector(".select-btn"),
+    options = optionMenu.querySelectorAll(".option"),
+    sBtn_text = optionMenu.querySelector(".sBtn-text");
+selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
 
-$(document).ready(function () {
-    $('.dropdown_date').click(function () {
-        $(this).attr('tabindex', 1).focus();
-        $(this).toggleClass('active');
-        var $dropdownMenu = $(this).find('.dropdown-menu');
-        if ($dropdownMenu.is(':hidden')) {
-            $dropdownMenu.css({
-                'display': 'block',
-                'height': '0',
-                'overflow': 'hidden'
-            }).animate({
-                'height': $dropdownMenu[0].scrollHeight + 'px'
-            }, 300);
-        } else {
-            $dropdownMenu.animate({
-                'height': '0'
-            }, 300, function() {
-                $dropdownMenu.css('display', 'none');
-            });
-        }
+options.forEach(option => {
+    option.addEventListener("click", () => {
+        let selectedOption = option.querySelector(".option-text").innerText;
+        sBtn_text.innerText = selectedOption;
+        optionMenu.classList.remove("active");
+        const element1 = document.getElementById("img2");
+        element1.setAttribute("src", `../Geo File/Polygon Create/${selectedOption}.jpg`)
     });
+});
 
-    $('.dropdown_date').focusout(function () {
-        $(this).removeClass('active');
-        $(this).find('.dropdown-menu').slideUp(300);
-    });
+const optionMenu1 = document.querySelector(".select-menu1"),
+    selectBtn1 = optionMenu1.querySelector(".select-btn1"),
+    options1 = optionMenu1.querySelectorAll(".option1"),
+    sBtn_text1 = optionMenu1.querySelector(".sBtn-text1");
+selectBtn1.addEventListener("click", () => optionMenu1.classList.toggle("active"));
 
-    $('.dropdown_date .dropdown-menu li').click(function () {
-        $(this).parents('.dropdown').find('span').text($(this).text());
-        $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
-    });
-
-    $('.dropdown-menu li').click(function () {
-        var input = '<strong>' + $(this).parents('.dropdown').find('input').val() + '</strong>',
-            msg = '<span class="msg">Hidden input value: ';
-        $('.msg').html(msg + input + '</span>');
+options1.forEach(option1 => {
+    option1.addEventListener("click", () => {
+        let selectedOption1 = option1.querySelector(".option-text1").innerText;
+        sBtn_text1.innerText = selectedOption1;
+        optionMenu1.classList.remove("active");
+        const element2 = document.getElementById("img1");
+        element2.setAttribute("src", `../Geo File/Polygon Create/${selectedOption1}.jpg`)
     });
 });

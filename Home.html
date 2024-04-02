@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vertex Home</title>
   <link rel="icon" type="image/x-icon" href="https://i.ibb.co/NjN8KGL/vertex-logo-06.png" />
-  <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -14,7 +13,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
   <!--Stylesheet-->
-
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="main.css" />
   <link rel="stylesheet" href="media.css" />
   <script onload="mapContent();" src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js"
@@ -125,31 +124,19 @@
       <!-- *---------------------------------- End Map ------------------------------------------- -->
     </div>
   </div>
-  
+
   <div id="dialog_detect" class="dialog_detect">
     <div id="page">
       <a href="https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096">
         <img src="../Geo File/Polygon Create/Screenshot.png" alt="" id="news" /></a>
       <div class="wrapper">
-        <div class="container_data select_option">
+
+        <!-- Design Number one -->
+        <!-- <div class="container_data select_option">
           <div class="dropdown_date">
             <div class="select">
               <span>Date image</span>
-              <!-- <i class="fa fa-chevron-left"></i> -->
-            </div>
-            <input type="hidden" name="gender" />
-            <ul class="dropdown-menu ">
-              <li id="date1">5/2023</li>
-              <li id="date2">10/2023</li>
-            </ul>
-          </div>
-          <!-- <span class="msg"></span> -->
-        </div>
-        <div class="container_data select_option1">
-          <div class="dropdown_date">
-            <div class="select">
-              <span>Date image</span>
-              <!-- <i class="fa fa-chevron-left"></i> -->
+              <i class="fa fa-chevron-left"></i> 
             </div>
             <input type="hidden" name="gender" />
             <ul class="dropdown-menu ">
@@ -158,7 +145,66 @@
             </ul>
           </div>
           <span class="msg"></span>
+        </div> -->
+
+        <!-- Design Number two -->
+        <!-- <select class="form-select select_date" aria-label="Default select example">
+          <div class="option_date">
+            <option selected>Date</option>
+            <option value="1">5/2023</option>
+            <option value="2">6/2023</option>
+            <option value="3">7/2023</option>
+          </div>
+        </select> -->
+
+        <div class="select-menu" id="left_selector">
+          <div class="select-btn">
+            <span class="sBtn-text">Date</span>
+            <i class="bx bx-chevron-down"></i>
+          </div>
+          <ul class="options">
+            <li class="option">
+              <span class="option-text">2-2022</span>
+            </li>
+            <li class="option">
+              <span class="option-text">6-2023</span>
+            </li>
+            <!-- <li class="option">
+              <span class="option-text">7/2023</span>
+            </li>
+            <li class="option">
+              <span class="option-text">8/2023</span>
+            </li>
+            <li class="option">
+              <span class="option-text">9/2023</span>
+            </li> -->
+          </ul>
         </div>
+
+        <div class=" select-menu1" id="right_selector">
+          <div class=" select-btn1">
+            <span class=" sBtn-text1">Date</span>
+            <i class="bx bx-chevron-down"></i>
+          </div>
+          <ul class="options1">
+            <li class=" option1">
+              <span class="option-text1">2-2022</span>
+            </li>
+            <li class="option1">
+              <span class="option-text1">6-2023</span>
+            </li>
+            <!-- <li class="option">
+              <span class="option-text">7/2023</span>
+            </li>
+            <li class="option">
+              <span class="option-text">8/2023</span>
+            </li>
+            <li class="option">
+              <span class="option-text">9/2023</span>
+            </li> -->
+          </ul>
+        </div>
+
 
         <div class="before">
           <img class="content-image" id="img1" src="../Geo File/Polygon Create/2-2022.jpg" draggable="false" />
@@ -184,5 +230,5 @@
     <img src="https://i.ibb.co/tZXHjwQ/Asset-1.png" alt="" />
   </div>
 </body>
- 
+
 </html>
