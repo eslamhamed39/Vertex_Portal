@@ -493,3 +493,23 @@ options1.forEach(option1 => {
         element2.setAttribute("src", `../Geo File/Polygon Create/${selectedOption1}.jpg`)
     });
 });
+
+window.onload = function () {
+    // alert("Please wait...");
+    var fileListElement = document.getElementById('fileList');
+
+    // Array of file names without extension
+    var fileNames = ["2018", "2023"]; // Add your filenames here
+
+    // Function to display file names in the UL
+    function displayFileNames() {
+        fileNames.forEach(fileName => {
+            var listItem = document.createElement('li');
+            listItem.textContent = fileName;
+            fileListElement.appendChild(listItem);
+        });
+    }
+
+    // Display file names
+    displayFileNames();
+};
