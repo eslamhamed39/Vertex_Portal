@@ -160,7 +160,31 @@ function switchPage() {
     window.location.pathname = "/Home.html";
 }
 //-------------------- Map Part ----------------------//
-// let layerid;
+// get layers;
+
+let Buildings_Detection;
+fetch('./Layer/Buildings_Detection.json')
+    .then(response => response.json())
+    .then(data => {
+        Buildings_Detection = data;
+    })
+
+let Buildings_Detection_outline;
+fetch('./Layer/Buildings_Detection_outline.json')
+    .then(response => response.json())
+    .then(data => {
+        Buildings_Detection_outline = data;
+    })
+
+
+
+// let Forest_Logging_Detection; 
+// fetch('./Layer/Forest Logging Detection.json')
+//     .then(response => response.json())
+//     .then(data => {
+//         Forest_Logging_Detection = data;
+//     })
+
 function mapContent() {
     var api_key = 'YZlbkr2ee2sbGy3dZsWG85VE4mPsibyQ';
     var latAndLong = { lat: 4.012114320491342, lng: 21.667170602629522 };
@@ -172,36 +196,12 @@ function mapContent() {
         zoom: zoomLevel,
         // ============== style without label name =============//
         style: `https://api.tomtom.com/style/2/custom/style/dG9tdG9tQEBAVVRVTzI1SHRBR3MxQXRBaDtiYWI4ZjY0Yi1lZDkwLTRjYTEtYTlkYy1mYjcxODIyNzdlMzA=/drafts/0.json`,
-
-        // ============== style with label name =============//
-        // style: `https://api.tomtom.com/style/1/style/*?map=2/basic_street-satellite&poi=2/poi_dynamic-satellite&key=${api_key}`,
     });
     //....................................... polygon creation --------------------------------
     map.on("load", function () {
         // ~------------------------------------- Pursuing Project layer --------------------------------//
-        map.addLayer(globalData);
-        map.addLayer({
-            'id': 'myOutlineLayer',
-            'type': 'line',
-            'source': {
-                'type': 'geojson',
-                'data': {
-                    'type': 'Feature',
-                    'properties': {},
-                    'geometry': {
-                        'type': 'Polygon',
-                        'coordinates': [
-                            [[39.201496256786378, -6.688107122809686], [39.202522027507413, -6.687276290529025], [39.202657791279336, -6.687405001523991], [39.202778470187695, -6.687560271885499], [39.203385978783167, -6.688363182309756], [39.202102394030632, -6.688635585885923], [39.20177875514004, -6.688461247614671], [39.201496256786378, -6.688107122809686]],
-                        ]
-                    }
-                }
-            },
-            'layout': {},
-            'paint': {
-                'line-color': '#fff', // Outline color
-                'line-width': 2.5 // Outline width
-            }
-        });
+        map.addLayer(Buildings_Detection);
+        map.addLayer(Buildings_Detection_outline);
         // !------------------------------------- Zamalek layer --------------------------------//
         map.addLayer({
             id: "Zamalek",
@@ -427,8 +427,6 @@ document.body.addEventListener('touchcancel', function () {
     document.querySelector('.scroller').classList.remove('scrolling');
 });
 
-
-
 // ---------------------------- Active functions ----------------------------//
 
 function setActive(elementId) {
@@ -459,18 +457,6 @@ document.body.addEventListener('click', event => {
 });
 
 
-let globalData; // Declare global variable
-
-fetch('./Layer/Pursuing_projects.json')
-    .then(response => response.json())
-    .then(data => {
-        globalData = data;
-    })
-    .catch(error => console.error('Error fetching JSON:', error));
-
-
-
-
 
 // *-------------------------- Select options------------------------//
 //  left Selector
@@ -485,47 +471,43 @@ function linkedImageWithSelect(idlayer) {
         fileNames.push("2-2022", "6-2023");
         // console.log(fileNames);
         // console.log(idlayer);
-        
-    displayFileNames(fileNames);
-};
-function displayFileNames(date) {
-    const leftSelector = document.getElementById('image_date_left');
-    const rightSelector = document.getElementById('image_date_right');
-
-    date.forEach(date => {
-        var listItem = document.createElement('li');
-        let span = document.createElement('span');
-        listItem.classList.add("option")
-        span.classList.add("option-text")
-        leftSelector.appendChild(listItem);
-        listItem.appendChild(span);
-        span.textContent = date;
-    });
-    date.forEach(date => {
-        var listItem1 = document.createElement('li');
-        let span1 = document.createElement('span1');
-        listItem1.classList.add("option1")
-        span1.classList.add("option-text1")
-        rightSelector.appendChild(listItem1);
-        listItem1.appendChild(span1);
-        span1.textContent = date;
-    });
-
-    const options = optionMenu.querySelectorAll(".option")
-    options.forEach(option => {
-        option.addEventListener("click", () => {
-            handleOptionClick(option);
+        displayFileNames(fileNames);
+    };
+    function displayFileNames(date) {
+        const leftSelector = document.getElementById('image_date_left');
+        const rightSelector = document.getElementById('image_date_right');
+        date.forEach(date => {
+            var listItem = document.createElement('li');
+            let span = document.createElement('span');
+            listItem.classList.add("option")
+            span.classList.add("option-text")
+            leftSelector.appendChild(listItem);
+            listItem.appendChild(span);
+            span.textContent = date;
         });
-    });
-    const options1 = optionMenu1.querySelectorAll(".option1")
-    options1.forEach(option => {
-        option.addEventListener("click", () => {
-            handleOptionClick1(option);
+        date.forEach(date => {
+            var listItem1 = document.createElement('li');
+            let span1 = document.createElement('span1');
+            listItem1.classList.add("option1")
+            span1.classList.add("option-text1")
+            rightSelector.appendChild(listItem1);
+            listItem1.appendChild(span1);
+            span1.textContent = date;
         });
-    });
-}}
-
-
+        const options = optionMenu.querySelectorAll(".option")
+        options.forEach(option => {
+            option.addEventListener("click", () => {
+                handleOptionClick(option);
+            });
+        });
+        const options1 = optionMenu1.querySelectorAll(".option1")
+        options1.forEach(option => {
+            option.addEventListener("click", () => {
+                handleOptionClick1(option);
+            });
+        });
+    }
+}
 
 // Function to handle click event of select button
 function handleSelectButtonClick() {
@@ -554,6 +536,7 @@ function handleOptionClick1(option) {
 // Adding event listener to the select button
 selectBtn.addEventListener("click", handleSelectButtonClick);
 selectBtn1.addEventListener("click", handleSelectButtonClick1);
-
 // Adding event listeners to each option
+
+
 
