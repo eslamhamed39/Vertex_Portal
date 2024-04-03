@@ -11,7 +11,14 @@ const Home_section = document.getElementById('Home_section');
 const loginPage = document.getElementById('loginPage');
 const map_section = document.getElementById('map_section');
 const home_status = document.getElementById('home_status');
-
+const optionMenu = document.querySelector(".select-menu"),
+    selectBtn = optionMenu.querySelector(".select-btn"),
+    options = optionMenu.querySelectorAll(".option"),
+    sBtn_text = optionMenu.querySelector(".sBtn-text");
+const optionMenu1 = document.querySelector(".select-menu1"),
+    selectBtn1 = optionMenu1.querySelector(".select-btn1"),
+    options1 = optionMenu1.querySelectorAll(".option1"),
+    sBtn_text1 = optionMenu1.querySelector(".sBtn-text1");
 
 // -------------------------- sidebar detection list --------------------//
 function toggleDiv() {
@@ -153,7 +160,7 @@ function switchPage() {
     window.location.pathname = "/Home.html";
 }
 //-------------------- Map Part ----------------------//
-
+// let layerid;
 function mapContent() {
     var api_key = 'YZlbkr2ee2sbGy3dZsWG85VE4mPsibyQ';
     var latAndLong = { lat: 4.012114320491342, lng: 21.667170602629522 };
@@ -247,13 +254,11 @@ function mapContent() {
             }
         });
     })
-
     // -------------------------------- Hover section  -----------------------//
     map.on('mouseenter', 'Zamalek', function () {
         map.setPaintProperty('Zamalek', 'fill-color', '#b8cdff'); // Change to red fill color on hover
         map.setPaintProperty('myOutlineLayer2', 'line-color', '#182ead'); // Change to red fill color on hover
     });
-
     // Revert fill color when not hovering over the fill layer
     map.on('mouseleave', 'Zamalek', function () {
         map.setPaintProperty('Zamalek', 'fill-color', '#216bc0'); // Revert to original fill color
@@ -263,15 +268,12 @@ function mapContent() {
         map.setPaintProperty('Project', 'fill-color', '#b8cdff'); // Change to red fill color on hover
         map.setPaintProperty('myOutlineLayer', 'line-color', '#182ead'); // Change to red fill color on hover
     });
-
     // Revert fill color when not hovering over the fill layer
     map.on('mouseleave', 'Project', function () {
         map.setPaintProperty('Project', 'fill-color', '#216bc0'); // Revert to original fill color
         map.setPaintProperty('myOutlineLayer', 'line-color', '#fff'); // Revert to original fill color
     });
-
     // var layers = map.getStyle().layers;
-
     // // Loop through each layer
     // layers.forEach(function(layer) {
     //     // Check if the layer type is 'fill'
@@ -284,7 +286,6 @@ function mapContent() {
     //         map.on('mouseleave', layerId, function () {
     //             map.setPaintProperty(layerId, 'fill-color', '#216bc0'); // Revert to original fill color
     //         });
-
     // });                                                             
     //.......................................End polygon creation --------------------------------
     // ------------------------------Zoom in Function--------------------------------//
@@ -325,8 +326,8 @@ function mapContent() {
     });
     map.on('click', 'Project', function (e) {
         toggleDiv2();
-        const element1 = document.getElementById("img1");
-        const element2 = document.getElementById("img2");
+        const element1 = document.getElementById("img_left");
+        const element2 = document.getElementById("img_right");
         const element3 = document.getElementById("news");
         element1.setAttribute("src", "../Geo File/Polygon Create/2-2022.jpg")
         element2.setAttribute("src", "../Geo File/Polygon Create/6-2023.jpg")
@@ -340,8 +341,8 @@ function mapContent() {
     });
     map.on('click', 'Zamalek', function (e) {
         toggleDiv2();
-        const element1 = document.getElementById("img1");
-        const element2 = document.getElementById("img2");
+        const element1 = document.getElementById("img_left");
+        const element2 = document.getElementById("img_right");
         const element3 = document.getElementById("news");
         element1.setAttribute("src", "../Geo File/Polygon Create/Zamalek/1.jpg")
         element2.setAttribute("src", "../Geo File/Polygon Create/Zamalek/2.jpg")
@@ -374,6 +375,16 @@ function mapContent() {
             document.removeEventListener('click', clickOutsideDiv);
         }
     }
+    map.on('click', function (e) {
+        var features = map.queryRenderedFeatures(e.point);
+        globalvar = features["0"].layer["id"];
+        // getLayerId(globalvar);
+        linkedImageWithSelect(globalvar);
+    });
+}
+
+function getLayerId(feature) {
+    return feature
 }
 
 
@@ -462,54 +473,87 @@ fetch('./Layer/Pursuing_projects.json')
 
 
 // *-------------------------- Select options------------------------//
-const optionMenu = document.querySelector(".select-menu"),
-    selectBtn = optionMenu.querySelector(".select-btn"),
-    options = optionMenu.querySelectorAll(".option"),
-    sBtn_text = optionMenu.querySelector(".sBtn-text");
-selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
+//  left Selector
 
-options.forEach(option => {
-    option.addEventListener("click", () => {
-        let selectedOption = option.querySelector(".option-text").innerText;
-        sBtn_text.innerText = selectedOption;
-        optionMenu.classList.remove("active");
-        const element1 = document.getElementById("img2");
-        element1.setAttribute("src", `../Geo File/Polygon Create/${selectedOption}.jpg`)
-    });
-});
 
-const optionMenu1 = document.querySelector(".select-menu1"),
-    selectBtn1 = optionMenu1.querySelector(".select-btn1"),
-    options1 = optionMenu1.querySelectorAll(".option1"),
-    sBtn_text1 = optionMenu1.querySelector(".sBtn-text1");
-selectBtn1.addEventListener("click", () => optionMenu1.classList.toggle("active"));
-
-options1.forEach(option1 => {
-    option1.addEventListener("click", () => {
-        let selectedOption1 = option1.querySelector(".option-text1").innerText;
-        sBtn_text1.innerText = selectedOption1;
-        optionMenu1.classList.remove("active");
-        const element2 = document.getElementById("img1");
-        element2.setAttribute("src", `../Geo File/Polygon Create/${selectedOption1}.jpg`)
-    });
-});
-
-window.onload = function () {
-    // alert("Please wait...");
-    var fileListElement = document.getElementById('fileList');
-
-    // Array of file names without extension
-    var fileNames = ["2018", "2023"]; // Add your filenames here
-
-    // Function to display file names in the UL
-    function displayFileNames() {
-        fileNames.forEach(fileName => {
-            var listItem = document.createElement('li');
-            listItem.textContent = fileName;
-            fileListElement.appendChild(listItem);
-        });
-    }
-
-    // Display file names
-    displayFileNames();
+// function to create li from list 
+function linkedImageWithSelect(idlayer) {
+    // const layerId = getLayerId();
+    // console.log(typeof(idlayer));
+    const fileNames = [];
+    if (idlayer == 'Project') {
+        fileNames.push("2-2022", "6-2023");
+        // console.log(fileNames);
+        // console.log(idlayer);
+        
+    displayFileNames(fileNames);
 };
+function displayFileNames(date) {
+    const leftSelector = document.getElementById('image_date_left');
+    const rightSelector = document.getElementById('image_date_right');
+
+    date.forEach(date => {
+        var listItem = document.createElement('li');
+        let span = document.createElement('span');
+        listItem.classList.add("option")
+        span.classList.add("option-text")
+        leftSelector.appendChild(listItem);
+        listItem.appendChild(span);
+        span.textContent = date;
+    });
+    date.forEach(date => {
+        var listItem1 = document.createElement('li');
+        let span1 = document.createElement('span1');
+        listItem1.classList.add("option1")
+        span1.classList.add("option-text1")
+        rightSelector.appendChild(listItem1);
+        listItem1.appendChild(span1);
+        span1.textContent = date;
+    });
+
+    const options = optionMenu.querySelectorAll(".option")
+    options.forEach(option => {
+        option.addEventListener("click", () => {
+            handleOptionClick(option);
+        });
+    });
+    const options1 = optionMenu1.querySelectorAll(".option1")
+    options1.forEach(option => {
+        option.addEventListener("click", () => {
+            handleOptionClick1(option);
+        });
+    });
+}}
+
+
+
+// Function to handle click event of select button
+function handleSelectButtonClick() {
+    optionMenu.classList.toggle("active");
+}
+function handleSelectButtonClick1() {
+    optionMenu1.classList.toggle("active");
+}
+
+// Function to handle click event of each option
+function handleOptionClick(option) {
+    let selectedOption = option.querySelector(".option-text").innerText;
+    sBtn_text.innerText = selectedOption;
+    optionMenu.classList.remove("active");
+    const element1 = document.getElementById("img_right");
+    element1.setAttribute("src", `../Geo File/Polygon Create/${selectedOption}.jpg`);
+}
+function handleOptionClick1(option) {
+    let selectedOption1 = option.querySelector(".option-text1").innerText;
+    sBtn_text1.innerText = selectedOption1;
+    optionMenu1.classList.remove("active");
+    const element2 = document.getElementById("img_left");
+    element2.setAttribute("src", `../Geo File/Polygon Create/${selectedOption1}.jpg`)
+}
+
+// Adding event listener to the select button
+selectBtn.addEventListener("click", handleSelectButtonClick);
+selectBtn1.addEventListener("click", handleSelectButtonClick1);
+
+// Adding event listeners to each option
+

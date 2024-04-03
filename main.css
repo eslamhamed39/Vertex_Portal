@@ -663,7 +663,7 @@ canvas[Attributes] {
     background-color: #ffffff9c;
     border-radius: 40px;
     animation: detect_card 0.8s;
-    display: block;
+    display: none;
 }
 
 @keyframes detect_card {
