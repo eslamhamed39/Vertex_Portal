@@ -86,25 +86,30 @@ function clickOutsideDiv2(event) {
 // ------------------------------Get Value Function--------------------------------
 function getValue() {
     var x = document.getElementById('UserName').value;
+    // console.log(x);
     var y = document.getElementById('password').value;
+    // console.log(y);
     check(x.toLowerCase(), y.toLowerCase());
 }
 
 //------------------------------User account --------------------------------------//
-var account = [{
-    username: "vertex",
-    password: "123",
-}]
+
 var name_id = '';
 var isFound = "";
 // ------------------------------Check account Function--------------------------------//
 function check(user, pass) {
-    for (var i = 0; i < account.length; i++) {
-        if ((user == account[i].username) && (pass == account[i].password)) {
-            name_id = { name: account[i].namePerson, id: account[i].idPreson, cname: account[i].username };
-            isFound = true;
-        }
+    const account = {
+        username: "vertex",
+        password: "123",
     }
+    // for (var i = 0; i < account.length; i++) {
+    if ((user == account.username) && (pass == account.password)) {
+        // name_id = { name: account[i].namePerson, id: account[i].idPreson, cname: account[i].username };
+        isFound = true;
+        console.log("Check Done");
+
+    }
+    // }
     if (isFound == "") {
         isFound = false;
     }
@@ -114,6 +119,7 @@ function check(user, pass) {
 // ------- sub Function to take Action -------//
 function action() {
     if (isFound == true) {
+        console.log(isFound);
         switchPage();
     }
     else {
@@ -160,7 +166,7 @@ function switchPage() {
     window.location.pathname = "/Home.html";
 }
 //-------------------- Map Part ----------------------//
-// get layers;
+
 
 let Buildings_Detection;
 fetch('./Layer/Buildings_Detection.json')
@@ -178,12 +184,18 @@ fetch('./Layer/Buildings_Detection_outline.json')
 
 
 
-// let Forest_Logging_Detection; 
-// fetch('./Layer/Forest Logging Detection.json')
-//     .then(response => response.json())
-//     .then(data => {
-//         Forest_Logging_Detection = data;
-//     })
+let Forest_Logging_Detection;
+fetch('./Layer/Forest_Logging_Detection.json')
+    .then(response => response.json())
+    .then(data => {
+        Forest_Logging_Detection = data;
+    })
+let Forest_Logging_Detection_outline;
+fetch('./Layer/Forest_Logging_Detection_outline.json')
+    .then(response => response.json())
+    .then(data => {
+        Forest_Logging_Detection_outline = data;
+    })
 
 function mapContent() {
     var api_key = 'YZlbkr2ee2sbGy3dZsWG85VE4mPsibyQ';
@@ -198,71 +210,37 @@ function mapContent() {
         style: `https://api.tomtom.com/style/2/custom/style/dG9tdG9tQEBAVVRVTzI1SHRBR3MxQXRBaDtiYWI4ZjY0Yi1lZDkwLTRjYTEtYTlkYy1mYjcxODIyNzdlMzA=/drafts/0.json`,
     });
     //....................................... polygon creation --------------------------------
+    function removeListleft() {
+        // Get the <ul> element
+        var ul = document.getElementById("image_date_left");
+        while (ul.firstChild) {
+            ul.removeChild(ul.firstChild);
+        }
+    }
+    function removeListright() {
+        // Get the <ul> element
+        var ul = document.getElementById("image_date_right");
+        while (ul.firstChild) {
+            ul.removeChild(ul.firstChild);
+        }
+    }
+    // ~------------------------------------- Pursuing Project layer --------------------------------//
     map.on("load", function () {
-        // ~------------------------------------- Pursuing Project layer --------------------------------//
         map.addLayer(Buildings_Detection);
         map.addLayer(Buildings_Detection_outline);
         // !------------------------------------- Zamalek layer --------------------------------//
-        map.addLayer({
-            id: "Zamalek",
-            type: "fill",
-            source: {
-                type: "geojson",
-                data: {
-                    type: "Feature",
-                    geometry: {
-                        type: "Polygon",
-                        coordinates: [
-                            // [
-                            //     [31.463121345638648, 24.92721487935429],
-                            //     [22.004038451409006, 24.994649117851637],
-                            //     [22.018411483956736, 36.84802038684241],
-                            //     [31.042284929970393, 32.37637391072008],
-                            // ],
-                            [[31.222554993498246, 30.073612485925189], [31.215720180017769, 30.067271695857119], [31.215337430462856, 30.065662774055152], [31.215337430462856, 30.064148470820335], [31.215644997069472, 30.063527363184392], [31.218488279477366, 30.052364507335859], [31.219212769706292, 30.048495370142582], [31.21960918888816, 30.04689797584258], [31.221208535242592, 30.041336476207032], [31.221796329201911, 30.03921829105677], [31.222684854954377, 30.038437272814978], [31.224092826531351, 30.038318936180691], [31.225405110719603, 30.038863283528222], [31.226580698638241, 30.040366140027157], [31.22774261692992, 30.042910293949713], [31.22860380342847, 30.04590402860989], [31.228084357603951, 30.048720186531629], [31.226895100058346, 30.054257608073151], [31.225828869155396, 30.056375471629764], [31.224584933101948, 30.061593031578766], [31.222985586747519, 30.06821810822878], [31.222807881597035, 30.072713443397046], [31.222780542343099, 30.073517850254273], [31.222554993498246, 30.073612485925189]],
-                        ],
-                    },
-                },
-            },
-            layout: {},
-            paint: {
-                "fill-color": "#216bc0",
-                "fill-opacity": 0.4,
-                'fill-outline-color': 'white', // Outline color// Outline width    
-            },
-        });
-        map.addLayer({
-            'id': 'myOutlineLayer2',
-            'type': 'line',
-            'source': {
-                'type': 'geojson',
-                'data': {
-                    'type': 'Feature',
-                    'properties': {},
-                    'geometry': {
-                        'type': 'Polygon',
-                        'coordinates': [
-                            [[31.222554993498246, 30.073612485925189], [31.215720180017769, 30.067271695857119], [31.215337430462856, 30.065662774055152], [31.215337430462856, 30.064148470820335], [31.215644997069472, 30.063527363184392], [31.218488279477366, 30.052364507335859], [31.219212769706292, 30.048495370142582], [31.21960918888816, 30.04689797584258], [31.221208535242592, 30.041336476207032], [31.221796329201911, 30.03921829105677], [31.222684854954377, 30.038437272814978], [31.224092826531351, 30.038318936180691], [31.225405110719603, 30.038863283528222], [31.226580698638241, 30.040366140027157], [31.22774261692992, 30.042910293949713], [31.22860380342847, 30.04590402860989], [31.228084357603951, 30.048720186531629], [31.226895100058346, 30.054257608073151], [31.225828869155396, 30.056375471629764], [31.224584933101948, 30.061593031578766], [31.222985586747519, 30.06821810822878], [31.222807881597035, 30.072713443397046], [31.222780542343099, 30.073517850254273], [31.222554993498246, 30.073612485925189]],
-                        ]
-                    }
-                }
-            },
-            'layout': {},
-            'paint': {
-                'line-color': '#fff', // Outline color
-                'line-width': 2.5 // Outline width
-            }
-        });
-    })
+        map.addLayer(Forest_Logging_Detection);
+        map.addLayer(Forest_Logging_Detection_outline);
+    });
     // -------------------------------- Hover section  -----------------------//
-    map.on('mouseenter', 'Zamalek', function () {
-        map.setPaintProperty('Zamalek', 'fill-color', '#b8cdff'); // Change to red fill color on hover
-        map.setPaintProperty('myOutlineLayer2', 'line-color', '#182ead'); // Change to red fill color on hover
+    map.on('mouseenter', 'Forest_Logging_Detection', function () {
+        map.setPaintProperty('Forest_Logging_Detection', 'fill-color', '#b8cdff'); // Change to red fill color on hover
+        map.setPaintProperty('Forest_Logging_Detection_outline', 'line-color', '#182ead'); // Change to red fill color on hover
     });
     // Revert fill color when not hovering over the fill layer
-    map.on('mouseleave', 'Zamalek', function () {
-        map.setPaintProperty('Zamalek', 'fill-color', '#216bc0'); // Revert to original fill color
-        map.setPaintProperty('myOutlineLayer2', 'line-color', '#fff'); // Revert to original fill color
+    map.on('mouseleave', 'Forest_Logging_Detection', function () {
+        map.setPaintProperty('Forest_Logging_Detection', 'fill-color', '#216bc0'); // Revert to original fill color
+        map.setPaintProperty('Forest_Logging_Detection_outline', 'line-color', '#fff'); // Revert to original fill color
     });
     map.on('mouseenter', 'Project', function () {
         map.setPaintProperty('Project', 'fill-color', '#b8cdff'); // Change to red fill color on hover
@@ -273,20 +251,6 @@ function mapContent() {
         map.setPaintProperty('Project', 'fill-color', '#216bc0'); // Revert to original fill color
         map.setPaintProperty('myOutlineLayer', 'line-color', '#fff'); // Revert to original fill color
     });
-    // var layers = map.getStyle().layers;
-    // // Loop through each layer
-    // layers.forEach(function(layer) {
-    //     // Check if the layer type is 'fill'
-    //         var layerId = layer.id;
-    //         // Change fill color when hovering over the layer
-    //         map.on('mouseenter', layerId, function () {
-    //             map.setPaintProperty(layerId, 'fill-color', '#b8cdff'); // Change to red fill color on hover
-    //         });
-    //         // Revert fill color when not hovering over the layer
-    //         map.on('mouseleave', layerId, function () {
-    //             map.setPaintProperty(layerId, 'fill-color', '#216bc0'); // Revert to original fill color
-    //         });
-    // });                                                             
     //.......................................End polygon creation --------------------------------
     // ------------------------------Zoom in Function--------------------------------//
     document.getElementById('Project').addEventListener('click', function () {
@@ -300,6 +264,9 @@ function mapContent() {
             pitch: 45,
             bearing: 0,
         });
+        removeListleft();
+        removeListright();
+        // getjson('./Layer/Buildings_Detection.json');
     });
     document.getElementById('Home').addEventListener('click', function () {
         var latAndLong = { lat: 4.012114320491342, lng: 21.667170602629522 };
@@ -311,9 +278,11 @@ function mapContent() {
             duration: duration,
             pitch: 0,
         });
+        removeListleft();
+        removeListright();
     });
-    document.getElementById('Zamalek').addEventListener('click', function () {
-        var newCoordinates3 = [31.221113, 30.058825];
+    document.getElementById('Forest_Logging_Detection').addEventListener('click', function () {
+        var newCoordinates3 = [25.13647, 0.47325];
         var newZoomLevel = 13;
         var duration = 5000;
         map.flyTo({
@@ -323,15 +292,27 @@ function mapContent() {
             pitch: 45,
             bearing: 0,
         });
+        removeListleft();
+        removeListright();
     });
+
+    // !------------- change pointer and after click  appear popup --------------------//
+
     map.on('click', 'Project', function (e) {
         toggleDiv2();
         const element1 = document.getElementById("img_left");
         const element2 = document.getElementById("img_right");
         const element3 = document.getElementById("news");
-        element1.setAttribute("src", "../Geo File/Polygon Create/2-2022.jpg")
-        element2.setAttribute("src", "../Geo File/Polygon Create/6-2023.jpg")
-        element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png")
+        element1.setAttribute("src", "../Geo File/Polygon Create/2-2022.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/6-2023.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
+        const element4 = document.getElementById("url_news");
+        sBtn_text.innerText = "6-2023";
+        sBtn_text1.innerText = "2-2022";
+        element4.setAttribute("href", "https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096")
+        removeListleft();
+        removeListright();
+
     });
     map.on('mouseenter', 'Project', function () {
         map.getCanvas().style.cursor = 'pointer';
@@ -339,19 +320,34 @@ function mapContent() {
     map.on('mouseleave', 'Project', function () {
         map.getCanvas().style.cursor = '';
     });
-    map.on('click', 'Zamalek', function (e) {
+    map.on('click', 'Forest_Logging_Detection', function (e) {
         toggleDiv2();
         const element1 = document.getElementById("img_left");
         const element2 = document.getElementById("img_right");
         const element3 = document.getElementById("news");
-        element1.setAttribute("src", "../Geo File/Polygon Create/Zamalek/1.jpg")
-        element2.setAttribute("src", "../Geo File/Polygon Create/Zamalek/2.jpg")
-        element3.setAttribute("src", "../Geo File/Polygon Create/Zamalek/Screenshot.png")
+        const element4 = document.getElementById("dashbord_img1");
+        const element5 = document.getElementById("dashbord_img2");
+        const element6 = document.querySelector(".parchart");
+        const element7 = document.querySelector(".piechart");
+        const element8 = document.getElementById("url_news");
+        element1.setAttribute("src", "../Data/Forest_Logging_Detection/6-1-2023.jpg")
+        element2.setAttribute("src", "../Data/Forest_Logging_Detection/10-3-2024.jpg")
+        element3.setAttribute("src", "../Geo File/Polygon Create/Forest_Logging_News.png")
+        element4.setAttribute("src", "Data/Forest_Logging_Detection/Dashboed/1.png")
+        element5.setAttribute("src", "Data/Forest_Logging_Detection/Dashboed/3.png")
+        element6.style.display = 'none'
+        element7.style.width = "100%"
+        element7.style.height = "255px"
+        element8.setAttribute("href", "https://www.reuters.com/article/idUSKBN0OJ00D/")
+        sBtn_text.innerText = "10-3-2024"
+        sBtn_text1.innerText = "6-1-2023"
+        removeListleft();
+        removeListright();
     });
-    map.on('mouseenter', 'Zamalek', function () {
+    map.on('mouseenter', 'Forest_Logging_Detection', function () {
         map.getCanvas().style.cursor = 'pointer';
     });
-    map.on('mouseleave', 'Zamalek', function () {
+    map.on('mouseleave', 'Forest_Logging_Detection', function () {
         map.getCanvas().style.cursor = '';
     });
     function toggleDiv2() {
@@ -427,14 +423,13 @@ document.body.addEventListener('touchcancel', function () {
     document.querySelector('.scroller').classList.remove('scrolling');
 });
 
-// ---------------------------- Active functions ----------------------------//
+// ---------------------------- To Make sidebar Active when click  ----------------------------//
 
 function setActive(elementId) {
     // Remove active class from all elements
     document.querySelectorAll('.nav-item').forEach(item => {
         item.classList.remove('active');
     });
-
     // Add active class to the clicked element
     document.getElementById(elementId).classList.add('active');
 }
@@ -468,7 +463,13 @@ function linkedImageWithSelect(idlayer) {
     // console.log(typeof(idlayer));
     const fileNames = [];
     if (idlayer == 'Project') {
-        fileNames.push("2-2022", "6-2023");
+        fileNames.push("6-2023","2-2022" );
+        // console.log(fileNames);
+        // console.log(idlayer);
+        displayFileNames(fileNames);
+    };
+    if (idlayer == 'Forest_Logging_Detection') {
+        fileNames.push("10-3-2024", "16-12-2023", "6-1-2023");
         // console.log(fileNames);
         // console.log(idlayer);
         displayFileNames(fileNames);
@@ -520,6 +521,7 @@ function handleSelectButtonClick1() {
 // Function to handle click event of each option
 function handleOptionClick(option) {
     let selectedOption = option.querySelector(".option-text").innerText;
+    console.log(selectedOption);
     sBtn_text.innerText = selectedOption;
     optionMenu.classList.remove("active");
     const element1 = document.getElementById("img_right");
@@ -532,11 +534,21 @@ function handleOptionClick1(option) {
     const element2 = document.getElementById("img_left");
     element2.setAttribute("src", `../Geo File/Polygon Create/${selectedOption1}.jpg`)
 }
-
 // Adding event listener to the select button
 selectBtn.addEventListener("click", handleSelectButtonClick);
 selectBtn1.addEventListener("click", handleSelectButtonClick1);
 // Adding event listeners to each option
 
+const hoverable = document.getElementById('Project');
+const target = document.querySelector('.list_detection2');
+
+// Add event listener for hovering
+// hoverable.addEventListener('mouseover', function() {
+//     target.style.display = 'block'; // Show the target element
+// });
+
+// hoverable.addEventListener('mouseout', function() {
+//     target.style.display = 'none'; // Hide the target element when mouse leaves
+// });
 
 
