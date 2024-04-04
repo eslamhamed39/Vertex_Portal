@@ -303,16 +303,26 @@ function mapContent() {
         const element1 = document.getElementById("img_left");
         const element2 = document.getElementById("img_right");
         const element3 = document.getElementById("news");
+        const element4 = document.getElementById("url_news");
+        const element6 = document.querySelector(".parchart");
+        const element7 = document.querySelector(".piechart");
+        const element8 = document.getElementById("dashbord_img1");
+        const element9 = document.getElementById("dashbord_img2");
+        const element10 = document.getElementById("dashbord_img3");
         element1.setAttribute("src", "../Geo File/Polygon Create/2-2022.jpg");
         element2.setAttribute("src", "../Geo File/Polygon Create/6-2023.jpg");
         element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
-        const element4 = document.getElementById("url_news");
+        element8.setAttribute("src", "/Dashbord/3.png");
+        element9.setAttribute("src", "/Dashbord/4.png");
+        element10.setAttribute("src", "/Dashbord/6.png");
+        element6.style.display = 'block';
+        element7.style.width = "60%";
+        element7.style.height = "245px";
         sBtn_text.innerText = "6-2023";
         sBtn_text1.innerText = "2-2022";
-        element4.setAttribute("href", "https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096")
+        element4.setAttribute("href", "https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096");
         removeListleft();
         removeListright();
-
     });
     map.on('mouseenter', 'Project', function () {
         map.getCanvas().style.cursor = 'pointer';
@@ -463,7 +473,7 @@ function linkedImageWithSelect(idlayer) {
     // console.log(typeof(idlayer));
     const fileNames = [];
     if (idlayer == 'Project') {
-        fileNames.push("6-2023","2-2022" );
+        fileNames.push("6-2023", "2-2022");
         // console.log(fileNames);
         // console.log(idlayer);
         displayFileNames(fileNames);
@@ -518,7 +528,7 @@ function handleSelectButtonClick1() {
     optionMenu1.classList.toggle("active");
 }
 
-// Function to handle click event of each option
+
 function handleOptionClick(option) {
     let selectedOption = option.querySelector(".option-text").innerText;
     console.log(selectedOption);
@@ -534,21 +544,20 @@ function handleOptionClick1(option) {
     const element2 = document.getElementById("img_left");
     element2.setAttribute("src", `../Geo File/Polygon Create/${selectedOption1}.jpg`)
 }
-// Adding event listener to the select button
+
 selectBtn.addEventListener("click", handleSelectButtonClick);
 selectBtn1.addEventListener("click", handleSelectButtonClick1);
-// Adding event listeners to each option
 
-const hoverable = document.getElementById('Project');
+const hoverable = document.querySelector('.Montoring_project');
+const allhoverable = document.querySelector('.main_list_li');
 const target = document.querySelector('.list_detection2');
-
-// Add event listener for hovering
-// hoverable.addEventListener('mouseover', function() {
-//     target.style.display = 'block'; // Show the target element
-// });
-
-// hoverable.addEventListener('mouseout', function() {
-//     target.style.display = 'none'; // Hide the target element when mouse leaves
-// });
-
+hoverable.addEventListener('mouseover', function () {
+    target.style.display = 'block';
+});
+target.addEventListener('mouseleave', function () {
+    target.style.display = 'none';
+});
+allhoverable.addEventListener('mouseover', function () {
+    target.style.display = 'none';
+});
 
