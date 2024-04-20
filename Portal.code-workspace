@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "Portal @ b9c871c",
+			"uri": "gitlens://7b22726566223a2262396338373163326561613366363464626365393436306338616262646531653737386138656563222c227265706f50617468223a22643a2f506f7274616c227d/d:/Portal?{\"ref\":\"b9c871c\"}"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Portal @ b9c871c"
+	}
+}

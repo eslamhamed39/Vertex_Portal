@@ -21,6 +21,7 @@
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
   <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.2/maps/maps-web.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
@@ -29,7 +30,7 @@
     <div>
       <!-- ^----------------------------------- Sidebar ---------------------------------------------- -->
       <div class="bg-light sticky-top Side_bar container_sidebar d-flex flex-column align-items-center">
-        <a href="/" class="d-block link-dark text-decoration-none" title="" data-bs-toggle="tooltip"
+        <a href="/home.html" class="d-block link-dark text-decoration-none" title="" data-bs-toggle="tooltip"
           data-bs-placement="right" data-bs-original-title="Icon-only">
           <img src="https://i.ibb.co/NjN8KGL/vertex-logo-06.png" class="v_logo" alt="v-Logo">
           <!-- <img src="https://i.ibb.co/tZXHjwQ/Asset-1.png" class="v_logo" alt="v-Logo" /> -->
@@ -66,12 +67,13 @@
               <li><a class="dropdown-item" href="#">Profile</a></li>
               <li class="dropdown-item Log_out1">
                 <a class="dropdown-item Log_out" href="/index.html">Log Out</a>
+                <!-- <a class="dropdown-item Log_out" href="http://85.31.237.210:8080/portal_v1/index.html">Log Out</a> -->
               </li>
             </ul>
           </div>
         </div>
         <div class="list_detection">
-          <ul class="d-flex flex-column align-items-center justify-content-center shadow">
+          <ul class="d-flex flex-column align-items-center justify-content-center shadow" id="Detection_services">
             <li class="Montoring_project">
               <a class="dropdown-item1 monitoring" href="#">Monitoring Projects</a>
               <div class="list_detection2">
@@ -80,12 +82,15 @@
                     <a class="dropdown-item1" href="#" id="Project">Tanzania Mega Mall
                     </a>
                   </li>
-                  <li>
-                    <a class="dropdown-item1" href="#">Squatters Camps
+                  <!-- <li>
+                    <a class="dropdown-item1" href="#" >Squatters Camps
                     </a>
+                  </li> -->
+                  <li>
+                    <a class="dropdown-item1" href="#" id="Azuri_Towers_Nigeria">Azuri Towers Nigeria</a>
                   </li>
                   <li>
-                    <a class="dropdown-item1" href="#">City</a>
+                    <a class="dropdown-item1" href="#" id="TATU_CITY_KENYA">Tatu City Kenya</a>
                   </li>
                 </ul>
               </div>
@@ -95,24 +100,25 @@
               <a class="dropdown-item1" id="Forest_Logging_Detection" href="#">Forest Logging Detection</a>
             </li>
             <li class="main_list_li">
-              <a class="dropdown-item1" href="#">Wildfires Detection</a>
+              <a class="dropdown-item1" href="#" id="Wildfires">Wildfires Detection</a>
             </li>
             <li class="main_list_li">
-              <a class="dropdown-item1" href="#">Buildings Detection</a>
+              <a class="dropdown-item1" href="#" id="Squatters_Camps">Buildings Detection</a>
             </li>
             <li class="main_list_li">
-              <a class="dropdown-item1" href="#">Crop Decease Detection</a>
+              <a class="dropdown-item1" href="#" id="Crop_Disease_Detection">Crop Disease Detection</a>
             </li>
+            <li class="main_list_li"><a class="dropdown-item1" href="#" id="Crop_Health">Crop Health</a></li>
             <li class="main_list_li">
-              <a class="dropdown-item1" href="#">Crop Classification</a>
+              <a class="dropdown-item1" href="#" id="Crop_Classification">Crop Classification</a>
             </li>
-            <li class="main_list_li"><a class="dropdown-item1" href="#">Crop Health</a></li>
-            <li class="main_list_li"><a class="dropdown-item1" href="#">Land Use</a></li>
-            <li class="main_list_li"><a class="dropdown-item1" href="#">Land Cover</a></li>
+            <li class="main_list_li"><a class="dropdown-item1" href="#" id="Land_Use">Land Use</a></li>
+            <li class="main_list_li"><a class="dropdown-item1" href="#" id="land_cover">Land Cover</a></li>
             <li class="main_list_li">
-              <a class="dropdown-item1" href="#">Oil Spill Detection</a>
+              <a class="dropdown-item1" href="#" id="Oil_Spill_Detection">Oil Spill Detection</a>
             </li>
-            <li class="main_list_li"><a class="dropdown-item1" href="#">Mining Monitoring</a></li>
+            <li class="main_list_li"><a class="dropdown-item1" href="#" id="Mining_Monitoring">Mining Monitoring</a>
+            </li>
           </ul>
         </div>
         <!-- <div class="list_detection2">
