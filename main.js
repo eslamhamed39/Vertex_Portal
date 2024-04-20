@@ -23,6 +23,19 @@ const optionMenu1 = document.querySelector(".select-menu1"),
     options1 = optionMenu1.querySelectorAll(".option1"),
     sBtn_text1 = optionMenu1.querySelector(".sBtn-text1");
 const satelite_Image = document.querySelector(".wrapper");
+const content_image = document.querySelector(".content-image");
+
+
+
+// todo:------------------------- i end here ----------------------------//
+
+let width_image = document.querySelector('.wrapper').getBoundingClientRect().width;
+// console.log(width_image + "px")
+// content_image.style.width = width_image + "px"
+// content_image.style.height = "100%"
+console.log(content_image)
+
+
 
 // -------------------------- sidebar detection list --------------------//
 function toggleDiv() {
@@ -608,6 +621,7 @@ function mapContent() {
         element7.style.width = "100%";
         element7.style.height = "255px";
         satelite_Image.style.height = "400px";
+        satelite_Image.style.width = "56%";
         element3.style.display = "block";
         element3.style.height = "135px";
         element8.style.height = "285px"
@@ -643,6 +657,7 @@ function mapContent() {
         dialog_detect.style.width = "1250px";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
+        satelite_Image.style.width = "56%";
         element4.setAttribute("href", "https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096");
         removeListleft();
         removeListright();
@@ -670,6 +685,7 @@ function mapContent() {
         dialog_detect.style.width = "1250px";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
+        satelite_Image.style.width = "56%";
         removeListleft();
         removeListright();
     });
@@ -695,6 +711,7 @@ function mapContent() {
         dialog_detect.style.width = "1250px";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
+        satelite_Image.style.width = "56%";
         removeListleft();
         removeListright();
     });
@@ -715,7 +732,8 @@ function mapContent() {
         element7.style.width = "100%";
         element7.style.height = "272px";
         element8.style.height = "272px";
-        satelite_Image.style.height = "400px";
+        satelite_Image.style.width = "56%";
+        satelite_Image.style.width = "96%";
         sBtn_text.innerText = "2-2024";
         sBtn_text1.innerText = "5-2016";
         dialog_detect.style.width = "1250px";
@@ -749,6 +767,7 @@ function mapContent() {
         dialog_detect.style.width = "1250px";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
+        satelite_Image.style.width = "56%";
         element4.setAttribute("href", "https://nellions.co.ke/blog/upcoming-residential-estates-nairobi/#9-Tatu-City");
         removeListleft();
         removeListright();
@@ -777,6 +796,7 @@ function mapContent() {
         dialog_detect.style.width = "1250px";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
+        satelite_Image.style.width = "56%";
         element4.setAttribute("href", "https://www.usaid.gov/kenya/agriculture-food-and-water-security");
         removeListleft();
         removeListright();
@@ -801,6 +821,7 @@ function mapContent() {
         element7.style.height = "272px";
         element8.style.height = "272px";
         satelite_Image.style.height = "400px";
+        satelite_Image.style.width = "56%";
         sBtn_text.innerText = "Crop Disease Detection";
         sBtn_text1.innerText = "Satellite Image";
         dialog_detect.style.width = "1250px";
@@ -829,6 +850,7 @@ function mapContent() {
         element7.style.height = "272px";
         element8.style.height = "272px";
         satelite_Image.style.height = "400px";
+        satelite_Image.style.width = "56%";
         sBtn_text.innerText = "18-8-2022";
         sBtn_text1.innerText = "29-6-2022";
         dialog_detect.style.width = "1250px";
@@ -857,6 +879,7 @@ function mapContent() {
         element7.style.height = "272px";
         element8.style.height = "272px";
         satelite_Image.style.height = "400px";
+        satelite_Image.style.width = "56%";
         sBtn_text.innerText = "29-3-2024";
         sBtn_text1.innerText = "23-7-2023";
         dialog_detect.style.width = "1250px";
@@ -885,6 +908,7 @@ function mapContent() {
         element8.style.height = "272px";
         element3.style.height = "130px";
         satelite_Image.style.height = "400px";
+        satelite_Image.style.width = "56%";
         sBtn_text.innerText = "2-2024";
         sBtn_text1.innerText = "12-2017";
         dialog_detect.style.width = "1250px";
@@ -916,6 +940,7 @@ function mapContent() {
         sBtn_text1.innerText = "2-2022";
         element8.style.height = "292px"
         satelite_Image.style.height = "400px";
+        satelite_Image.style.width = "56%";
         dialog_detect.style.width = "1250px";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
@@ -949,6 +974,7 @@ function mapContent() {
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         satelite_Image.style.height = "400px";
+        satelite_Image.style.width = "96%";
         element4.setAttribute("href", "https://www.sciencephoto.com/media/182797/view/squatter-camp");
         removeListleft();
         removeListright();
@@ -1017,6 +1043,7 @@ let globalvar;
 // }
 
 
+
 // *==============================> Slider Comparison imege <================================//
 let active = false;
 document.querySelector('.scroller').addEventListener('mousedown', function () {
@@ -1035,12 +1062,13 @@ document.body.addEventListener('mousemove', function (e) {
     if (!active) return;
     let x = e.pageX;
     x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+    // console.log(document.querySelector('.wrapper').getBoundingClientRect().width)
     scrollIt(x);
 });
 function scrollIt(x) {
     let transform = x
     document.querySelector('.after').style.width = transform + "px";
-    document.querySelector('.scroller').style.left = transform - 16 + "px";
+    document.querySelector('.scroller').style.left = transform + "px";
 }
 scrollIt(250);
 document.querySelector('.scroller').addEventListener('touchstart', function () {
