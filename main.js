@@ -174,215 +174,37 @@ function switchPage() {
 
 // !---------------------- Fetch the GeoJSON data ----------------------//
 
-let Buildings_Detection;
-fetch('./Layer/Buildings_Detection.json')
-    .then(response => response.json())
-    .then(data => {
-        Buildings_Detection = data;
-    })
+let layer;
+let layer_outline;
 
+async function Refetch(layerID, status) {
+    await fetch(`./Layer/${layerID}.json`)
+        .then(response => response.json())
+        .then(data => {
+            layer = data;
+        })
 
-let Buildings_Detection_outline;
-fetch('./Layer/Buildings_Detection_outline.json')
-    .then(response => response.json())
-    .then(data => {
-        Buildings_Detection_outline = data;
-    })
-
-
-let Forest_Logging_Detection;
-fetch('./Layer/Forest_Logging_Detection.json')
-    .then(response => response.json())
-    .then(data => {
-        Forest_Logging_Detection = data;
-    })
-let Forest_Logging_Detection_outline;
-fetch('./Layer/Forest_Logging_Detection_outline.json')
-    .then(response => response.json())
-    .then(data => {
-        Forest_Logging_Detection_outline = data;
-    })
-
-
-let Land_Cover;
-fetch('./Layer/Land_Cover.json')
-    .then(response => response.json())
-    .then(data => {
-        Land_Cover = data;
-    })
-
-let Land_Cover_outline;
-fetch('./Layer/Land_Cover_outline.json')
-    .then(response => response.json())
-    .then(data => {
-        Land_Cover_outline = data;
-    })
-
-let Land_Use;
-fetch('./Layer/Land_Use.json')
-    .then(response => response.json())
-    .then(data => {
-        Land_Use = data;
-    })
-
-let Land_Use_outline;
-fetch('./Layer/Land_Use_outline.json')
-    .then(response => response.json())
-    .then(data => {
-        Land_Use_outline = data;
-    })
-
-let Squatters_Camps;
-fetch('./Layer/Squatters_Camps.json')
-    .then(response => response.json())
-    .then(data => {
-        Squatters_Camps = data;
-    })
-
-let Squatters_Camps_outline;
-fetch('./Layer/Squatters_Camps_outline.json')
-    .then(response => response.json())
-    .then(data => {
-        Squatters_Camps_outline = data;
-    })
-
-
-let Azuri_Towers_Nigeria;
-fetch('./Layer/Azuri_Towers_Nigeria.json')
-    .then(response => response.json())
-    .then(data => {
-        Azuri_Towers_Nigeria = data;
-    })
-
-let Azuri_Towers_Nigeria_outline;
-fetch('./Layer/Azuri_Towers_Nigeria_outline.json')
-    .then(response => response.json())
-    .then(data => {
-        Azuri_Towers_Nigeria_outline = data;
-    })
-
-let TATU_CITY_KENYA;
-fetch('./Layer/TATU_CITY_KENYA.json')
-    .then(response => response.json())
-    .then(data => {
-        TATU_CITY_KENYA = data;
-    })
-
-let TATU_CITY_KENYA_outline;
-fetch('./Layer/TATU_CITY_KENYA_outline.json')
-    .then(response => response.json())
-    .then(data => {
-        TATU_CITY_KENYA_outline = data;
-    })
-
-
-let Crop_Classification;
-fetch('./Layer/Crop_Classification.json')
-    .then(response => response.json())
-    .then(data => {
-        Crop_Classification = data;
-    })
-
-let Crop_Classification_outline;
-fetch('./Layer/Crop_Classification_outline.json')
-    .then(response => response.json())
-    .then(data => {
-        Crop_Classification_outline = data;
-    })
-
-
-let Mining_Monitoring;
-fetch('./Layer/Mining_Monitoring.json')
-    .then(response => response.json())
-    .then(data => {
-        Mining_Monitoring = data;
-    })
-
-let Mining_Monitoring_outline;
-fetch('./Layer/Mining_Monitoring_outline.json')
-    .then(response => response.json())
-    .then(data => {
-        Mining_Monitoring_outline = data;
-    })
-
-let Oil_Spill_Detection;
-fetch('./Layer/Oil_Spill_Detection.json')
-    .then(response => response.json())
-    .then(data => {
-        Oil_Spill_Detection = data;
-    })
-
-let Oil_Spill_Detection_outline;
-fetch('./Layer/Oil_Spill_Detection_outline.json')
-    .then(response => response.json())
-    .then(data => {
-        Oil_Spill_Detection_outline = data;
-    })
-
-let Wildfires;
-fetch('./Layer/Wildfires.json')
-    .then(response => response.json())
-    .then(data => {
-        Wildfires = data;
-    })
-
-let Wildfires_outline;
-fetch('./Layer/Wildfires_outline.json')
-    .then(response => response.json())
-    .then(data => {
-        Wildfires_outline = data;
-    })
-
-
-let Crop_Disease_Detection;
-fetch('./Layer/Crop_Disease_Detection.json')
-    .then(response => response.json())
-    .then(data => {
-        Crop_Disease_Detection = data;
-    })
-
-let Crop_Disease_Detection_outline;
-fetch('./Layer/Crop_Disease_Detection_outline.json')
-    .then(response => response.json())
-    .then(data => {
-        Crop_Disease_Detection_outline = data;
-    })
-
-let Crop_Health;
-fetch('./Layer/Crop_Health.json')
-    .then(response => response.json())
-    .then(data => {
-        Crop_Health = data;
-    })
-
-let Crop_Health_outline;
-fetch('./Layer/Crop_Health_outline.json')
-    .then(response => response.json())
-    .then(data => {
-        Crop_Health_outline = data;
-    })
-
-
-// let Crop_Health;
-// let Crop_Health_outline;
-
-// async function Refetch(){
-//     await fetch('./Layer/Crop_Health.json')
-//         .then(response => response.json())
-//         .then(data => {
-//             Crop_Health = data;
-//         })
-
-//     await fetch('./Layer/Crop_Health_outline.json')
-//         .then(response => response.json())
-//         .then(data => {
-//             Crop_Health_outline = data;
-//         })
+    await fetch(`./Layer/${layerID}_outline.json`)
+        .then(response => response.json())
+        .then(data => {
+            layer_outline = data;
+        })
+    if (status == "Show") {
+        Crop_Health['paint']['fill-opacity'] = 0.4;
+        Crop_Health_outline['paint']['line-width'] = 3;
+    }
+    else if (status == "Hide") {
+        Crop_Health['paint']['fill-opacity'] = 0;
+        Crop_Health_outline['paint']['line-width'] = 'none';
+    }
     // response();
-// }
+}
 // function response(){
 //     console.log(Crop_Health);
 // }
+
+
+
 
 
 
@@ -398,11 +220,21 @@ function mapContent() {
         // ================= style without label name =================//
         style: `https://api.tomtom.com/style/2/custom/style/dG9tdG9tQEBAVVRVTzI1SHRBR3MxQXRBaDtiYWI4ZjY0Yi1lZDkwLTRjYTEtYTlkYy1mYjcxODIyNzdlMzA=/drafts/0.json`,
     });
+    const layerID_use = ["Project", "Project_outline", "Forest_Logging_Detection", "Forest_Logging_Detection_outline", "Land_Cover", "Land_Cover_outline", "Squatters_Camps", "Squatters_Camps_outline", "Land_Use", "Land_Use_outline", "Azuri_Towers_Nigeria", "Azuri_Towers_Nigeria_outline", "TATU_CITY_KENYA", "TATU_CITY_KENYA_outline", "Crop_Classification", "Crop_Classification_outline", "Mining_Monitoring", "Mining_Monitoring_outline", "Oil_Spill_Detection", "Oil_Spill_Detection_outline", "Wildfires", "Wildfires_outline", "Crop_Disease_Detection", "Crop_Disease_Detection_outline", "Crop_Health", "Crop_Health_outline"]
 
-
-
-
-
+    function removeAllSourceLayers(map) {
+        var mapLayers = map.getStyle().layers;
+        mapLayers.forEach(function (layer) {
+            var layerId = layer.id;
+            if (layer.source && layerID_use.includes(layerId)) {
+                var sourceId = layer.source;
+                map.removeLayer(layerId);
+                map.removeSource(sourceId);
+                // console.log(layer.id)
+                // console.log(typeof(sourceId))
+            }
+        });
+    }
 
     //....................................... polygon creation --------------------------------
     function removeListleft() {
@@ -434,96 +266,166 @@ function mapContent() {
     const crop_Disease_Detection = document.getElementById("Crop_Disease_Detection");
     const crop_Health = document.getElementById("Crop_Health");
 
-
+    
 
     // ^-------------------------- Monitoring Projects -------------------------//
-    Tanzania_Mega_Mall.addEventListener("click", function () {
-        // fetchBuildings_Detection()
-        // Buildings_Detection['paint']['fill-opacity'] = 0.4
-        // Buildings_Detection_outline['paint']['line-width'] = 3
-        map.addLayer(Buildings_Detection);
-        map.addLayer(Buildings_Detection_outline);
+    Tanzania_Mega_Mall.addEventListener("click", async function () {
+        await Refetch("Buildings_Detection")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
     });
 
+
     // ^-------------------------- Forest_Logging_Detection -------------------------//
-    forest_Logging.addEventListener("click", function () {
-        map.addLayer(Forest_Logging_Detection);
-        map.addLayer(Forest_Logging_Detection_outline);
+    forest_Logging.addEventListener("click", async function () {
+        await Refetch("Forest_Logging_Detection")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
     });
-    forest_Logging.addEventListener("click", function () {
-        map.addLayer('Forest_Logging_Detection');
-        map.addLayer('Forest_Logging_Detection_outline');
-    });
+
     // ^--------------------------------- Land cover ----------------------------//
-    land_cover.addEventListener("click", function () {
-        map.addLayer(Land_Cover);
-        map.addLayer(Land_Cover_outline);
+    land_cover.addEventListener("click", async function () {
+        await Refetch("Land_Cover")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
     });
 
     // ^-------------------------- Squatters Camps ----------------------------//
-    squatters_camps.addEventListener("click", function () {
-        map.addLayer(Squatters_Camps);
-        map.addLayer(Squatters_Camps_outline);
+    squatters_camps.addEventListener("click", async function () {
+        await Refetch("Squatters_Camps")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
     });
 
     // ^---------------------------------- Land Use -----------------------------//
-    land_Use.addEventListener("click", function () {
-        map.addLayer(Land_Use);
-        map.addLayer(Land_Use_outline);
+    land_Use.addEventListener("click", async function () {
+        await Refetch("Land_Use")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
     });
 
     // ^---------------------------------- Azuri Towers Nigeria -----------------------------//
-    azuri_Towers_Nigeria.addEventListener("click", function () {
-        map.addLayer(Azuri_Towers_Nigeria);
-        map.addLayer(Azuri_Towers_Nigeria_outline);
+    azuri_Towers_Nigeria.addEventListener("click", async function () {
+        await Refetch("Azuri_Towers_Nigeria")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
     });
 
     // ^---------------------------------- TATU CITY KENYA -----------------------------//
-    tATU_CITY_KENYA.addEventListener("click", function () {
-        map.addLayer(TATU_CITY_KENYA);
-        map.addLayer(TATU_CITY_KENYA_outline);
+    tATU_CITY_KENYA.addEventListener("click", async function () {
+        await Refetch("TATU_CITY_KENYA")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
     });
 
     // ^---------------------------------- Crop Classification -----------------------------//
-    crop_Classification.addEventListener("click", function () {
-        map.addLayer(Crop_Classification);
-        map.addLayer(Crop_Classification_outline);
+    crop_Classification.addEventListener("click", async function () {
+        await Refetch("Crop_Classification")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
     });
     // ^---------------------------------- Mining Monitoring -----------------------------//
-    mining_Monitoring.addEventListener("click", function () {
-        map.addLayer(Mining_Monitoring);
-        map.addLayer(Mining_Monitoring_outline);
+    mining_Monitoring.addEventListener("click", async function () {
+        await Refetch("Mining_Monitoring")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
     });
 
     // ^---------------------------------- Oil Spill Detection -----------------------------//
-    oil_Spill_Detection.addEventListener("click", function () {
-        map.addLayer(Oil_Spill_Detection);
-        map.addLayer(Oil_Spill_Detection_outline);
+    oil_Spill_Detection.addEventListener("click", async function () {
+        await Refetch("Oil_Spill_Detection")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
     });
 
     // ^---------------------------------- Wildfires Detection -----------------------------//
-    wildfires.addEventListener("click", function () {
-        map.addLayer(Wildfires);
-        map.addLayer(Wildfires_outline);
+    wildfires.addEventListener("click", async function () {
+        await Refetch("Wildfires")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
     });
 
     // ^---------------------------------- Crop_Disease_Detection -----------------------------//
-    crop_Disease_Detection.addEventListener("click", function () {
-        map.addLayer(Crop_Disease_Detection);
-        map.addLayer(Crop_Disease_Detection_outline);
-        map.removeLayer('Crop_Health')
-        map.removeLayer('Crop_Health_outline')
+    crop_Disease_Detection.addEventListener("click", async function () {
+        await Refetch("Crop_Disease_Detection")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
     });
 
     // ^---------------------------------- Crop_Health -----------------------------//
-    crop_Health.addEventListener("click",function () {
-        // Refetch()
-        map.addLayer(Crop_Health);
-        map.addLayer(Crop_Health_outline);
+    crop_Health.addEventListener("click", async function () {
+        await Refetch("Crop_Health")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
     });
 
 
-    
+
     // const Detection_services = document.getElementById("Detection_services");
     // Detection_services.addEventListener("click", function () {
     //     map.removeLayer(globalvar);
@@ -738,8 +640,8 @@ function mapContent() {
     //  ?-----------==============  Land use ===============-----------//
     map.on('click', 'Land_Use', function (e) {
         toggleDiv2();
-        element1.setAttribute("src", "../Geo File/Polygon Create/Libya_satelliteImage.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Land-use-image.jpg");
+        element1.setAttribute("src", "../Geo File/Polygon Create/Libya_satelliteImage1.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Land-use-image1.jpg");
         element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
         element8.setAttribute("src", "../Geo File/Polygon Create/Land-use-barchart1.jpg");
         element9.setAttribute("src", "../Geo File/Polygon Create/Land-use-barchart2.jpg");
@@ -765,7 +667,7 @@ function mapContent() {
     map.on('click', 'Crop_Classification', function (e) {
         toggleDiv2();
         element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_satelliteImage.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_Classification.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_Classification.png");
         element8.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_parchart.jpg");
         element9.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_piechart.jpg");
         element3.style.display = "none";
@@ -1351,7 +1253,7 @@ function handleOptionClick1(option) {
     else if (globalvar == "Crop_Health") {
         element2.setAttribute("src", `../Geo File/Polygon Create/Crop_Health-${selectedOption1}.jpg`);
     };
-    
+
 }
 
 selectBtn.addEventListener("click", handleSelectButtonClick);
