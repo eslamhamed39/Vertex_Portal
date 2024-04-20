@@ -12,6 +12,7 @@ const loginPage = document.getElementById('loginPage');
 const map_section = document.getElementById('map_section');
 const home_status = document.getElementById('home_status');
 const image_date_right = document.getElementById('image_date_right');
+const Home_btn = document.getElementById('Home');
 const image_date_left = document.getElementById('image_date_left');
 const optionMenu = document.querySelector(".select-menu"),
     selectBtn = optionMenu.querySelector(".select-btn"),
@@ -422,6 +423,16 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+    });
+
+    // ^---------------------------------- Home -----------------------------//
+
+    Home_btn.addEventListener("click",function () {
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
     });
 
 
