@@ -15,8 +15,11 @@
     }
 }
 
-@media (min-width: 1200px) {
-    
+@media (min-width: 1550px) {
+    #dialog_detect{
+    height: 95%;
+
+    }
 }
 @media (min-width: 992px){
 .col-md-offset-1 {

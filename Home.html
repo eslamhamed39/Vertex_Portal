@@ -149,58 +149,64 @@
     </div>
   </div>
 
-  <div id="dialog_detect" class="dialog_detect">
-    <div id="page">
-      <a id="url_news" target="blank"
-        href="https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096">
-        <img src="../Geo File/Polygon Create/Screenshot.png" alt="" id="news" /></a>
-      <div class="wrapper">
-        <!-- &------------ Select Date ------------------ -->
+  <div id="dialog_detect" class="dialog_detect row">
+    <div class="container_dashbord col-md-7">
+      <div id="page">
+        <div class="news_image">
+          <a id="url_news" target="blank"
+            href="https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096">
+            <img src="../Geo File/Polygon Create/Screenshot.png" alt="" id="news" /></a>
+        </div>
+        <div class="wrapper">
+          <!-- &------------ Select Date ------------------ -->
 
-        <div class="select-menu" id="left_selector">
-          <div class="select-btn">
-            <span class="sBtn-text">Date</span>
-            <i class="bx bx-chevron-down"></i>
+          <div class="select-menu" id="left_selector">
+            <div class="select-btn">
+              <span class="sBtn-text">Date</span>
+              <i class="bx bx-chevron-down"></i>
+            </div>
+            <ul class="options" id="image_date_left">
+            </ul>
           </div>
-          <ul class="options" id="image_date_left">
-          </ul>
-        </div>
 
-        <div class="select-menu1" id="right_selector">
-          <div class="select-btn1">
-            <span class="sBtn-text1">Date</span>
-            <i class="bx bx-chevron-down"></i>
+          <div class="select-menu1" id="right_selector">
+            <div class="select-btn1">
+              <span class="sBtn-text1">Date</span>
+              <i class="bx bx-chevron-down"></i>
+            </div>
+            <ul class="options1" id="image_date_right">
+            </ul>
           </div>
-          <ul class="options1" id="image_date_right">
-          </ul>
-        </div>
 
-        <!-- &------------End Select Date ------------------ -->
+          <!-- &------------End Select Date ------------------ -->
 
-        <div class="before">
-          <img class="content-image" id="img_left" src="../Geo File/Polygon Create/2-2022.jpg" draggable="false" />
-        </div>
-        <div class="after">
-          <img class="content-image" id="img_right" src="../Geo File/Polygon Create/6-2023.jpg" draggable="false" />
-        </div>
-        <div class="scroller">
-          <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100"
-            viewBox="0 0 100 100">
-            <polygon points="0 50 37 68 37 32 0 50" style="fill: #fff" />
-            <polygon points="100 50 64 32 64 68 100 50" style="fill: #fff" />
-          </svg>
-        </div>
+          <div class="before">
+            <img class="content-image" id="img_left" src="../Geo File/Polygon Create/2-2022.jpg" draggable="false" />
+          </div>
+          <div class="after">
+            <img class="content-image" id="img_right" src="../Geo File/Polygon Create/6-2023.jpg" draggable="false" />
+          </div>
+          <div class="scroller">
+            <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100"
+              viewBox="0 0 100 100">
+              <polygon points="0 50 37 68 37 32 0 50" style="fill: #fff" />
+              <polygon points="100 50 64 32 64 68 100 50" style="fill: #fff" />
+            </svg>
+          </div>
 
+        </div>
       </div>
-      <div class="dashbord">
+    </div>
+    <div class="container_dash col-md-5">
+      <div class="dashbord d-flex flex-column">
         <div class="timeline">
           <img id="dashbord_img1" src="Dashbord/3.png" alt="">
         </div>
         <div class="container_row2">
-          <div class="piechart">
+          <div class="piechart col-md-7">
             <img id="dashbord_img2" src="Dashbord/4.png" alt="">
           </div>
-          <div class="parchart">
+          <div class="parchart col-md-5">
             <img id="dashbord_img3" src="Dashbord/6.png" alt="">
           </div>
         </div>

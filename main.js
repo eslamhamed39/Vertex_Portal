@@ -24,6 +24,19 @@ const optionMenu1 = document.querySelector(".select-menu1"),
     sBtn_text1 = optionMenu1.querySelector(".sBtn-text1");
 const satelite_Image = document.querySelector(".wrapper");
 const content_image = document.querySelector(".content-image");
+const element1 = document.getElementById("img_left");
+const element2 = document.getElementById("img_right");
+const element3 = document.getElementById("news");
+const element4 = document.getElementById("url_news");
+const element6 = document.querySelector(".parchart");
+const element7 = document.querySelector(".piechart");
+const element8 = document.getElementById("dashbord_img1");
+const element9 = document.getElementById("dashbord_img2");
+const element10 = document.getElementById("dashbord_img3");
+const dialog_detect = document.getElementById("dialog_detect");
+const container_row2 = document.querySelector(".container_row2");
+const timeline = document.querySelector(".timeline");
+const container_dashbord = document.querySelector(".container_dashbord ");
 
 
 
@@ -279,7 +292,7 @@ function mapContent() {
     const crop_Disease_Detection = document.getElementById("Crop_Disease_Detection");
     const crop_Health = document.getElementById("Crop_Health");
 
-    
+
 
     // ^-------------------------- Monitoring Projects -------------------------//
     Tanzania_Mega_Mall.addEventListener("click", async function () {
@@ -439,7 +452,7 @@ function mapContent() {
 
     // ^---------------------------------- Home -----------------------------//
 
-    Home_btn.addEventListener("click",function () {
+    Home_btn.addEventListener("click", function () {
         try {
             removeAllSourceLayers(map)
         } catch (error) {
@@ -594,16 +607,7 @@ function mapContent() {
 
     // &======================== click layer to appear popup Detection ========================//
 
-    const element1 = document.getElementById("img_left");
-    const element2 = document.getElementById("img_right");
-    const element3 = document.getElementById("news");
-    const element4 = document.getElementById("url_news");
-    const element6 = document.querySelector(".parchart");
-    const element7 = document.querySelector(".piechart");
-    const element8 = document.getElementById("dashbord_img1");
-    const element9 = document.getElementById("dashbord_img2");
-    const element10 = document.getElementById("dashbord_img3");
-    const dialog_detect = document.getElementById("dialog_detect");
+
 
     //  ?-----==============  Forest Logging Detection ===============-----------//
     map.on('click', 'Forest_Logging_Detection', function (e) {
@@ -618,18 +622,17 @@ function mapContent() {
         element9.style.display = "block";
         element10.style.display = "block";
         element7.style.width = "100%";
-        element7.style.height = "255px";
-        satelite_Image.style.height = "400px";
-        satelite_Image.style.width = "56%";
+        container_row2.style.height = "50%";
+        timeline.style.height = "50%";
         element3.style.display = "block";
-        element3.style.height = "135px";
-        element8.style.height = "285px"
         element4.setAttribute("href", "https://www.lifegate.com/congo-basin-rainforest-logging")
         sBtn_text.innerText = "10-3-2024";
-        dialog_detect.style.width = "1250px";
         sBtn_text1.innerText = "6-1-2023";
+        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
+        container_dashbord.style.removeProperty("width")
+        handleResize();
         removeListleft();
         removeListright();
     });
@@ -648,16 +651,18 @@ function mapContent() {
         element8.style.display = "block";
         element9.style.display = "block";
         element10.style.display = "block";
-        element7.style.width = "100%";
-        element7.style.height = "272px";
-        satelite_Image.style.height = "549px";
+        // element7.style.width = "100%";
+        // element7.style.height = "272px";
+        // satelite_Image.style.height = "549px";
         sBtn_text.innerText = "2023";
         sBtn_text1.innerText = "2018";
-        dialog_detect.style.width = "1250px";
+        dialog_detect.style.width = "85%";
+        // satelite_Image.style.width = "56%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
-        satelite_Image.style.width = "56%";
         element4.setAttribute("href", "https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096");
+        container_dashbord.style.removeProperty("width")
+        handleResize();
         removeListleft();
         removeListright();
     });
@@ -676,15 +681,17 @@ function mapContent() {
         element9.style.display = "block";
         element10.style.display = "block";
         element7.style.width = "100%";
-        element7.style.height = "272px";
-        element8.style.height = "272px";
-        satelite_Image.style.height = "549px";
+        // element7.style.height = "272px";
+        // element8.style.height = "272px";
+        // satelite_Image.style.height = "549px";
         sBtn_text.innerText = "Land Use";
         sBtn_text1.innerText = "satellite Image";
-        dialog_detect.style.width = "1250px";
+        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
-        satelite_Image.style.width = "56%";
+        // satelite_Image.style.width = "56%";
+        container_dashbord.style.removeProperty("width")
+        handleResize();
         removeListleft();
         removeListright();
     });
@@ -702,15 +709,17 @@ function mapContent() {
         element9.style.display = "block";
         element10.style.display = "block";
         element7.style.width = "100%";
-        element7.style.height = "272px";
-        element8.style.height = "272px";
-        satelite_Image.style.height = "549px";
+        // element7.style.height = "272px";
+        // element8.style.height = "272px";
+        // satelite_Image.style.height = "549px";
         sBtn_text.innerText = "Classification";
         sBtn_text1.innerText = "Satellite Image";
-        dialog_detect.style.width = "1250px";
+        dialog_detect.style.width = "85%";
+        // satelite_Image.style.width = "56%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
-        satelite_Image.style.width = "56%";
+        container_dashbord.style.removeProperty("width")
+        handleResize();
         removeListleft();
         removeListright();
     });
@@ -729,16 +738,17 @@ function mapContent() {
         element9.style.display = "block";
         element10.style.display = "block";
         element7.style.width = "100%";
-        element7.style.height = "272px";
-        element8.style.height = "272px";
-        satelite_Image.style.width = "56%";
-        satelite_Image.style.width = "96%";
+        container_row2.style.height = "50%";
+        timeline.style.height = "50%";
         sBtn_text.innerText = "2-2024";
         sBtn_text1.innerText = "5-2016";
-        dialog_detect.style.width = "1250px";
+        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
+
         element4.setAttribute("href", "https://www.itbng.com/azuri-peninsula-eko-atlantic-city-lagos");
+        container_dashbord.style.removeProperty("width")
+        handleResize();
         removeListleft();
         removeListright();
     });
@@ -758,16 +768,15 @@ function mapContent() {
         element9.style.display = "block";
         element10.style.display = "block";
         element7.style.width = "100%";
-        element7.style.height = "272px";
-        element8.style.height = "272px";
-        satelite_Image.style.height = "400px";
         sBtn_text.innerText = "2-2024";
         sBtn_text1.innerText = "12-2017";
-        dialog_detect.style.width = "1250px";
+        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
-        satelite_Image.style.width = "56%";
+
         element4.setAttribute("href", "https://nellions.co.ke/blog/upcoming-residential-estates-nairobi/#9-Tatu-City");
+        container_dashbord.style.removeProperty("width")
+        handleResize();
         removeListleft();
         removeListright();
     });
@@ -787,16 +796,18 @@ function mapContent() {
         element9.style.display = "block";
         element10.style.display = "block";
         element7.style.width = "100%";
-        element7.style.height = "272px";
-        element8.style.height = "272px";
-        satelite_Image.style.height = "400px";
+        // element7.style.height = "272px";
+        // element8.style.height = "272px";
+        // satelite_Image.style.height = "400px";
         sBtn_text.innerText = "21-5-2022 NDVI";
         sBtn_text1.innerText = "21-5-2022";
-        dialog_detect.style.width = "1250px";
+        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
-        satelite_Image.style.width = "56%";
+        // satelite_Image.style.width = "56%";
         element4.setAttribute("href", "https://www.usaid.gov/kenya/agriculture-food-and-water-security");
+        container_dashbord.style.removeProperty("width")
+        handleResize();
         removeListleft();
         removeListright();
     });
@@ -817,16 +828,18 @@ function mapContent() {
         element9.style.display = "block";
         element10.style.display = "block";
         element7.style.width = "100%";
-        element7.style.height = "272px";
-        element8.style.height = "272px";
-        satelite_Image.style.height = "400px";
-        satelite_Image.style.width = "56%";
+        // element7.style.height = "272px";
+        // element8.style.height = "272px";
+        // satelite_Image.style.height = "400px";
+        // satelite_Image.style.width = "56%";
         sBtn_text.innerText = "Crop Disease Detection";
         sBtn_text1.innerText = "Satellite Image";
-        dialog_detect.style.width = "1250px";
+        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://www.downtoearth.org.in/news/agriculture/savage-mode-in-a-warmer-wetter-world-pests-are-multiplying-faster-and-damaging-crops-severely-91049");
+        container_dashbord.style.removeProperty("width")
+        handleResize();
         removeListleft();
         removeListright();
     });
@@ -846,16 +859,14 @@ function mapContent() {
         element9.style.display = "block";
         element10.style.display = "block";
         element7.style.width = "100%";
-        element7.style.height = "272px";
-        element8.style.height = "272px";
-        satelite_Image.style.height = "400px";
-        satelite_Image.style.width = "56%";
         sBtn_text.innerText = "18-8-2022";
         sBtn_text1.innerText = "29-6-2022";
-        dialog_detect.style.width = "1250px";
+        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://enterprise.press/greeneconomys/when-oil-washed-up-on-dahabs-shores-local-residents-jumped-into-action/");
+        container_dashbord.style.removeProperty("width")
+        handleResize();
         removeListleft();
         removeListright();
     });
@@ -875,16 +886,16 @@ function mapContent() {
         element9.style.display = "block";
         element10.style.display = "block";
         element7.style.width = "100%";
-        element7.style.height = "272px";
-        element8.style.height = "272px";
-        satelite_Image.style.height = "400px";
-        satelite_Image.style.width = "56%";
+        container_row2.style.height = "50%";
+        timeline.style.height = "50%";
         sBtn_text.innerText = "29-3-2024";
         sBtn_text1.innerText = "23-7-2023";
-        dialog_detect.style.width = "1250px";
-        image_date_left.style.height = '300px';
-        image_date_right.style.height = '300px';
+        dialog_detect.style.width = "85%";
+        image_date_left.style.height = '40vh';
+        image_date_right.style.height = '40vh';
         element4.setAttribute("href", "https://www.thenationalnews.com/world/2023/07/26/horrors-of-wildfires-from-space-satellite-photos-track-blazes-in-europe-and-north-africa/");
+        container_dashbord.style.removeProperty("width")
+        handleResize();
         removeListleft();
         removeListright();
     });
@@ -903,23 +914,25 @@ function mapContent() {
         element9.style.display = "block";
         element10.style.display = "block";
         element7.style.width = "100%";
-        element7.style.height = "272px";
-        element8.style.height = "272px";
+        // element7.style.height = "272px";
+        // element8.style.height = "272px";
         element3.style.height = "130px";
-        satelite_Image.style.height = "400px";
-        satelite_Image.style.width = "56%";
+        // satelite_Image.style.height = "400px";
+        // satelite_Image.style.width = "56%";
         sBtn_text.innerText = "2-2024";
         sBtn_text1.innerText = "12-2017";
-        dialog_detect.style.width = "1250px";
+        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
+        container_dashbord.style.removeProperty("width")
+        handleResize();
         element4.setAttribute("href", "https://www.digest.tz/ongoing-struggle-with-small-scale-mining-threating-environment/");
         removeListleft();
         removeListright();
     });
 
 
-    //  ?-----==================  Monitoring Projects ===============-----------//
+    //  ?-----==================  Tanzania Mega Mall ===============-----------//
     map.on('click', 'Project', function (e) {
         toggleDiv2();
         element1.setAttribute("src", "../Geo File/Polygon Create/2-2022.jpg");
@@ -933,17 +946,15 @@ function mapContent() {
         element8.style.display = "block";
         element9.style.display = "block";
         element10.style.display = "block";
-        element7.style.width = "60%";
-        element7.style.height = "245px";
+        element7.style.removeProperty("width")
+        container_dashbord.style.removeProperty("width")
         sBtn_text.innerText = "6-2023";
         sBtn_text1.innerText = "2-2022";
-        element8.style.height = "292px"
-        satelite_Image.style.height = "400px";
-        satelite_Image.style.width = "56%";
-        dialog_detect.style.width = "1250px";
+        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096");
+        handleResize();
         removeListleft();
         removeListright();
     });
@@ -952,6 +963,7 @@ function mapContent() {
 
     map.on('click', 'Squatters_Camps', function (e) {
         toggleDiv2();
+
         element1.setAttribute("src", "../Geo File/Polygon Create/Squatters_Camps-1-2020.jpg");
         element2.setAttribute("src", "../Geo File/Polygon Create/Squatters_Camps-12-2022.jpg");
         element3.setAttribute("src", "../Geo File/Polygon Create/Squatters_Camps_new.jpg");
@@ -964,42 +976,52 @@ function mapContent() {
         element9.style.display = "none";
         element10.style.display = "none";
         element3.style.height = "140px";
-        element7.style.width = "60%";
-        dialog_detect.style.width = "730px";
-        element7.style.height = "245px";
+        element7.style.width = "100%";
         sBtn_text.innerText = "12-2022";
         sBtn_text1.innerText = "1-2020";
-        element8.style.height = "292px";
+        container_dashbord.style.width = "100%";
+        container_dashbord.style.height = "100%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
-        satelite_Image.style.height = "400px";
-        satelite_Image.style.width = "96%";
+        handleResize();
         element4.setAttribute("href", "https://www.sciencephoto.com/media/182797/view/squatter-camp");
         removeListleft();
         removeListright();
     });
 
 
-    function toggleDiv2() {
+    async function toggleDiv2() {
         var div = document.querySelector('.dialog_detect');
         if (div.style.display === 'none' || div.style.display === '') {
-            div.style.display = 'block';
+            div.style.display = 'flex';
             // Add event listener to hide div when clicking outside
             // console.log("iam here")
             setTimeout(function () {
                 document.addEventListener('click', clickOutsideDiv);
             }, 1);
-            let width_image = document.querySelector('.wrapper').getBoundingClientRect().width;
-            document.getElementById('img_right').style.width = width_image + "px";
-            document.getElementById('img_left').style.width = width_image + "px";
-        } else {
+            handleResize();
+        }
+        else {
             div.style.display = 'none';
             // Remove event listener when div is hidden
             document.removeEventListener('click', clickOutsideDiv);
         }
-        
+        // handleResize();
 
     }
+    handleResize();
+
+    function handleResize() {
+        // Code to run when the window size changes
+        let width_image = document.querySelector('.wrapper').getBoundingClientRect().width;
+        console.log(width_image)
+        document.getElementById('img_right').style.width = width_image + "px";
+        document.getElementById('img_left').style.width = width_image + "px";
+    }
+
+    window.addEventListener('resize', handleResize);
+
+
     function clickOutsideDiv(event) {
         var div = document.querySelector('.dialog_detect');
         if (!div.contains(event.target)) {
