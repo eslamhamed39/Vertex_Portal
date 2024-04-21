@@ -198,6 +198,10 @@ input:-webkit-autofill:active {
     /* top:-40px; */
 }
 
+#loginPage .image img{
+    width: 70%;
+}
+
 /* img { */
     /* width: 220px; */
     /* background-color: #e5e5e5; */
