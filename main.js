@@ -29,11 +29,10 @@ const content_image = document.querySelector(".content-image");
 
 // todo:------------------------- i end here ----------------------------//
 
-let width_image = document.querySelector('.wrapper').getBoundingClientRect().width;
-// console.log(width_image + "px")
-// content_image.style.width = width_image + "px"
-// content_image.style.height = "100%"
-console.log(content_image)
+// console.log(width_image + "px");
+// content_image.style.width = width_image + "px";
+// content_image.style.height = "100%";
+// console.log(content_image);
 
 
 
@@ -593,7 +592,7 @@ function mapContent() {
 
 
 
-    // &======================== click and appear popup ========================//
+    // &======================== click layer to appear popup Detection ========================//
 
     const element1 = document.getElementById("img_left");
     const element2 = document.getElementById("img_right");
@@ -986,14 +985,20 @@ function mapContent() {
         if (div.style.display === 'none' || div.style.display === '') {
             div.style.display = 'block';
             // Add event listener to hide div when clicking outside
+            // console.log("iam here")
             setTimeout(function () {
                 document.addEventListener('click', clickOutsideDiv);
             }, 1);
+            let width_image = document.querySelector('.wrapper').getBoundingClientRect().width;
+            document.getElementById('img_right').style.width = width_image + "px";
+            document.getElementById('img_left').style.width = width_image + "px";
         } else {
             div.style.display = 'none';
             // Remove event listener when div is hidden
             document.removeEventListener('click', clickOutsideDiv);
         }
+        
+
     }
     function clickOutsideDiv(event) {
         var div = document.querySelector('.dialog_detect');
