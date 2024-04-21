@@ -670,8 +670,8 @@ function mapContent() {
     //  ?-----------==============  Land use ===============-----------//
     map.on('click', 'Land_Use', function (e) {
         toggleDiv2();
-        element1.setAttribute("src", "../Geo File/Polygon Create/Libya_satelliteImage1.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Land-use-image1.jpg");
+        element1.setAttribute("src", "../Geo File/Polygon Create/Libya_satelliteImage.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Land-use-image.jpg");
         element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
         element8.setAttribute("src", "../Geo File/Polygon Create/Land-use-barchart1.jpg");
         element9.setAttribute("src", "../Geo File/Polygon Create/Land-use-barchart2.jpg");
@@ -700,7 +700,7 @@ function mapContent() {
     map.on('click', 'Crop_Classification', function (e) {
         toggleDiv2();
         element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_satelliteImage.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_Classification.png");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_Classification.jpg");
         element8.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_parchart.jpg");
         element9.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_piechart.jpg");
         element3.style.display = "none";
@@ -919,8 +919,8 @@ function mapContent() {
         element3.style.height = "130px";
         // satelite_Image.style.height = "400px";
         // satelite_Image.style.width = "56%";
-        sBtn_text.innerText = "2-2024";
-        sBtn_text1.innerText = "12-2017";
+        sBtn_text.innerText = "06-2022";
+        sBtn_text1.innerText = "07-2013";
         dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
@@ -997,14 +997,15 @@ function mapContent() {
             // Add event listener to hide div when clicking outside
             // console.log("iam here")
             setTimeout(function () {
-                document.addEventListener('click', clickOutsideDiv);
+                document.addEventListener('mousedown', clickOutsideDiv);
             }, 1);
             handleResize();
+            slider()
         }
         else {
             div.style.display = 'none';
             // Remove event listener when div is hidden
-            document.removeEventListener('click', clickOutsideDiv);
+            document.removeEventListener('mousedown', clickOutsideDiv);
         }
         // handleResize();
 
@@ -1014,7 +1015,7 @@ function mapContent() {
     function handleResize() {
         // Code to run when the window size changes
         let width_image = document.querySelector('.wrapper').getBoundingClientRect().width;
-        console.log(width_image)
+        // console.log(width_image)
         document.getElementById('img_right').style.width = width_image + "px";
         document.getElementById('img_left').style.width = width_image + "px";
     }
@@ -1072,44 +1073,63 @@ let globalvar;
 
 
 // *==============================> Slider Comparison imege <================================//
-let active = false;
-document.querySelector('.scroller').addEventListener('mousedown', function () {
-    active = true;
-    document.querySelector('.scroller').classList.add('scrolling');
-});
-document.body.addEventListener('mouseup', function () {
-    active = false;
-    document.querySelector('.scroller').classList.remove('scrolling');
-});
-document.body.addEventListener('mouseleave', function () {
-    active = false;
-    document.querySelector('.scroller').classList.remove('scrolling');
-});
-document.body.addEventListener('mousemove', function (e) {
-    if (!active) return;
-    let x = e.pageX;
-    x -= document.querySelector('.wrapper').getBoundingClientRect().left;
-    // console.log(document.querySelector('.wrapper').getBoundingClientRect().width)
-    scrollIt(x);
-});
-function scrollIt(x) {
-    let transform = x
-    document.querySelector('.after').style.width = transform + "px";
-    document.querySelector('.scroller').style.left = transform + "px";
+function slider(){
+    let active = false;
+    document.querySelector('.scroller').addEventListener('mousedown', function () {
+        active = true;
+        document.querySelector('.scroller').classList.add('scrolling');
+    });
+    document.body.addEventListener('mouseup', function () {
+        active = false;
+        document.querySelector('.scroller').classList.remove('scrolling');
+    });
+    document.body.addEventListener('mouseleave', function () {
+        active = false;
+        document.querySelector('.scroller').classList.remove('scrolling');
+    });
+    document.body.addEventListener('mousemove', function (e) {
+        if (!active) return;
+        let x = e.pageX;
+        x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+        // console.log(document.querySelector('.wrapper').getBoundingClientRect().width)
+        scrollIt(x);
+    });
+    // function scrollIt(x) {
+    //     let transform = x
+    //     document.querySelector('.after').style.width = transform + "px";
+    //     document.querySelector('.scroller').style.left = transform + "px";
+    // }
+    async function scrollIt(x) {
+        let minWidth = 0; // Assuming the minimum width is 0
+        let maxWidth = document.querySelector('.wrapper').getBoundingClientRect().width;
+        let initialPosition = 250; // Desired starting position
+        // handleResize()
+        // Calculate the transform value
+        let transform = initialPosition + (x - initialPosition);
+        // console.log(initialPosition + (x - initialPosition));
+        // Ensure transform stays within the range
+        console.log(maxWidth);
+        transform = Math.min(Math.max(transform, minWidth), maxWidth);
+        // console.log("second " + transform);
+        document.querySelector('.after').style.width = transform + "px";
+        document.querySelector('.scroller').style.left = transform + "px";
+    }
+    
+    scrollIt(250);
+    document.querySelector('.scroller').addEventListener('touchstart', function () {
+        active = true;
+        document.querySelector('.scroller').classList.add('scrolling');
+    });
+    document.body.addEventListener('touchend', function () {
+        active = false;
+        document.querySelector('.scroller').classList.remove('scrolling');
+    });
+    document.body.addEventListener('touchcancel', function () {
+        active = false;
+        document.querySelector('.scroller').classList.remove('scrolling');
+    });
 }
-scrollIt(250);
-document.querySelector('.scroller').addEventListener('touchstart', function () {
-    active = true;
-    document.querySelector('.scroller').classList.add('scrolling');
-});
-document.body.addEventListener('touchend', function () {
-    active = false;
-    document.querySelector('.scroller').classList.remove('scrolling');
-});
-document.body.addEventListener('touchcancel', function () {
-    active = false;
-    document.querySelector('.scroller').classList.remove('scrolling');
-});
+
 
 // ---------------------------- To Make sidebar Active when click  ----------------------------//
 
