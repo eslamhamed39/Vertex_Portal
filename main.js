@@ -1275,71 +1275,50 @@ function handleSelectButtonClick1() {
 
 
 function handleOptionClick(option) {
-    let selectedOption = option.querySelector(".option-text").innerText;
+    const selectedOption = option.querySelector(".option-text").innerText;
     sBtn_text.innerText = selectedOption;
     optionMenu.classList.remove("active");
     const element1 = document.getElementById("img_right");
-    if (globalvar == "Land_Cover") {
-        element1.setAttribute("src", `../Geo File/Polygon Create/land-C-S-image-${selectedOption}.jpg`);
-    }
-    else if (globalvar == "Project" || globalvar == "Forest_Logging_Detection") {
-        element1.setAttribute("src", `../Geo File/Polygon Create/${selectedOption}.jpg`);
-    }
-    else if (globalvar == "Squatters_Camps") {
-        element1.setAttribute("src", `../Geo File/Polygon Create/Squatters_Camps-${selectedOption}.jpg`);
-    }
-    else if (globalvar == "Azuri_Towers_Nigeria") {
-        element1.setAttribute("src", `../Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption}.jpg`);
-    }
-    else if (globalvar == "TATU_CITY_KENYA") {
-        element1.setAttribute("src", `../Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption}.jpg`);
-    }
-    else if (globalvar == "Mining_Monitoring") {
-        element1.setAttribute("src", `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption}.jpg`);
-    }
-    else if (globalvar == "Oil_Spill_Detection") {
-        element1.setAttribute("src", `../Geo File/Polygon Create/Oil_Spill_Detection-${selectedOption}.jpg`);
-    }
-    else if (globalvar == "Wildfires") {
-        element1.setAttribute("src", `../Geo File/Polygon Create/Wildfires-${selectedOption}.jpg`);
-    }
-    else if (globalvar == "Crop_Health") {
-        element1.setAttribute("src", `../Geo File/Polygon Create/Crop_Health-${selectedOption}.jpg`);
+    const imagePaths = {
+        "Land_Cover": `../Geo File/Polygon Create/land-C-S-image-${selectedOption}.jpg`,
+        "Project": `../Geo File/Polygon Create/${selectedOption}.jpg`,
+        "Forest_Logging_Detection": `../Geo File/Polygon Create/${selectedOption}.jpg`,
+        "Squatters_Camps": `../Geo File/Polygon Create/Squatters_Camps-${selectedOption}.jpg`,
+        "Azuri_Towers_Nigeria": `../Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption}.jpg`,
+        "TATU_CITY_KENYA": `../Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption}.jpg`,
+        "Mining_Monitoring": `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption}.jpg`,
+        "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_Detection-${selectedOption}.jpg`,
+        "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption}.jpg`,
+        "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption}.jpg`
     };
+    const imagePath = imagePaths[globalvar];
+    if (imagePath) {
+        element1.setAttribute("src", imagePath);
+    }
 }
+
+
 function handleOptionClick1(option) {
-    let selectedOption1 = option.querySelector(".option-text1").innerText;
+    const selectedOption1 = option.querySelector(".option-text1").innerText;
     sBtn_text1.innerText = selectedOption1;
     optionMenu1.classList.remove("active");
     const element2 = document.getElementById("img_left");
-    if (globalvar == "Land_Cover") {
-        element2.setAttribute("src", `../Geo File/Polygon Create/land-C-S-image-${selectedOption1}.jpg`);
-    }
-    else if (globalvar == "Project" || globalvar == "Forest_Logging_Detection") {
-        element2.setAttribute("src", `../Geo File/Polygon Create/${selectedOption1}.jpg`);
-    }
-    else if (globalvar == "Squatters_Camps") {
-        element2.setAttribute("src", `../Geo File/Polygon Create/Squatters_Camps-${selectedOption1}.jpg`);
-    }
-    else if (globalvar == "Azuri_Towers_Nigeria") {
-        element2.setAttribute("src", `../Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption1}.jpg`);
-    }
-    else if (globalvar == "TATU_CITY_KENYA") {
-        element2.setAttribute("src", `../Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption1}.jpg`);
-    }
-    else if (globalvar == "Mining_Monitoring") {
-        element2.setAttribute("src", `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption1}.jpg`);
-    }
-    else if (globalvar == "Oil_Spill_Detection") {
-        element2.setAttribute("src", `../Geo File/Polygon Create/Oil_Spill_Detection-${selectedOption1}.jpg`);
-    }
-    else if (globalvar == "Wildfires") {
-        element2.setAttribute("src", `../Geo File/Polygon Create/Wildfires-${selectedOption1}.jpg`);
-    }
-    else if (globalvar == "Crop_Health") {
-        element2.setAttribute("src", `../Geo File/Polygon Create/Crop_Health-${selectedOption1}.jpg`);
+    const imagePaths = {
+        "Land_Cover": `../Geo File/Polygon Create/land-C-S-image-${selectedOption1}.jpg`,
+        "Project": `../Geo File/Polygon Create/${selectedOption1}.jpg`,
+        "Forest_Logging_Detection": `../Geo File/Polygon Create/${selectedOption1}.jpg`,
+        "Squatters_Camps": `../Geo File/Polygon Create/Squatters_Camps-${selectedOption1}.jpg`,
+        "Azuri_Towers_Nigeria": `../Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption1}.jpg`,
+        "TATU_CITY_KENYA": `../Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption1}.jpg`,
+        "Mining_Monitoring": `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption1}.jpg`,
+        "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_Detection-${selectedOption1}.jpg`,
+        "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption1}.jpg`,
+        "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption1}.jpg`
     };
-
+    const imagePath = imagePaths[globalvar];
+    if (imagePath) {
+        element2.setAttribute("src", imagePath);
+    }
 }
 
 selectBtn.addEventListener("click", handleSelectButtonClick);
