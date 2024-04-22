@@ -1028,11 +1028,6 @@ function mapContent() {
         if (!div.contains(event.target)) {
             div.style.display = 'none';
             document.removeEventListener('click', clickOutsideDiv);
-            // Buildings_Detection['paint']['fill-opacity'] = 0;
-            // fetchBuildings_Detection();
-            // Buildings_Detection_outline['paint']['line-width'] = none;
-            // removeLayers();
-            // console.log(Buildings_Detection)
         }
     }
     map.on('click', function (e) {
@@ -1041,35 +1036,8 @@ function mapContent() {
         // getLayerId();
         linkedImageWithSelect(globalvar);
     });
-    // function removeLayers() {
-    //     map.removeLayer('TATU_CITY_KENYA');
-    //     map.removeLayer('TATU_CITY_KENYA_outline');
-    //     map.removeLayer('Crop_Classification');
-    //     map.removeLayer('Crop_Classification_outline');
-    //     map.removeLayer('Mining_Monitoring');
-    //     map.removeLayer('Mining_Monitoring_outline');
-    //     map.removeLayer('Project');
-    //     map.removeLayer('Project_outline');
-    //     map.removeLayer('Forest_Logging_Detection');
-    //     map.removeLayer('Forest_Logging_Detection_outline');
-    //     map.removeLayer('Land_Cover');
-    //     map.removeLayer('Land_Cover_outline');
-    //     map.removeLayer('Squatters_Camps');
-    //     map.removeLayer('Squatters_Camps_outline');
-    //     map.removeLayer('Land_Use');
-    //     map.removeLayer('Land_Use_outline');
-    //     map.removeLayer('Azuri_Towers_Nigeria');
-    //     map.removeLayer('Azuri_Towers_Nigeria_outline');
-    //     map.removeLayer('Azuri_Towers_Nigeria');
-    //     map.removeLayer('Azuri_Towers_Nigeria_outline');
-    //     map.removeSource(source.getId())
-    // }
 }
 let globalvar;
-// function getLayerId(feature) {
-//     console.log(globalvar)
-// }
-
 
 
 // *==============================> Slider Comparison imege <================================//
@@ -1129,8 +1097,6 @@ function slider(){
         document.querySelector('.scroller').classList.remove('scrolling');
     });
 }
-
-
 // ---------------------------- To Make sidebar Active when click  ----------------------------//
 
 function setActive(elementId) {
@@ -1141,14 +1107,12 @@ function setActive(elementId) {
     // Add active class to the clicked element
     document.getElementById(elementId).classList.add('active');
 }
-
 // Add event listeners to all navigation items
 document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', event => {
         setActive(event.currentTarget.id);
     });
 });
-
 // Add event listener to the document body
 document.body.addEventListener('click', event => {
     const clickedElement = event.target;
@@ -1158,78 +1122,25 @@ document.body.addEventListener('click', event => {
         setActive('Home');
     }
 });
-
-
-// *-------------------------- Select options------------------------//
+// *------------------------- Select options------------------------//
 //  left Selector
-
 // function to create li from list 
 function linkedImageWithSelect(idlayer) {
-    // const layerId = getLayerId();
-    // console.log(typeof(idlayer));
-    const fileNames = [];
-    if (idlayer == 'Project') {
-        fileNames.push("6-2023", "2-2022");
-        // console.log(fileNames);
-        // console.log(idlayer);
-        displayFileNames(fileNames);
-    }
-    else if (idlayer == 'Forest_Logging_Detection') {
-        fileNames.push("10-3-2024", "16-12-2023", "6-1-2023");
-        // console.log(fileNames);
-        // console.log(idlayer);
-        displayFileNames(fileNames);
-    }
-    else if (idlayer == 'Land_Cover') {
-        fileNames.push("2023", "2018");
-        // console.log(fileNames);
-        // console.log(idlayer);
-        displayFileNames(fileNames);
-    }
-    else if (idlayer == 'Squatters_Camps') {
-        fileNames.push("12-2022", "1-2020");
-        // console.log(fileNames);
-        // console.log(idlayer);
-        displayFileNames(fileNames);
-    }
-    else if (idlayer == 'Azuri_Towers_Nigeria') {
-        fileNames.push("2-2024", "1-2020", "12-2018", "2-2018", "5-2016");
-        // console.log(fileNames);
-        // console.log(idlayer);
-        displayFileNames(fileNames);
-    }
-    else if (idlayer == 'TATU_CITY_KENYA') {
-        fileNames.push("2-2024", "1-2023", "2-2022", "1-2020", "1-2019", "12-2017");
-        // console.log(fileNames);
-        // console.log(idlayer);
-        displayFileNames(fileNames);
-    }
-    else if (idlayer == 'Mining_Monitoring') {
-        fileNames.push("6-2022", "6-2020", "7-2019", "10-2017", "6-2014", "7-2013");
-        // console.log(fileNames);
-        // console.log(idlayer);
-        displayFileNames(fileNames);
-    }
-    else if (idlayer == 'Oil_Spill_Detection') {
-        fileNames.push("18-8-2022", "3-8-2022", "29-7-2022", "14-7-2022", "29-6-2022");
-        // console.log(fileNames);
-        // console.log(idlayer);
-        displayFileNames(fileNames);
-    }
-    else if (idlayer == 'Wildfires') {
-        fileNames.push("29-3-2024", "9-3-2024", "13-2-2024", "8-2-2024", "29-1-2024", "4-1-2024", "25-12-2023", "10-12-2023", "30-11-2023", "20-11-2023", "15-11-2023", "11-10-2023", "6-10-2023", "1-10-2023", "21-9-2023", "1-9-2023", "22-8-2023", "17-8-2023", "12-8-2023", "23-7-2023");
-        // console.log(fileNames);
-        // console.log(idlayer);
-        displayFileNames(fileNames);
-    }
-    else if (idlayer == 'Crop_Health') {
-        fileNames.push("21-5-2022", "21-5-2022 NDVI", "11-3-2024", "11-3-2024 NDVI");
-        // console.log(fileNames);
-        // console.log(idlayer);
-        displayFileNames(fileNames);
+    const fileNamesMap = {
+        'Project': ["6-2023", "2-2022"],
+        'Forest_Logging_Detection': ["10-3-2024", "16-12-2023", "6-1-2023"],
+        'Land_Cover': ["2023", "2018"],
+        'Squatters_Camps': ["12-2022", "1-2020"],
+        'Azuri_Towers_Nigeria': ["2-2024", "1-2020", "12-2018", "2-2018", "5-2016"],
+        'TATU_CITY_KENYA': ["2-2024", "1-2023", "2-2022", "1-2020", "1-2019", "12-2017"],
+        'Mining_Monitoring': ["6-2022", "6-2020", "7-2019", "10-2017", "6-2014", "7-2013"],
+        'Oil_Spill_Detection': ["18-8-2022", "3-8-2022", "29-7-2022", "14-7-2022", "29-6-2022"],
+        'Wildfires': ["29-3-2024", "9-3-2024", "13-2-2024", "8-2-2024", "29-1-2024", "4-1-2024", "25-12-2023", "10-12-2023", "30-11-2023", "20-11-2023", "15-11-2023", "11-10-2023", "6-10-2023", "1-10-2023", "21-9-2023", "1-9-2023", "22-8-2023", "17-8-2023", "12-8-2023", "23-7-2023"],
+        'Crop_Health': ["21-5-2022", "21-5-2022 NDVI", "11-3-2024", "11-3-2024 NDVI"]
     };
+    const fileNames = fileNamesMap[idlayer] || [];
+    displayFileNames(fileNames);
     function displayFileNames(date) {
-
         const leftSelector = document.getElementById('image_date_left');
         const rightSelector = document.getElementById('image_date_right');
         date.forEach(date => {
