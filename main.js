@@ -790,85 +790,108 @@ function mapContent() {
 
     // &======================== click layer to appear popup Detection ========================//
 
-    //  ?-----==============  Forest Logging Detection ===============-----------//
-    map.on('click', 'Forest_Logging_Detection', function (e) {
-        toggleDiv2();
+    // //  ?-----==============  Forest Logging Detection ===============-----------//
+    // map.on('click', 'Forest_Logging_Detection', function (e) {
+    //     toggleDiv2();
+    // });
+    // //  ?-----------==============  Land cover ===============-----------//
+    // map.on('click', 'Land_Cover', function (e) {
+    //     toggleDiv2();
+    // });
+    // //  ?-----------==============  Land use ===============-----------//
+    // map.on('click', 'Land_Use', function (e) {
+    //     toggleDiv2();
+    // });
+    // //  ?-----------==============  Crop_Classification ===============-----------//
+    // map.on('click', 'Crop_Classification', function (e) {
+    //     toggleDiv2();
+    // });
+    // //  ?-----------============== Azuri_Towers_Nigeria ===============-----------//
+    // map.on('click', 'Azuri_Towers_Nigeria', function (e) {
+    //     toggleDiv2();
+    // });
+
+    // //  ?-----------============== TATU_CITY_KENYA ===============-----------//
+    // map.on('click', 'TATU_CITY_KENYA', function (e) {
+
+
+    //     toggleDiv2();
+    // });
+
+    // //  ?-----------============== Crop_Health ===============-----------//
+    // map.on('click', 'Crop_Health', function (e) {
+
+    //     toggleDiv2();
+
+    // });
+
+
+    // //  ?-----------============== Crop_Disease_Detection ===============-----------//
+    // map.on('click', 'Crop_Disease_Detection', function (e) {
+
+
+    //     toggleDiv2();
+    // });
+
+    // //  ?-----------============== Oil_Spill_Detection ===============-----------//
+    // map.on('click', 'Oil_Spill_Detection', function (e) {
+
+    //     toggleDiv2();
+    // });
+
+    // //  ?-----------============== Wildfires_Detection ===============-----------//
+    // map.on('click', 'Wildfires', function (e) {
+
+
+    //     toggleDiv2();
+    // });
+
+    // //  ?-----------============== Mining Monitoring ===============-----------//
+    // map.on('click', 'Mining_Monitoring', function (e) {
+
+
+    //     toggleDiv2();
+    // });
+
+
+    // //  ?-----==================  Tanzania Mega Mall ===============-----------//
+    // map.on('click', 'Project', function (e) {
+
+
+    //     toggleDiv2();
+    // });
+
+    // //  ?----------==================  Squatters Camps ===============-----------//
+
+    // map.on('click', 'Squatters_Camps', function (e) {
+
+
+    //     toggleDiv2();
+    // });
+
+    var layerNames = [
+        'Forest_Logging_Detection',
+        'Land_Cover',
+        'Land_Use',
+        'Crop_Classification',
+        'Azuri_Towers_Nigeria',
+        'TATU_CITY_KENYA',
+        'Crop_Health',
+        'Crop_Disease_Detection',
+        'Oil_Spill_Detection',
+        'Wildfires',
+        'Mining_Monitoring',
+        'Project',
+        'Squatters_Camps'
+    ];
+    
+    // Loop through the array and bind the click event for each layer
+    layerNames.forEach(function(layerName) {
+        map.on('click', layerName, function(e) {
+            toggleDiv2();
+            // console.log(layerName)
+        });
     });
-    //  ?-----------==============  Land cover ===============-----------//
-    map.on('click', 'Land_Cover', function (e) {
-        toggleDiv2();
-    });
-    //  ?-----------==============  Land use ===============-----------//
-    map.on('click', 'Land_Use', function (e) {
-        toggleDiv2();
-    });
-    //  ?-----------==============  Crop_Classification ===============-----------//
-    map.on('click', 'Crop_Classification', function (e) {
-        toggleDiv2();
-    });
-    //  ?-----------============== Azuri_Towers_Nigeria ===============-----------//
-    map.on('click', 'Azuri_Towers_Nigeria', function (e) {
-        toggleDiv2();
-    });
-
-    //  ?-----------============== TATU_CITY_KENYA ===============-----------//
-    map.on('click', 'TATU_CITY_KENYA', function (e) {
-
-
-        toggleDiv2();
-    });
-
-    //  ?-----------============== Crop_Health ===============-----------//
-    map.on('click', 'Crop_Health', function (e) {
-
-        toggleDiv2();
-
-    });
-
-
-    //  ?-----------============== Crop_Disease_Detection ===============-----------//
-    map.on('click', 'Crop_Disease_Detection', function (e) {
-
-
-        toggleDiv2();
-    });
-
-    //  ?-----------============== Oil_Spill_Detection ===============-----------//
-    map.on('click', 'Oil_Spill_Detection', function (e) {
-
-        toggleDiv2();
-    });
-
-    //  ?-----------============== Wildfires_Detection ===============-----------//
-    map.on('click', 'Wildfires', function (e) {
-
-
-        toggleDiv2();
-    });
-
-    //  ?-----------============== Mining Monitoring ===============-----------//
-    map.on('click', 'Mining_Monitoring', function (e) {
-
-
-        toggleDiv2();
-    });
-
-
-    //  ?-----==================  Tanzania Mega Mall ===============-----------//
-    map.on('click', 'Project', function (e) {
-
-
-        toggleDiv2();
-    });
-
-    //  ?----------==================  Squatters Camps ===============-----------//
-
-    map.on('click', 'Squatters_Camps', function (e) {
-
-
-        toggleDiv2();
-    });
-
 
     function toggleDiv2() {
         var div = document.querySelector('.dialog_detect');
@@ -941,7 +964,6 @@ function slider() {
         let maxWidth = document.querySelector('.wrapper').getBoundingClientRect().width;
         let initialPosition = 250; 
         let transform = initialPosition + (x - initialPosition);
-        console.log(maxWidth);
         transform = Math.min(Math.max(transform, minWidth), maxWidth);
         document.querySelector('.after').style.width = transform + "px";
         document.querySelector('.scroller').style.left = transform + "px";
