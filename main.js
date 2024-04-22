@@ -225,9 +225,6 @@ async function Refetch(layerID, status) {
     }
     // response();
 }
-// function response(){
-//     console.log(Crop_Health);
-// }
 
 
 
@@ -256,8 +253,6 @@ function mapContent() {
                 var sourceId = layer.source;
                 map.removeLayer(layerId);
                 map.removeSource(sourceId);
-                // console.log(layer.id)
-                // console.log(typeof(sourceId))
             }
         });
     }
@@ -304,6 +299,25 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/2-2022.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/6-2023.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
+        element8.setAttribute("src", "/Dashbord/3.png");
+        element9.setAttribute("src", "/Dashbord/4.png");
+        element10.setAttribute("src", "/Dashbord/6.png");
+        element6.style.display = 'block';
+        element3.style.display = "block";
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
+        element7.style.removeProperty("width")
+        container_dashbord.style.removeProperty("width")
+        sBtn_text.innerText = "6-2023";
+        sBtn_text1.innerText = "2-2022";
+        dialog_detect.style.width = "85%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        element4.setAttribute("href", "https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096");
     });
 
 
@@ -317,6 +331,26 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Data/Forest_Logging_Detection/6-1-2023.jpg");
+        element2.setAttribute("src", "../Data/Forest_Logging_Detection/10-3-2024.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Forest_Logging_News.png");
+        element8.setAttribute("src", "Data/Forest_Logging_Detection/Dashboed/11.png");
+        element9.setAttribute("src", "Data/Forest_Logging_Detection/Dashboed/13.png");
+        element6.style.display = 'none';
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
+        element7.style.width = "100%";
+        container_row2.style.height = "50%";
+        timeline.style.height = "50%";
+        element3.style.display = "block";
+        element4.setAttribute("href", "https://www.lifegate.com/congo-basin-rainforest-logging")
+        sBtn_text.innerText = "10-3-2024";
+        sBtn_text1.innerText = "6-1-2023";
+        dialog_detect.style.width = "85%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        container_dashbord.style.removeProperty("width");
     });
 
     // ^--------------------------------- Land cover ----------------------------//
@@ -329,6 +363,24 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/land-C-S-image-2018.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/land-C-S-image-2023.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
+        element8.setAttribute("src", "../Geo File/Polygon Create/land.C.barchart.jpg");
+        element9.setAttribute("src", "../Geo File/Polygon Create/land.C.Chart.2015.jpg");
+        element10.setAttribute("src", "../Geo File/Polygon Create/land.C.Chart.2020.jpg");
+        element3.style.display = "none";
+        element6.style.display = 'none';
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
+        sBtn_text.innerText = "2023";
+        sBtn_text1.innerText = "2018";
+        dialog_detect.style.width = "85%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        element4.setAttribute("href", "https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096");
+        container_dashbord.style.removeProperty("width");
     });
 
     // ^-------------------------- Squatters Camps ----------------------------//
@@ -341,6 +393,26 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/Squatters_Camps-1-2020.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Squatters_Camps-12-2022.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Squatters_Camps_new.jpg");
+        element8.setAttribute("src", "");
+        element9.setAttribute("src", "");
+        element10.setAttribute("src", "");
+        element6.style.display = 'block';
+        element3.style.display = "block";
+        element8.style.display = "none";
+        element9.style.display = "none";
+        element10.style.display = "none";
+        element3.style.height = "140px";
+        element7.style.width = "100%";
+        sBtn_text.innerText = "12-2022";
+        sBtn_text1.innerText = "1-2020";
+        container_dashbord.style.width = "100%";
+        container_dashbord.style.height = "100%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        element4.setAttribute("href", "https://www.sciencephoto.com/media/182797/view/squatter-camp");
     });
 
     // ^---------------------------------- Land Use -----------------------------//
@@ -353,6 +425,23 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/Libya_satelliteImage.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Land-use-image.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
+        element8.setAttribute("src", "../Geo File/Polygon Create/Land-use-barchart1.jpg");
+        element9.setAttribute("src", "../Geo File/Polygon Create/Land-use-barchart2.jpg");
+        element3.style.display = "none";
+        element6.style.display = 'none';
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
+        element7.style.width = "100%";
+        sBtn_text.innerText = "Land Use";
+        sBtn_text1.innerText = "satellite Image";
+        dialog_detect.style.width = "85%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        container_dashbord.style.removeProperty("width");
     });
 
     // ^---------------------------------- Azuri Towers Nigeria -----------------------------//
@@ -365,6 +454,26 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-5-2016.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-2-2024.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-new.png");
+        element8.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-barchart.jpg");
+        element9.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-pointchart.jpg");
+        element3.style.display = "block";
+        element6.style.display = 'none';
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
+        element7.style.width = "100%";
+        container_row2.style.height = "50%";
+        timeline.style.height = "50%";
+        sBtn_text.innerText = "2-2024";
+        sBtn_text1.innerText = "5-2016";
+        dialog_detect.style.width = "85%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        element4.setAttribute("href", "https://www.itbng.com/azuri-peninsula-eko-atlantic-city-lagos");
+        container_dashbord.style.removeProperty("width");
     });
 
     // ^---------------------------------- TATU CITY KENYA -----------------------------//
@@ -377,6 +486,25 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-12-2017.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-2-2024.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-News.jpg");
+        element8.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-Barchart.jpg");
+        element9.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-pointchart.jpg");
+        element3.style.display = "block";
+        element3.style.height = "135px";
+        element6.style.display = 'none';
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
+        element7.style.width = "100%";
+        sBtn_text.innerText = "2-2024";
+        sBtn_text1.innerText = "12-2017";
+        dialog_detect.style.width = "85%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        element4.setAttribute("href", "https://nellions.co.ke/blog/upcoming-residential-estates-nairobi/#9-Tatu-City");
+        container_dashbord.style.removeProperty("width");
     });
 
     // ^---------------------------------- Crop Classification -----------------------------//
@@ -389,7 +517,24 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_satelliteImage.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_Classification.jpg");
+        element8.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_parchart.jpg");
+        element9.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_piechart.jpg");
+        element3.style.display = "none";
+        element6.style.display = 'none';
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
+        element7.style.width = "100%";
+        sBtn_text.innerText = "Classification";
+        sBtn_text1.innerText = "Satellite Image";
+        dialog_detect.style.width = "85%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        container_dashbord.style.removeProperty("width");
     });
+
     // ^---------------------------------- Mining Monitoring -----------------------------//
     mining_Monitoring.addEventListener("click", async function () {
         await Refetch("Mining_Monitoring")
@@ -400,6 +545,25 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring-7-2013.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring-6-2022.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring_news.jpg");
+        element8.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring-barchart.jpg");
+        element9.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring-circalchart.jpg");
+        element3.style.display = "block";
+        element6.style.display = 'none';
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
+        element7.style.width = "100%";
+        element3.style.height = "130px";
+        sBtn_text.innerText = "06-2022";
+        sBtn_text1.innerText = "07-2013";
+        dialog_detect.style.width = "85%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        container_dashbord.style.removeProperty("width")
+        element4.setAttribute("href", "https://www.digest.tz/ongoing-struggle-with-small-scale-mining-threating-environment/");
     });
 
     // ^---------------------------------- Oil Spill Detection -----------------------------//
@@ -408,10 +572,28 @@ function mapContent() {
         try {
             removeAllSourceLayers(map)
         } catch (error) {
-            // console.log("error")
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-29-6-2022.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-18-8-2022.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-news.jpg");
+        element8.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-parchart.jpg");
+        element9.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-pointchart.jpg");
+        element3.style.display = "block";
+        element3.style.height = "130px";
+        element6.style.display = 'none';
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
+        element7.style.width = "100%";
+        sBtn_text.innerText = "18-8-2022";
+        sBtn_text1.innerText = "29-6-2022";
+        dialog_detect.style.width = "85%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        element4.setAttribute("href", "https://enterprise.press/greeneconomys/when-oil-washed-up-on-dahabs-shores-local-residents-jumped-into-action/");
+        container_dashbord.style.removeProperty("width");
     });
 
     // ^---------------------------------- Wildfires Detection -----------------------------//
@@ -424,6 +606,27 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/Wildfires-23-7-2023.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Wildfires-29-3-2024.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Wildfires-News.jpg");
+        element8.setAttribute("src", "../Geo File/Polygon Create/Wildfires-barchart.jpg");
+        element9.setAttribute("src", "../Geo File/Polygon Create/Wildfires-saidebarchart.jpg");
+        element3.style.display = "block";
+        element3.style.height = "130px";
+        element6.style.display = 'none';
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
+        element7.style.width = "100%";
+        container_row2.style.height = "50%";
+        timeline.style.height = "50%";
+        sBtn_text.innerText = "29-3-2024";
+        sBtn_text1.innerText = "23-7-2023";
+        dialog_detect.style.width = "85%";
+        image_date_left.style.height = '40vh';
+        image_date_right.style.height = '40vh';
+        element4.setAttribute("href", "https://www.thenationalnews.com/world/2023/07/26/horrors-of-wildfires-from-space-satellite-photos-track-blazes-in-europe-and-north-africa/");
+        container_dashbord.style.removeProperty("width");
     });
 
     // ^---------------------------------- Crop_Disease_Detection -----------------------------//
@@ -436,6 +639,25 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection_Satellite-image.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection-News.jpg");
+        element8.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection-Circelchart.jpg");
+        element9.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection-Linechart.jpg");
+        element3.style.display = "block";
+        element3.style.height = "135px";
+        element6.style.display = 'none';
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
+        element7.style.width = "100%";
+        sBtn_text.innerText = "Crop Disease Detection";
+        sBtn_text1.innerText = "Satellite Image";
+        dialog_detect.style.width = "85%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        element4.setAttribute("href", "https://www.downtoearth.org.in/news/agriculture/savage-mode-in-a-warmer-wetter-world-pests-are-multiplying-faster-and-damaging-crops-severely-91049");
+        container_dashbord.style.removeProperty("width");
     });
 
     // ^---------------------------------- Crop_Health -----------------------------//
@@ -448,6 +670,26 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-21-5-2022.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-21-5-2022 NDVI.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-News.jpg");
+        element8.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-Digram1.jpg");
+        element9.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-Digram2.jpg");
+        element3.style.display = "block";
+        element3.style.height = "135px";
+        element6.style.display = 'none';
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
+        element7.style.width = "100%";
+        sBtn_text.innerText = "21-5-2022 NDVI";
+        sBtn_text1.innerText = "21-5-2022";
+        dialog_detect.style.width = "85%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        // satelite_Image.style.width = "56%";
+        element4.setAttribute("href", "https://www.usaid.gov/kenya/agriculture-food-and-water-security");
+        container_dashbord.style.removeProperty("width");
     });
 
     // ^---------------------------------- Home -----------------------------//
@@ -459,57 +701,6 @@ function mapContent() {
             // console.log("error")
         }
     });
-
-
-
-    // const Detection_services = document.getElementById("Detection_services");
-    // Detection_services.addEventListener("click", function () {
-    //     map.removeLayer(globalvar);
-    //     map.removeLayer(`${globalvar}_outline`);
-    //     console.log(globalvar);
-    // });
-
-    // document.body.addEventListener("click", function (event) {
-    //         if (event.target == tATU_CITY_KENYA && 
-    //             event.target == crop_Classification &&
-    //             event.target == mining_Monitoring) {
-    //             // If clicked outside, remove layers
-    //             // map.removeLayer(layer);
-    //     }
-    // });
-
-
-
-
-
-    // Add a click event listener to the document body
-    // document.body.addEventListener("click", function (event) {
-    //     if (event.target == tATU_CITY_KENYA && 
-    //         event.target == crop_Classification &&
-    //         event.target == mining_Monitoring) {
-    //         // If clicked outside, remove layers
-    //         removeLayers();
-    //     }
-    // });
-
-
-
-
-
-
-    //  Todo: this function to remove layer when i press anywhere out layer but not working untile now //
-    // document.body.addEventListener("click", function (event) {
-    //     // Check if the clicked element is not the land_cover element
-    //     if (event.target !== land_cover) {
-    //         // Remove the land cover layers if they are added
-    //         if (map.getLayer(Land_Cover)) {
-    //             map.removeLayer(Land_Cover);
-    //         }
-    //         if (map.getLayer(Land_Cover_outline)) {
-    //             map.removeLayer(Land_Cover_outline);
-    //         }
-    //     }
-    // });
 
     // -------------------------------- Hover section -----------------------//
     function addHoverEffect(layerId) {
@@ -546,7 +737,7 @@ function mapContent() {
     //--------------------------------- End polygon creation --------------------------------//
     function handleMapClick(id, newCoordinates, newZoomLevel, angle) {
         document.getElementById(id).addEventListener('click', function () {
-            var duration = 5000;
+            var duration = 6000;
             map.flyTo({
                 center: newCoordinates,
                 zoom: newZoomLevel,
@@ -554,8 +745,6 @@ function mapContent() {
                 pitch: angle,
                 // bearing: 0,
             });
-            removeListleft();
-            removeListright();
         });
     }
     handleMapClick('Home', [21.667170602629522, 4.012114320491342], 2.2, 0);
@@ -585,8 +774,6 @@ function mapContent() {
             map.getCanvas().style.cursor = '';
         });
     }
-
-    // Usage
     setCursor('Project');
     setCursor('Forest_Logging_Detection');
     setCursor('Land_Cover');
@@ -601,423 +788,111 @@ function mapContent() {
     setCursor('Crop_Disease_Detection');
     setCursor('Crop_Health');
 
-
-
-
-
     // &======================== click layer to appear popup Detection ========================//
-
-
 
     //  ?-----==============  Forest Logging Detection ===============-----------//
     map.on('click', 'Forest_Logging_Detection', function (e) {
         toggleDiv2();
-        element1.setAttribute("src", "../Data/Forest_Logging_Detection/6-1-2023.jpg")
-        element2.setAttribute("src", "../Data/Forest_Logging_Detection/10-3-2024.jpg")
-        element3.setAttribute("src", "../Geo File/Polygon Create/Forest_Logging_News.png")
-        element8.setAttribute("src", "Data/Forest_Logging_Detection/Dashboed/11.png")
-        element9.setAttribute("src", "Data/Forest_Logging_Detection/Dashboed/13.png")
-        element6.style.display = 'none';
-        element8.style.display = "block";
-        element9.style.display = "block";
-        element10.style.display = "block";
-        element7.style.width = "100%";
-        container_row2.style.height = "50%";
-        timeline.style.height = "50%";
-        element3.style.display = "block";
-        element4.setAttribute("href", "https://www.lifegate.com/congo-basin-rainforest-logging")
-        sBtn_text.innerText = "10-3-2024";
-        sBtn_text1.innerText = "6-1-2023";
-        dialog_detect.style.width = "85%";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
-        container_dashbord.style.removeProperty("width")
-        handleResize();
-        removeListleft();
-        removeListright();
     });
-
     //  ?-----------==============  Land cover ===============-----------//
     map.on('click', 'Land_Cover', function (e) {
         toggleDiv2();
-        element1.setAttribute("src", "../Geo File/Polygon Create/land-C-S-image-2018.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/land-C-S-image-2023.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
-        element8.setAttribute("src", "../Geo File/Polygon Create/land.C.barchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/land.C.Chart.2015.jpg");
-        element10.setAttribute("src", "../Geo File/Polygon Create/land.C.Chart.2020.jpg");
-        element3.style.display = "none";
-        element6.style.display = 'none';
-        element8.style.display = "block";
-        element9.style.display = "block";
-        element10.style.display = "block";
-        // element7.style.width = "100%";
-        // element7.style.height = "272px";
-        // satelite_Image.style.height = "549px";
-        sBtn_text.innerText = "2023";
-        sBtn_text1.innerText = "2018";
-        dialog_detect.style.width = "85%";
-        // satelite_Image.style.width = "56%";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
-        element4.setAttribute("href", "https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096");
-        container_dashbord.style.removeProperty("width")
-        handleResize();
-        removeListleft();
-        removeListright();
     });
-
     //  ?-----------==============  Land use ===============-----------//
     map.on('click', 'Land_Use', function (e) {
         toggleDiv2();
-        element1.setAttribute("src", "../Geo File/Polygon Create/Libya_satelliteImage.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Land-use-image.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Land-use-barchart1.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Land-use-barchart2.jpg");
-        element3.style.display = "none";
-        element6.style.display = 'none';
-        element8.style.display = "block";
-        element9.style.display = "block";
-        element10.style.display = "block";
-        element7.style.width = "100%";
-        // element7.style.height = "272px";
-        // element8.style.height = "272px";
-        // satelite_Image.style.height = "549px";
-        sBtn_text.innerText = "Land Use";
-        sBtn_text1.innerText = "satellite Image";
-        dialog_detect.style.width = "85%";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
-        // satelite_Image.style.width = "56%";
-        container_dashbord.style.removeProperty("width")
-        handleResize();
-        removeListleft();
-        removeListright();
     });
-
     //  ?-----------==============  Crop_Classification ===============-----------//
     map.on('click', 'Crop_Classification', function (e) {
         toggleDiv2();
-        element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_satelliteImage.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_Classification.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_parchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_piechart.jpg");
-        element3.style.display = "none";
-        element6.style.display = 'none';
-        element8.style.display = "block";
-        element9.style.display = "block";
-        element10.style.display = "block";
-        element7.style.width = "100%";
-        // element7.style.height = "272px";
-        // element8.style.height = "272px";
-        // satelite_Image.style.height = "549px";
-        sBtn_text.innerText = "Classification";
-        sBtn_text1.innerText = "Satellite Image";
-        dialog_detect.style.width = "85%";
-        // satelite_Image.style.width = "56%";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
-        container_dashbord.style.removeProperty("width")
-        handleResize();
-        removeListleft();
-        removeListright();
     });
-
     //  ?-----------============== Azuri_Towers_Nigeria ===============-----------//
     map.on('click', 'Azuri_Towers_Nigeria', function (e) {
         toggleDiv2();
-        element1.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-5-2016.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-2-2024.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-new.png");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-barchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-pointchart.jpg");
-        element3.style.display = "block";
-        element6.style.display = 'none';
-        element8.style.display = "block";
-        element9.style.display = "block";
-        element10.style.display = "block";
-        element7.style.width = "100%";
-        container_row2.style.height = "50%";
-        timeline.style.height = "50%";
-        sBtn_text.innerText = "2-2024";
-        sBtn_text1.innerText = "5-2016";
-        dialog_detect.style.width = "85%";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
-
-        element4.setAttribute("href", "https://www.itbng.com/azuri-peninsula-eko-atlantic-city-lagos");
-        container_dashbord.style.removeProperty("width")
-        handleResize();
-        removeListleft();
-        removeListright();
     });
 
     //  ?-----------============== TATU_CITY_KENYA ===============-----------//
     map.on('click', 'TATU_CITY_KENYA', function (e) {
-        toggleDiv2();
-        element1.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-12-2017.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-2-2024.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-News.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-Barchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-pointchart.jpg");
-        element3.style.display = "block";
-        element3.style.height = "135px";
-        element6.style.display = 'none';
-        element8.style.display = "block";
-        element9.style.display = "block";
-        element10.style.display = "block";
-        element7.style.width = "100%";
-        sBtn_text.innerText = "2-2024";
-        sBtn_text1.innerText = "12-2017";
-        dialog_detect.style.width = "85%";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
 
-        element4.setAttribute("href", "https://nellions.co.ke/blog/upcoming-residential-estates-nairobi/#9-Tatu-City");
-        container_dashbord.style.removeProperty("width")
-        handleResize();
-        removeListleft();
-        removeListright();
+
+        toggleDiv2();
     });
 
     //  ?-----------============== Crop_Health ===============-----------//
     map.on('click', 'Crop_Health', function (e) {
+
         toggleDiv2();
-        element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-21-5-2022.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-21-5-2022 NDVI.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-News.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-Digram1.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-Digram2.jpg");
-        element3.style.display = "block";
-        element3.style.height = "135px";
-        element6.style.display = 'none';
-        element8.style.display = "block";
-        element9.style.display = "block";
-        element10.style.display = "block";
-        element7.style.width = "100%";
-        // element7.style.height = "272px";
-        // element8.style.height = "272px";
-        // satelite_Image.style.height = "400px";
-        sBtn_text.innerText = "21-5-2022 NDVI";
-        sBtn_text1.innerText = "21-5-2022";
-        dialog_detect.style.width = "85%";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
-        // satelite_Image.style.width = "56%";
-        element4.setAttribute("href", "https://www.usaid.gov/kenya/agriculture-food-and-water-security");
-        container_dashbord.style.removeProperty("width")
-        handleResize();
-        removeListleft();
-        removeListright();
+
     });
 
 
     //  ?-----------============== Crop_Disease_Detection ===============-----------//
     map.on('click', 'Crop_Disease_Detection', function (e) {
+
+
         toggleDiv2();
-        element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection_Satellite-image.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection-News.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection-Circelchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection-Linechart.jpg");
-        element3.style.display = "block";
-        element3.style.height = "135px";
-        element6.style.display = 'none';
-        element8.style.display = "block";
-        element9.style.display = "block";
-        element10.style.display = "block";
-        element7.style.width = "100%";
-        // element7.style.height = "272px";
-        // element8.style.height = "272px";
-        // satelite_Image.style.height = "400px";
-        // satelite_Image.style.width = "56%";
-        sBtn_text.innerText = "Crop Disease Detection";
-        sBtn_text1.innerText = "Satellite Image";
-        dialog_detect.style.width = "85%";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
-        element4.setAttribute("href", "https://www.downtoearth.org.in/news/agriculture/savage-mode-in-a-warmer-wetter-world-pests-are-multiplying-faster-and-damaging-crops-severely-91049");
-        container_dashbord.style.removeProperty("width")
-        handleResize();
-        removeListleft();
-        removeListright();
     });
 
     //  ?-----------============== Oil_Spill_Detection ===============-----------//
     map.on('click', 'Oil_Spill_Detection', function (e) {
+
         toggleDiv2();
-        element1.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-29-6-2022.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-18-8-2022.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-news.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-parchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-pointchart.jpg");
-        element3.style.display = "block";
-        element3.style.height = "130px";
-        element6.style.display = 'none';
-        element8.style.display = "block";
-        element9.style.display = "block";
-        element10.style.display = "block";
-        element7.style.width = "100%";
-        sBtn_text.innerText = "18-8-2022";
-        sBtn_text1.innerText = "29-6-2022";
-        dialog_detect.style.width = "85%";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
-        element4.setAttribute("href", "https://enterprise.press/greeneconomys/when-oil-washed-up-on-dahabs-shores-local-residents-jumped-into-action/");
-        container_dashbord.style.removeProperty("width")
-        handleResize();
-        removeListleft();
-        removeListright();
     });
 
     //  ?-----------============== Wildfires_Detection ===============-----------//
     map.on('click', 'Wildfires', function (e) {
+
+
         toggleDiv2();
-        element1.setAttribute("src", "../Geo File/Polygon Create/Wildfires-23-7-2023.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Wildfires-29-3-2024.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Wildfires-News.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Wildfires-barchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Wildfires-saidebarchart.jpg");
-        element3.style.display = "block";
-        element3.style.height = "130px";
-        element6.style.display = 'none';
-        element8.style.display = "block";
-        element9.style.display = "block";
-        element10.style.display = "block";
-        element7.style.width = "100%";
-        container_row2.style.height = "50%";
-        timeline.style.height = "50%";
-        sBtn_text.innerText = "29-3-2024";
-        sBtn_text1.innerText = "23-7-2023";
-        dialog_detect.style.width = "85%";
-        image_date_left.style.height = '40vh';
-        image_date_right.style.height = '40vh';
-        element4.setAttribute("href", "https://www.thenationalnews.com/world/2023/07/26/horrors-of-wildfires-from-space-satellite-photos-track-blazes-in-europe-and-north-africa/");
-        container_dashbord.style.removeProperty("width")
-        handleResize();
-        removeListleft();
-        removeListright();
     });
 
     //  ?-----------============== Mining Monitoring ===============-----------//
     map.on('click', 'Mining_Monitoring', function (e) {
+
+
         toggleDiv2();
-        element1.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring-7-2013.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring-6-2022.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring_news.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring-barchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring-circalchart.jpg");
-        element3.style.display = "block";
-        element6.style.display = 'none';
-        element8.style.display = "block";
-        element9.style.display = "block";
-        element10.style.display = "block";
-        element7.style.width = "100%";
-        // element7.style.height = "272px";
-        // element8.style.height = "272px";
-        element3.style.height = "130px";
-        // satelite_Image.style.height = "400px";
-        // satelite_Image.style.width = "56%";
-        sBtn_text.innerText = "06-2022";
-        sBtn_text1.innerText = "07-2013";
-        dialog_detect.style.width = "85%";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
-        container_dashbord.style.removeProperty("width")
-        handleResize();
-        element4.setAttribute("href", "https://www.digest.tz/ongoing-struggle-with-small-scale-mining-threating-environment/");
-        removeListleft();
-        removeListright();
     });
 
 
     //  ?-----==================  Tanzania Mega Mall ===============-----------//
     map.on('click', 'Project', function (e) {
+
+
         toggleDiv2();
-        element1.setAttribute("src", "../Geo File/Polygon Create/2-2022.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/6-2023.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
-        element8.setAttribute("src", "/Dashbord/3.png");
-        element9.setAttribute("src", "/Dashbord/4.png");
-        element10.setAttribute("src", "/Dashbord/6.png");
-        element6.style.display = 'block';
-        element3.style.display = "block";
-        element8.style.display = "block";
-        element9.style.display = "block";
-        element10.style.display = "block";
-        element7.style.removeProperty("width")
-        container_dashbord.style.removeProperty("width")
-        sBtn_text.innerText = "6-2023";
-        sBtn_text1.innerText = "2-2022";
-        dialog_detect.style.width = "85%";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
-        element4.setAttribute("href", "https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096");
-        handleResize();
-        removeListleft();
-        removeListright();
     });
 
     //  ?----------==================  Squatters Camps ===============-----------//
 
     map.on('click', 'Squatters_Camps', function (e) {
-        toggleDiv2();
 
-        element1.setAttribute("src", "../Geo File/Polygon Create/Squatters_Camps-1-2020.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Squatters_Camps-12-2022.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Squatters_Camps_new.jpg");
-        element8.setAttribute("src", "");
-        element9.setAttribute("src", "");
-        element10.setAttribute("src", "");
-        element6.style.display = 'block';
-        element3.style.display = "block";
-        element8.style.display = "none";
-        element9.style.display = "none";
-        element10.style.display = "none";
-        element3.style.height = "140px";
-        element7.style.width = "100%";
-        sBtn_text.innerText = "12-2022";
-        sBtn_text1.innerText = "1-2020";
-        container_dashbord.style.width = "100%";
-        container_dashbord.style.height = "100%";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
-        handleResize();
-        element4.setAttribute("href", "https://www.sciencephoto.com/media/182797/view/squatter-camp");
-        removeListleft();
-        removeListright();
+
+        toggleDiv2();
     });
 
 
-    async function toggleDiv2() {
+    function toggleDiv2() {
         var div = document.querySelector('.dialog_detect');
         if (div.style.display === 'none' || div.style.display === '') {
             div.style.display = 'flex';
-            // Add event listener to hide div when clicking outside
-            // console.log("iam here")
             setTimeout(function () {
                 document.addEventListener('mousedown', clickOutsideDiv);
             }, 1);
-            handleResize();
-            slider()
         }
         else {
             div.style.display = 'none';
-            // Remove event listener when div is hidden
             document.removeEventListener('mousedown', clickOutsideDiv);
         }
-        // handleResize();
-
+        handleResize();
+        removeListleft();
+        removeListright();
     }
-    handleResize();
-
     function handleResize() {
         // Code to run when the window size changes
         let width_image = document.querySelector('.wrapper').getBoundingClientRect().width;
         // console.log(width_image)
         document.getElementById('img_right').style.width = width_image + "px";
         document.getElementById('img_left').style.width = width_image + "px";
+        slider()
     }
 
     window.addEventListener('resize', handleResize);
@@ -1041,7 +916,7 @@ let globalvar;
 
 
 // *==============================> Slider Comparison imege <================================//
-function slider(){
+function slider() {
     let active = false;
     document.querySelector('.scroller').addEventListener('mousedown', function () {
         active = true;
@@ -1059,30 +934,19 @@ function slider(){
         if (!active) return;
         let x = e.pageX;
         x -= document.querySelector('.wrapper').getBoundingClientRect().left;
-        // console.log(document.querySelector('.wrapper').getBoundingClientRect().width)
         scrollIt(x);
     });
-    // function scrollIt(x) {
-    //     let transform = x
-    //     document.querySelector('.after').style.width = transform + "px";
-    //     document.querySelector('.scroller').style.left = transform + "px";
-    // }
-    async function scrollIt(x) {
-        let minWidth = 0; // Assuming the minimum width is 0
+    function scrollIt(x) {
+        let minWidth = 0; 
         let maxWidth = document.querySelector('.wrapper').getBoundingClientRect().width;
-        let initialPosition = 250; // Desired starting position
-        // handleResize()
-        // Calculate the transform value
+        let initialPosition = 250; 
         let transform = initialPosition + (x - initialPosition);
-        // console.log(initialPosition + (x - initialPosition));
-        // Ensure transform stays within the range
         console.log(maxWidth);
         transform = Math.min(Math.max(transform, minWidth), maxWidth);
-        // console.log("second " + transform);
         document.querySelector('.after').style.width = transform + "px";
         document.querySelector('.scroller').style.left = transform + "px";
-    }
-    
+    };
+
     scrollIt(250);
     document.querySelector('.scroller').addEventListener('touchstart', function () {
         active = true;
@@ -1096,29 +960,24 @@ function slider(){
         active = false;
         document.querySelector('.scroller').classList.remove('scrolling');
     });
-}
+};
 // ---------------------------- To Make sidebar Active when click  ----------------------------//
 
 function setActive(elementId) {
-    // Remove active class from all elements
     document.querySelectorAll('.nav-item').forEach(item => {
         item.classList.remove('active');
     });
-    // Add active class to the clicked element
     document.getElementById(elementId).classList.add('active');
 }
-// Add event listeners to all navigation items
+
 document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', event => {
         setActive(event.currentTarget.id);
     });
 });
-// Add event listener to the document body
 document.body.addEventListener('click', event => {
     const clickedElement = event.target;
-    // Check if the clicked element is not a nav-item or a descendant of a nav-item
     if (!clickedElement.closest('.nav-item') & !document.getElementById("detect").classList.contains("active")) {
-        // If clicked element is outside nav-item, make Home active
         setActive('Home');
     }
 });
