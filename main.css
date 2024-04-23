@@ -713,13 +713,14 @@ canvas[Attributes] {
     position: absolute;
     top: 15px;
     left: 135px;
-    width: 85%;
+    width: 83%;
     height: 95%;
     background-color: #ffffff9c;
     border-radius: 40px;
     animation: detect_card 0.8s;
     display: none;
     /* z-index:00; */
+    padding: 15px;
     
 }
 .content-image {
@@ -756,7 +757,7 @@ svg {
     height: 100%;
     /* background-color: #0011ff; */
     /* position: absolute; */
-    padding: 15px 7.5px 15px 15px;
+    padding: 0px 7.5px 0px 0px;
     gap: 10px;
 }
 #page a img {
@@ -978,7 +979,7 @@ svg {
     width: 100%;
     height: 100%; 
     /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
-    padding: 15px 15px 15px 7.5px;
+    padding: 0px 0px 0px 7.5px;
 }
 
 .dashbord img {
@@ -997,7 +998,8 @@ svg {
 
 .dashbord .piechart {
     padding: 2.5px 5px 0px 0px;
-
+    width: 100%;
+    height: 100%;
 }
 
 #dashbord_img2 {
@@ -1099,4 +1101,49 @@ svg {
     padding-right: 0px;
     padding-left: 0px;
     margin-top: var(--bs-gutter-y);
+}
+/* .detection_icon{
+    background-image: url("https://icons8.com/icons/set/land");
+} */
+
+
+#detect img{
+    text-align: center;
+    /* padding-top: 5px; */
+    margin-top: 5px;
+}
+
+#icon_land{
+    transition: all 0.8s;
+    width: 35px;
+    height: 35px;
+    background-image: url("https://img.icons8.com/ios/0D6EFD/country--v1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* .nav-link:focus,
+.nav-link:hover {
+    color: #ffffff;
+} */
+
+.detection_icon:hover #icon_land,
+.detection_icon:focus #icon_land{
+    background-image: url("https://img.icons8.com/ios/ffffff/country--v1.png");
+}
+#icon_land:focus{
+    background-image: url("https://img.icons8.com/ios/ffffff/country--v1.png");
+}
+
+
+.detection_icon.active {
+    color: #fff;
+    background-color: #00000054 !important;
+    border-radius: 30px !important;
+    animation: 0.5s;
+    transition: all 0.5s linear;
+    #icon_land{
+        background-image: url("https://img.icons8.com/ios/ffffff/country--v1.png");
+    }
 }

@@ -66,13 +66,23 @@ function toggleDiv() {
 }
 function clickOutsideDiv1(event) {
     var div = document.querySelector('.list_detection');
+    console.log(event.target.innerHTML)
+    // if ((div.contains(event.target.innerHTML)) == "kkkonitoring Projects") {
+    //     div.style.display = 'block';
+    //     document.addEventListener('click', clickOutsideDiv1);
+    // }
     if (!div.contains(event.target)) {
         div.style.display = 'none';
         document.removeEventListener('click', clickOutsideDiv1);
     }
     else if (div.contains(event.target)) {
-        div.style.display = 'none';
-        document.removeEventListener('click', clickOutsideDiv1);
+        if(event.target.innerHTML == "Monitoring Projects"){
+            div.style.display = 'block';
+            document.addEventListener('click', clickOutsideDiv1);
+        }else{
+            div.style.display = 'none';
+            document.removeEventListener('click', clickOutsideDiv1);
+        }
     }
 }
 
@@ -197,7 +207,6 @@ function switchPage() {
 }
 //-------------------- Map Part ----------------------//
 
-
 // !---------------------- Fetch the GeoJSON data ----------------------//
 
 let layer;
@@ -310,11 +319,10 @@ function mapContent() {
         element8.style.display = "block";
         element9.style.display = "block";
         element10.style.display = "block";
-        element7.style.removeProperty("width")
+        element7.style.width = "58%";
         container_dashbord.style.removeProperty("width")
         sBtn_text.innerText = "6-2023";
         sBtn_text1.innerText = "2-2022";
-        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096");
@@ -331,8 +339,8 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Data/Forest_Logging_Detection/6-1-2023.jpg");
-        element2.setAttribute("src", "../Data/Forest_Logging_Detection/10-3-2024.jpg");
+        element1.setAttribute("src", "../Geo File/Polygon Create/6-1-2023.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/10-3-2024.jpg");
         element3.setAttribute("src", "../Geo File/Polygon Create/Forest_Logging_News.png");
         element8.setAttribute("src", "Data/Forest_Logging_Detection/Dashboed/11.png");
         element9.setAttribute("src", "Data/Forest_Logging_Detection/Dashboed/13.png");
@@ -347,7 +355,6 @@ function mapContent() {
         element4.setAttribute("href", "https://www.lifegate.com/congo-basin-rainforest-logging")
         sBtn_text.innerText = "10-3-2024";
         sBtn_text1.innerText = "6-1-2023";
-        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         container_dashbord.style.removeProperty("width");
@@ -374,9 +381,11 @@ function mapContent() {
         element8.style.display = "block";
         element9.style.display = "block";
         element10.style.display = "block";
+        container_row2.style.height = "50%";
+        timeline.style.height = "50%";
+        element7.style.width = "100%";
         sBtn_text.innerText = "2023";
         sBtn_text1.innerText = "2018";
-        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096");
@@ -399,7 +408,7 @@ function mapContent() {
         element8.setAttribute("src", "");
         element9.setAttribute("src", "");
         element10.setAttribute("src", "");
-        element6.style.display = 'block';
+        element6.style.display = 'none';
         element3.style.display = "block";
         element8.style.display = "none";
         element9.style.display = "none";
@@ -425,8 +434,8 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Libya_satelliteImage.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Land-use-image.jpg");
+        element1.setAttribute("src", "../Geo File/Polygon Create/Libya_satelliteImage1.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Land-use-image1.jpg");
         element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
         element8.setAttribute("src", "../Geo File/Polygon Create/Land-use-barchart1.jpg");
         element9.setAttribute("src", "../Geo File/Polygon Create/Land-use-barchart2.jpg");
@@ -437,8 +446,9 @@ function mapContent() {
         element10.style.display = "block";
         element7.style.width = "100%";
         sBtn_text.innerText = "Land Use";
+        container_row2.style.height = "50%";
+        timeline.style.height = "50%";
         sBtn_text1.innerText = "satellite Image";
-        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         container_dashbord.style.removeProperty("width");
@@ -469,7 +479,6 @@ function mapContent() {
         timeline.style.height = "50%";
         sBtn_text.innerText = "2-2024";
         sBtn_text1.innerText = "5-2016";
-        dialog_detect.style.width = "85%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://www.itbng.com/azuri-peninsula-eko-atlantic-city-lagos");
@@ -500,13 +509,13 @@ function mapContent() {
         element7.style.width = "100%";
         sBtn_text.innerText = "2-2024";
         sBtn_text1.innerText = "12-2017";
-        dialog_detect.style.width = "85%";
+        container_row2.style.height = "50%";
+        timeline.style.height = "50%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://nellions.co.ke/blog/upcoming-residential-estates-nairobi/#9-Tatu-City");
         container_dashbord.style.removeProperty("width");
     });
-
     // ^---------------------------------- Crop Classification -----------------------------//
     crop_Classification.addEventListener("click", async function () {
         await Refetch("Crop_Classification")
@@ -518,7 +527,7 @@ function mapContent() {
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
         element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_satelliteImage.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_Classification.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_Classification.png");
         element8.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_parchart.jpg");
         element9.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_piechart.jpg");
         element3.style.display = "none";
@@ -529,7 +538,8 @@ function mapContent() {
         element7.style.width = "100%";
         sBtn_text.innerText = "Classification";
         sBtn_text1.innerText = "Satellite Image";
-        dialog_detect.style.width = "85%";
+        container_row2.style.height = "50%";
+        timeline.style.height = "50%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         container_dashbord.style.removeProperty("width");
@@ -559,7 +569,8 @@ function mapContent() {
         element3.style.height = "130px";
         sBtn_text.innerText = "06-2022";
         sBtn_text1.innerText = "07-2013";
-        dialog_detect.style.width = "85%";
+        container_row2.style.height = "50%";
+        timeline.style.height = "50%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         container_dashbord.style.removeProperty("width")
@@ -575,8 +586,8 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-29-6-2022.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-18-8-2022.jpg");
+        element1.setAttribute("src", "../Geo File/Polygon Create/oil_spill_3-8-2022.PNG");
+        element2.setAttribute("src", "../Geo File/Polygon Create/oil_spill_12-10-2022.PNG");
         element3.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-news.jpg");
         element8.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-parchart.jpg");
         element9.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-pointchart.jpg");
@@ -586,10 +597,11 @@ function mapContent() {
         element8.style.display = "block";
         element9.style.display = "block";
         element10.style.display = "block";
+        container_row2.style.height = "48.2%";
+        timeline.style.height = "50%";
         element7.style.width = "100%";
-        sBtn_text.innerText = "18-8-2022";
-        sBtn_text1.innerText = "29-6-2022";
-        dialog_detect.style.width = "85%";
+        sBtn_text.innerText = "12-10-2022";
+        sBtn_text1.innerText = "3-8-2022";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://enterprise.press/greeneconomys/when-oil-washed-up-on-dahabs-shores-local-residents-jumped-into-action/");
@@ -622,9 +634,8 @@ function mapContent() {
         timeline.style.height = "50%";
         sBtn_text.innerText = "29-3-2024";
         sBtn_text1.innerText = "23-7-2023";
-        dialog_detect.style.width = "85%";
-        image_date_left.style.height = '40vh';
-        image_date_right.style.height = '40vh';
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://www.thenationalnews.com/world/2023/07/26/horrors-of-wildfires-from-space-satellite-photos-track-blazes-in-europe-and-north-africa/");
         container_dashbord.style.removeProperty("width");
     });
@@ -653,7 +664,8 @@ function mapContent() {
         element7.style.width = "100%";
         sBtn_text.innerText = "Crop Disease Detection";
         sBtn_text1.innerText = "Satellite Image";
-        dialog_detect.style.width = "85%";
+        container_row2.style.height = "50%";
+        timeline.style.height = "50%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://www.downtoearth.org.in/news/agriculture/savage-mode-in-a-warmer-wetter-world-pests-are-multiplying-faster-and-damaging-crops-severely-91049");
@@ -670,8 +682,8 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-21-5-2022.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-21-5-2022 NDVI.jpg");
+        element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-11-3-2023.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-11-3-2023 NDVI.jpg");
         element3.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-News.jpg");
         element8.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-Digram1.jpg");
         element9.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-Digram2.jpg");
@@ -682,11 +694,12 @@ function mapContent() {
         element9.style.display = "block";
         element10.style.display = "block";
         element7.style.width = "100%";
-        sBtn_text.innerText = "21-5-2022 NDVI";
-        sBtn_text1.innerText = "21-5-2022";
-        dialog_detect.style.width = "85%";
+        sBtn_text.innerText = "11-3-2023 NDVI";
+        sBtn_text1.innerText = "11-3-2023";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
+        container_row2.style.height = "49%";
+        timeline.style.height = "50%";
         // satelite_Image.style.width = "56%";
         element4.setAttribute("href", "https://www.usaid.gov/kenya/agriculture-food-and-water-security");
         container_dashbord.style.removeProperty("width");
@@ -790,85 +803,6 @@ function mapContent() {
 
     // &======================== click layer to appear popup Detection ========================//
 
-    // //  ?-----==============  Forest Logging Detection ===============-----------//
-    // map.on('click', 'Forest_Logging_Detection', function (e) {
-    //     toggleDiv2();
-    // });
-    // //  ?-----------==============  Land cover ===============-----------//
-    // map.on('click', 'Land_Cover', function (e) {
-    //     toggleDiv2();
-    // });
-    // //  ?-----------==============  Land use ===============-----------//
-    // map.on('click', 'Land_Use', function (e) {
-    //     toggleDiv2();
-    // });
-    // //  ?-----------==============  Crop_Classification ===============-----------//
-    // map.on('click', 'Crop_Classification', function (e) {
-    //     toggleDiv2();
-    // });
-    // //  ?-----------============== Azuri_Towers_Nigeria ===============-----------//
-    // map.on('click', 'Azuri_Towers_Nigeria', function (e) {
-    //     toggleDiv2();
-    // });
-
-    // //  ?-----------============== TATU_CITY_KENYA ===============-----------//
-    // map.on('click', 'TATU_CITY_KENYA', function (e) {
-
-
-    //     toggleDiv2();
-    // });
-
-    // //  ?-----------============== Crop_Health ===============-----------//
-    // map.on('click', 'Crop_Health', function (e) {
-
-    //     toggleDiv2();
-
-    // });
-
-
-    // //  ?-----------============== Crop_Disease_Detection ===============-----------//
-    // map.on('click', 'Crop_Disease_Detection', function (e) {
-
-
-    //     toggleDiv2();
-    // });
-
-    // //  ?-----------============== Oil_Spill_Detection ===============-----------//
-    // map.on('click', 'Oil_Spill_Detection', function (e) {
-
-    //     toggleDiv2();
-    // });
-
-    // //  ?-----------============== Wildfires_Detection ===============-----------//
-    // map.on('click', 'Wildfires', function (e) {
-
-
-    //     toggleDiv2();
-    // });
-
-    // //  ?-----------============== Mining Monitoring ===============-----------//
-    // map.on('click', 'Mining_Monitoring', function (e) {
-
-
-    //     toggleDiv2();
-    // });
-
-
-    // //  ?-----==================  Tanzania Mega Mall ===============-----------//
-    // map.on('click', 'Project', function (e) {
-
-
-    //     toggleDiv2();
-    // });
-
-    // //  ?----------==================  Squatters Camps ===============-----------//
-
-    // map.on('click', 'Squatters_Camps', function (e) {
-
-
-    //     toggleDiv2();
-    // });
-
     var layerNames = [
         'Forest_Logging_Detection',
         'Land_Cover',
@@ -884,10 +818,10 @@ function mapContent() {
         'Project',
         'Squatters_Camps'
     ];
-    
+
     // Loop through the array and bind the click event for each layer
-    layerNames.forEach(function(layerName) {
-        map.on('click', layerName, function(e) {
+    layerNames.forEach(function (layerName) {
+        map.on('click', layerName, function (e) {
             toggleDiv2();
             // console.log(layerName)
         });
@@ -960,9 +894,9 @@ function slider() {
         scrollIt(x);
     });
     function scrollIt(x) {
-        let minWidth = 0; 
+        let minWidth = 0;
         let maxWidth = document.querySelector('.wrapper').getBoundingClientRect().width;
-        let initialPosition = 250; 
+        let initialPosition = 250;
         let transform = initialPosition + (x - initialPosition);
         transform = Math.min(Math.max(transform, minWidth), maxWidth);
         document.querySelector('.after').style.width = transform + "px";
@@ -1013,11 +947,11 @@ function linkedImageWithSelect(idlayer) {
         'Land_Cover': ["2023", "2018"],
         'Squatters_Camps': ["12-2022", "1-2020"],
         'Azuri_Towers_Nigeria': ["2-2024", "1-2020", "12-2018", "2-2018", "5-2016"],
-        'TATU_CITY_KENYA': ["2-2024", "1-2023", "2-2022", "1-2020", "1-2019", "12-2017"],
-        'Mining_Monitoring': ["6-2022", "6-2020", "7-2019", "10-2017", "6-2014", "7-2013"],
-        'Oil_Spill_Detection': ["18-8-2022", "3-8-2022", "29-7-2022", "14-7-2022", "29-6-2022"],
-        'Wildfires': ["29-3-2024", "9-3-2024", "13-2-2024", "8-2-2024", "29-1-2024", "4-1-2024", "25-12-2023", "10-12-2023", "30-11-2023", "20-11-2023", "15-11-2023", "11-10-2023", "6-10-2023", "1-10-2023", "21-9-2023", "1-9-2023", "22-8-2023", "17-8-2023", "12-8-2023", "23-7-2023"],
-        'Crop_Health': ["21-5-2022", "21-5-2022 NDVI", "11-3-2024", "11-3-2024 NDVI"]
+        'TATU_CITY_KENYA': ["2-2024", "1-2023", "2-2021", "1-2020", "1-2019", "12-2017"],
+        'Mining_Monitoring': ["6-2022", "6-2020", "10-2017", "6-2014", "7-2013"],
+        'Oil_Spill_Detection': ["12-10-2022", "27-9-2022", "3-8-2022"],
+        'Wildfires': ["29-3-2024", "30-11-2023", "11-10-2023", "23-7-2023"],
+        'Crop_Health': ["21-5-2022", "21-5-2022 NDVI", "11-3-2023", "11-3-2023 NDVI"]
     };
     const fileNames = fileNamesMap[idlayer] || [];
     displayFileNames(fileNames);
@@ -1079,7 +1013,7 @@ function handleOptionClick(option) {
         "Azuri_Towers_Nigeria": `../Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption}.jpg`,
         "TATU_CITY_KENYA": `../Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption}.jpg`,
         "Mining_Monitoring": `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption}.jpg`,
-        "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_Detection-${selectedOption}.jpg`,
+        "Oil_Spill_Detection": `../Geo File/Polygon Create/oil_spill_${selectedOption}.PNG`,
         "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption}.jpg`,
         "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption}.jpg`
     };
@@ -1088,7 +1022,6 @@ function handleOptionClick(option) {
         element1.setAttribute("src", imagePath);
     }
 }
-
 
 function handleOptionClick1(option) {
     const selectedOption1 = option.querySelector(".option-text1").innerText;
@@ -1103,7 +1036,7 @@ function handleOptionClick1(option) {
         "Azuri_Towers_Nigeria": `../Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption1}.jpg`,
         "TATU_CITY_KENYA": `../Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption1}.jpg`,
         "Mining_Monitoring": `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption1}.jpg`,
-        "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_Detection-${selectedOption1}.jpg`,
+        "Oil_Spill_Detection": `../Geo File/Polygon Create/oil_spill_${selectedOption1}.PNG`,
         "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption1}.jpg`,
         "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption1}.jpg`
     };
@@ -1113,6 +1046,8 @@ function handleOptionClick1(option) {
     }
 }
 
+
+// ====================== To show Montoring List ==================== //
 selectBtn.addEventListener("click", handleSelectButtonClick);
 selectBtn1.addEventListener("click", handleSelectButtonClick1);
 
@@ -1127,5 +1062,22 @@ target.addEventListener('mouseleave', function () {
 });
 allhoverable.addEventListener('mouseover', function () {
     target.style.display = 'none';
+});
+
+
+
+const detection_icon = document.querySelector('.detection_icon');
+const icon_land = document.getElementById("icon_land")
+detection_icon.addEventListener('mouseover', function () {
+    icon_land.setAttribute("src", "https://img.icons8.com/ios/ffffff/country--v1.png");
+});
+detection_icon.addEventListener('click', function () {
+    icon_land.setAttribute("src", "https://img.icons8.com/ios/ffffff/country--v1.png");
+});
+detection_icon.addEventListener('focus', function () {
+    icon_land.setAttribute("src", "https://img.icons8.com/ios/ffffff/country--v1.png");
+});
+detection_icon.addEventListener('mouseleave', function () {
+    icon_land.setAttribute("src", "https://img.icons8.com/ios/0D6EFD/country--v1.png");
 });
 

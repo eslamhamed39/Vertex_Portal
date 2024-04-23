@@ -17,8 +17,9 @@
 
 @media (min-width: 1550px) {
     #dialog_detect{
-    height: 95%;
-
+    top: 40px;
+    height: 80%;
+    width: 85%;
     }
 }
 @media (min-width: 992px){
