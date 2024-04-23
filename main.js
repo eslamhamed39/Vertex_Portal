@@ -578,35 +578,35 @@ function mapContent() {
     });
 
     // ^---------------------------------- Oil Spill Detection -----------------------------//
-    oil_Spill_Detection.addEventListener("click", async function () {
-        await Refetch("Oil_Spill_Detection")
-        try {
-            removeAllSourceLayers(map)
-        } catch (error) {
-        }
-        await map.addLayer(layer);
-        await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/oil_spill_3-8-2022.PNG");
-        element2.setAttribute("src", "../Geo File/Polygon Create/oil_spill_12-10-2022.PNG");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-news.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-parchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-pointchart.jpg");
-        element3.style.display = "block";
-        element3.style.height = "130px";
-        element6.style.display = 'none';
-        element8.style.display = "block";
-        element9.style.display = "block";
-        element10.style.display = "block";
-        container_row2.style.height = "48.2%";
-        timeline.style.height = "50%";
-        element7.style.width = "100%";
-        sBtn_text.innerText = "12-10-2022";
-        sBtn_text1.innerText = "3-8-2022";
-        image_date_left.style.height = 'auto';
-        image_date_right.style.height = 'auto';
-        element4.setAttribute("href", "https://enterprise.press/greeneconomys/when-oil-washed-up-on-dahabs-shores-local-residents-jumped-into-action/");
-        container_dashbord.style.removeProperty("width");
-    });
+    // oil_Spill_Detection.addEventListener("click", async function () {
+    //     await Refetch("Oil_Spill_Detection")
+    //     try {
+    //         removeAllSourceLayers(map)
+    //     } catch (error) {
+    //     }
+    //     await map.addLayer(layer);
+    //     await map.addLayer(layer_outline);
+    //     element1.setAttribute("src", "../Geo File/Polygon Create/oil_spill_3-8-2022.PNG");
+    //     element2.setAttribute("src", "../Geo File/Polygon Create/oil_spill_12-10-2022.PNG");
+    //     element3.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-news.jpg");
+    //     element8.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-parchart.jpg");
+    //     element9.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-pointchart.jpg");
+    //     element3.style.display = "block";
+    //     element3.style.height = "130px";
+    //     element6.style.display = 'none';
+    //     element8.style.display = "block";
+    //     element9.style.display = "block";
+    //     element10.style.display = "block";
+    //     container_row2.style.height = "48.2%";
+    //     timeline.style.height = "50%";
+    //     element7.style.width = "100%";
+    //     sBtn_text.innerText = "12-10-2022";
+    //     sBtn_text1.innerText = "3-8-2022";
+    //     image_date_left.style.height = 'auto';
+    //     image_date_right.style.height = 'auto';
+    //     element4.setAttribute("href", "https://enterprise.press/greeneconomys/when-oil-washed-up-on-dahabs-shores-local-residents-jumped-into-action/");
+    //     container_dashbord.style.removeProperty("width");
+    // });
 
     // ^---------------------------------- Wildfires Detection -----------------------------//
     wildfires.addEventListener("click", async function () {
@@ -770,7 +770,7 @@ function mapContent() {
     handleMapClick('TATU_CITY_KENYA', [36.8897801, -1.1556409], 16, 45);
     handleMapClick('Crop_Classification', [37.934, 0.927], 5.5, 45);
     handleMapClick('Mining_Monitoring', [39.379219, -7.161839], 15, 45);
-    handleMapClick('Oil_Spill_Detection', [34.986951, 29.527043], 13, 45);
+    // handleMapClick('Oil_Spill_Detection', [34.986951, 29.527043], 13, 45);
     handleMapClick('Wildfires', [4.82700, 36.69667], 9, 45);
     handleMapClick('Crop_Disease_Detection', [35.25887, -0.38983], 13, 45);
     handleMapClick('Crop_Health', [36.05687, -0.23038], 13, 45);
