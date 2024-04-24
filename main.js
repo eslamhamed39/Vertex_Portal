@@ -905,9 +905,12 @@ function mapContent() {
     });
     map.on('load', function() {
         setTimeout(function() { load_map(); }, 1000);
+        // load_map()
     });
 }
 function load_map() {
+    const map = document.getElementById('map');
+    map.style.opacity = "1";
     Home_section.classList.add("Home_section")
     Home_section.style.opacity ="1";
     side_bar.style.opacity ="1";
