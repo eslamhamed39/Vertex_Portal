@@ -127,30 +127,32 @@ body {
     }
 }
 
-.Home_section{
+.Home_section {
     opacity: 0;
-    animation: appear_map 4s ease-in-out ;
+    animation: appear_map 2s ease-in-out;
 }
 
-@keyframes appear_map{
+@keyframes appear_map {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
 
 
-.Side_bar_hidden{
+.Side_bar_hidden {
     opacity: 0;
-    animation: appear_map 4s ease-in-out ;
+    animation: appear_map 2s ease-in-out;
 }
 
-@keyframes appear_map{
+@keyframes appear_map {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
