@@ -37,7 +37,9 @@ const dialog_detect = document.getElementById("dialog_detect");
 const container_row2 = document.querySelector(".container_row2");
 const timeline = document.querySelector(".timeline");
 const container_dashbord = document.querySelector(".container_dashbord ");
-
+const loading = document.querySelector(".loading ");
+const home_content = document.querySelector(".home_content");
+const side_bar = document.querySelector(".Side_bar");
 
 
 // todo:------------------------- i end here ----------------------------//
@@ -76,10 +78,10 @@ function clickOutsideDiv1(event) {
         document.removeEventListener('click', clickOutsideDiv1);
     }
     else if (div.contains(event.target)) {
-        if(event.target.innerHTML == "Monitoring Projects"){
+        if (event.target.innerHTML == "Monitoring Projects") {
             div.style.display = 'block';
             document.addEventListener('click', clickOutsideDiv1);
-        }else{
+        } else {
             div.style.display = 'none';
             document.removeEventListener('click', clickOutsideDiv1);
         }
@@ -193,19 +195,26 @@ function time() {
         // success_panel.classList.replace("d-inline-block", "d-none");
     }, 4000);
 }
-function btnTime() {
-    setTimeout(() => {
-        success_panel.classList.replace("d-inline-block", "d-none");
-        checkAfterAction()
-    }, 3998);
-}
+
 //-------------------- function to Switch login & logout page ----------------------//
 function switchPage() {
-    loginPage.classList.replace("d-block", "d-none");
+    loginPage.classList.replace("d-block", "loading_hidden");
     window.location.pathname = "/Home.html";
     // window.location.pathname = "http://85.31.237.210:8080/portal_v1/Home.html";
 }
-//-------------------- Map Part ----------------------//
+
+// setTimeout(() => {
+//     loading.classList.replace("d-block", "d-none");
+//     // home_content.classList.replace("d-none", "d-iznlineblock");
+
+// }, 2800);
+// setTimeout(() => {
+//     // home_content.classList.replace("d-none", "d-iznlineblock");
+//     Home_section.style.opacity = "1";
+//     // side_bar.classList.replace("d-none", "d-flex");
+// }, 3000);
+
+
 
 // !---------------------- Fetch the GeoJSON data ----------------------//
 
@@ -235,6 +244,32 @@ async function Refetch(layerID, status) {
     // response();
 }
 
+
+function loadTomTomAPI() {
+    return new Promise((resolve, reject) => {
+        // Load the TomTom API asynchronously
+        const script = document.createElement('script');
+        script.src = 'https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.69.0/maps/maps-web.min.js';
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+    });
+}
+
+async function initializeMap() {
+    try {
+        // Wait for the TomTom API to finish loading
+        await loadTomTomAPI();
+        mapContent()
+
+    } catch (error) {
+        console.error('Error loading TomTom API:', error);
+    }
+}
+
+// Call initializeMap when your page is ready
+initializeMap();
 
 
 
@@ -868,6 +903,15 @@ function mapContent() {
         // getLayerId();
         linkedImageWithSelect(globalvar);
     });
+    map.on('load', function() {
+        setTimeout(function() { load_map(); }, 1000);
+    });
+}
+function load_map() {
+    Home_section.classList.add("Home_section")
+    Home_section.style.opacity ="1";
+    side_bar.style.opacity ="1";
+    loading.classList.add("loading_hidden")
 }
 let globalvar;
 
@@ -1048,8 +1092,10 @@ function handleOptionClick1(option) {
 
 
 // ====================== To show Montoring List ==================== //
-selectBtn.addEventListener("click", handleSelectButtonClick);
-selectBtn1.addEventListener("click", handleSelectButtonClick1);
+setTimeout(() => {
+    selectBtn.addEventListener("click", handleSelectButtonClick);
+    selectBtn1.addEventListener("click", handleSelectButtonClick1);
+}, 3000);
 
 const hoverable = document.querySelector('.Montoring_project');
 const allhoverable = document.querySelector('.main_list_li');
@@ -1081,3 +1127,13 @@ detection_icon.addEventListener('mouseleave', function () {
     icon_land.setAttribute("src", "https://img.icons8.com/ios/0D6EFD/country--v1.png");
 });
 
+
+
+// *------------------------- Login page------------------------//
+
+
+// const login_logo = document.querySelectorAll("#V_logo path");
+
+// for(let i = 0; i < login_logo.length; i++){
+//     console.log(` element ${i} is ${login_logo[i].getTotalLength()}`);
+// }

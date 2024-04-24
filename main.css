@@ -19,11 +19,143 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE 10+ */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
 }
+
+
+/* *======================== Login page ========================* */
+
+.loading {
+    background-color: #000000c5;
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+    /* transition: all 1.5s ease; */
+    display: block;
+    /* animation: hide 1.5s ease-in-out forwards 1.5s; */
+    z-index: 99999;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.loading_hidden {
+    animation: hide 1.5s ease-in-out forwards 1.5s;
+}
+
+#V_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fill 1.5s ease-in-out forwards 1.5s;
+}
+
+#V_logo path:nth-child(1) {
+    stroke-dasharray: 634.643;
+    stroke-dashoffset: 634.643;
+    animation: line-anim 1s ease forwards 0.1s;
+}
+
+#V_logo path:nth-child(2) {
+    stroke-dasharray: 659.999;
+    stroke-dashoffset: 659.999;
+    animation: line-anim 1s ease forwards 0.3s;
+}
+
+#V_logo path:nth-child(3) {
+    stroke-dasharray: 747.408;
+    stroke-dashoffset: 747.408;
+    animation: line-anim 1s ease forwards 0.6s;
+}
+
+#V_logo path:nth-child(4) {
+    stroke-dasharray: 496;
+    stroke-dashoffset: 496;
+    animation: line-anim 1s ease forwards 0.9s;
+
+}
+
+#V_logo path:nth-child(5) {
+    stroke-dasharray: 659.999;
+    stroke-dashoffset: 659.999;
+    animation: line-anim 1s ease forwards 1.2s;
+
+}
+
+#V_logo path:nth-child(6) {
+    stroke-dasharray: 695.288;
+    stroke-dashoffset: 695.288;
+    animation: line-anim 1s ease forwards 1.5s;
+}
+
+
+@keyframes line-anim {
+    to {
+        /* stroke-dasharray: 0; */
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill {
+    from {
+        fill: transparent;
+    }
+
+    to {
+        fill: white;
+
+    }
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.Home_section{
+    opacity: 0;
+    animation: appear_map 4s ease-in-out ;
+}
+
+@keyframes appear_map{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.Side_bar_hidden{
+    animation: appear_map 4s ease-in-out ;
+}
+
+@keyframes appear_map{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
 
 .background {
     width: 430px;
@@ -202,13 +334,13 @@ input:-webkit-autofill:active {
     /* top:-40px; */
 }
 
-#loginPage .image img{
+#loginPage .image img {
     width: 70%;
 }
 
 /* img { */
-    /* width: 220px; */
-    /* background-color: #e5e5e5; */
+/* width: 220px; */
+/* background-color: #e5e5e5; */
 /* } */
 
 .status,
@@ -394,6 +526,7 @@ h5 {
 .Side_bar {
     width: 100px;
     height: inherit;
+    opacity: 0;
 }
 
 .container_sidebar {
@@ -721,8 +854,9 @@ canvas[Attributes] {
     display: none;
     /* z-index:00; */
     padding: 15px;
-    
+
 }
+
 .content-image {
     /* width: 700px; */
     height: 100%;
@@ -760,6 +894,7 @@ svg {
     padding: 0px 7.5px 0px 0px;
     gap: 10px;
 }
+
 #page a img {
     width: 100%;
     /* height: 100px; */
@@ -977,7 +1112,7 @@ svg {
     /* top: 15px; */
     /* right: 15px; */
     width: 100%;
-    height: 100%; 
+    height: 100%;
     /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
     padding: 0px 0px 0px 7.5px;
 }
@@ -1102,18 +1237,19 @@ svg {
     padding-left: 0px;
     margin-top: var(--bs-gutter-y);
 }
+
 /* .detection_icon{
     background-image: url("https://icons8.com/icons/set/land");
 } */
 
 
-#detect img{
+#detect img {
     text-align: center;
     /* padding-top: 5px; */
     margin-top: 5px;
 }
 
-#icon_land{
+#icon_land {
     transition: all 0.8s;
     width: 35px;
     height: 35px;
@@ -1129,10 +1265,11 @@ svg {
 } */
 
 .detection_icon:hover #icon_land,
-.detection_icon:focus #icon_land{
+.detection_icon:focus #icon_land {
     background-image: url("https://img.icons8.com/ios/ffffff/country--v1.png");
 }
-#icon_land:focus{
+
+#icon_land:focus {
     background-image: url("https://img.icons8.com/ios/ffffff/country--v1.png");
 }
 
@@ -1143,7 +1280,8 @@ svg {
     border-radius: 30px !important;
     animation: 0.5s;
     transition: all 0.5s linear;
-    #icon_land{
+
+    #icon_land {
         background-image: url("https://img.icons8.com/ios/ffffff/country--v1.png");
     }
 }
