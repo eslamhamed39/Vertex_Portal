@@ -68,12 +68,13 @@ function toggleDiv() {
 }
 function clickOutsideDiv1(event) {
     var div = document.querySelector('.list_detection');
-    console.log(event.target.innerHTML)
+    // console.log(event.target.innerHTML)
     // if ((div.contains(event.target.innerHTML)) == "kkkonitoring Projects") {
     //     div.style.display = 'block';
     //     document.addEventListener('click', clickOutsideDiv1);
     // }
     if (!div.contains(event.target)) {
+        target.style.display = 'none';
         div.style.display = 'none';
         document.removeEventListener('click', clickOutsideDiv1);
     }
@@ -276,9 +277,14 @@ initializeMap();
 
 
 function mapContent() {
+    let viewport_width2 = document.documentElement.getBoundingClientRect().height;
     var api_key = 'YZlbkr2ee2sbGy3dZsWG85VE4mPsibyQ';
     var latAndLong = { lat: 4.012114320491342, lng: 21.667170602629522 };
-    var zoomLevel = 2.2;
+    if(viewport_width2 < 620){
+        var zoomLevel = 1.6;
+    }else{
+        var zoomLevel = 2.2;
+    }
     var map = tt.map({
         container: 'map',
         key: api_key,
@@ -785,14 +791,26 @@ function mapContent() {
     //--------------------------------- End polygon creation --------------------------------//
     function handleMapClick(id, newCoordinates, newZoomLevel, angle) {
         document.getElementById(id).addEventListener('click', function () {
-            var duration = 6000;
-            map.flyTo({
+            let viewport_width = document.documentElement.getBoundingClientRect().height;
+            if (viewport_width < 620){
+                var duration = 6000;
+                map.flyTo({
                 center: newCoordinates,
-                zoom: newZoomLevel,
+                zoom: newZoomLevel-1,
                 duration: duration,
                 pitch: angle,
                 // bearing: 0,
-            });
+                });
+            }else{
+                var duration = 6000;
+                map.flyTo({
+                    center: newCoordinates,
+                    zoom: newZoomLevel,
+                    duration: duration,
+                    pitch: angle,
+                    // bearing: 0,
+                });
+            }
         });
     }
     handleMapClick('Home', [21.667170602629522, 4.012114320491342], 2.2, 0);
@@ -801,7 +819,7 @@ function mapContent() {
     handleMapClick('Project', [39.2022738, -6.6880111], 16, 45);
     handleMapClick('Land_Use', [16.415, 27.525], 4.8, 45);
     handleMapClick('Squatters_Camps', [31.0187547, -29.8457573], 18, 45);
-    handleMapClick('Azuri_Towers_Nigeria', [3.4063485, 6.4027519], 18, 45);
+    handleMapClick('Azuri_Towers_Nigeria', [3.4063485, 6.4027519], 16.9, 45);
     handleMapClick('TATU_CITY_KENYA', [36.8897801, -1.1556409], 16, 45);
     handleMapClick('Crop_Classification', [37.934, 0.927], 5.5, 45);
     handleMapClick('Mining_Monitoring', [39.379219, -7.161839], 15, 45);
@@ -952,16 +970,28 @@ function slider() {
 
     scrollIt(250);
     document.querySelector('.scroller').addEventListener('touchstart', function () {
+        console.log('Touch start');
         active = true;
         document.querySelector('.scroller').classList.add('scrolling');
     });
+    
     document.body.addEventListener('touchend', function () {
+        console.log('Touch end');
         active = false;
         document.querySelector('.scroller').classList.remove('scrolling');
     });
+    
     document.body.addEventListener('touchcancel', function () {
+        console.log('Touch cancel');
         active = false;
         document.querySelector('.scroller').classList.remove('scrolling');
+    });
+    
+    document.body.addEventListener('touchmove', function (e) {
+        if (!active) return;
+        let x = e.touches[0].pageX;
+        x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+        scrollIt(x);
     });
 };
 // ---------------------------- To Make sidebar Active when click  ----------------------------//
@@ -972,6 +1002,7 @@ function setActive(elementId) {
     });
     document.getElementById(elementId).classList.add('active');
 }
+
 
 document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', event => {
@@ -1101,17 +1132,31 @@ setTimeout(() => {
 }, 3000);
 
 const hoverable = document.querySelector('.Montoring_project');
-const allhoverable = document.querySelector('.main_list_li');
+const allhoverable = document.querySelectorAll('.main_list_li');
 const target = document.querySelector('.list_detection2');
 hoverable.addEventListener('mouseover', function () {
     target.style.display = 'block';
+    hoverable.style.background =' #0000003d';
+    hoverable.querySelector('a').style.color ='#ffffff';
 });
 target.addEventListener('mouseleave', function () {
     target.style.display = 'none';
+    hoverable.style.background =' none';
+    hoverable.querySelector('a').style.color ='#0011ff';
 });
-allhoverable.addEventListener('mouseover', function () {
+target.addEventListener('click', function () {
     target.style.display = 'none';
+    hoverable.style.background =' none';
+    hoverable.querySelector('a').style.color ='#0011ff';
 });
+for (let i = 0; i < allhoverable.length; i++) {
+    allhoverable[i].addEventListener("mouseover", function() {
+        target.style.display = 'none';
+        hoverable.style.background =' none';
+        hoverable.querySelector('a').style.color ='#0011ff';
+    });
+}
+
 
 
 

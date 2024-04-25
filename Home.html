@@ -30,28 +30,28 @@
   <div class=" w-100 vh-100 d-block" id="Home_section">
     <div class="home_content">
       <!-- ^----------------------------------- Sidebar ---------------------------------------------- -->
-      <div class="bg-light sticky-top Side_bar container_sidebar d-flex flex-column align-items-center">
-        <a href="/home.html" class="d-block link-dark text-decoration-none" title="" data-bs-toggle="tooltip"
-          data-bs-placement="right" data-bs-original-title="Icon-only">
-          <img src="https://i.ibb.co/NjN8KGL/vertex-logo-06.png" class="v_logo" alt="v-Logo">
+      <div class="bg-light sticky-top Side_bar">
+        <a href="/home.html" class="d-block link-dark text-decoration-none Side_a_logo " title=""
+          data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+          <img src="https://i.ibb.co/NjN8KGL/vertex-logo-06.png" class="Side_v_logo" alt="v-Logo">
           <!-- <img src="https://i.ibb.co/tZXHjwQ/Asset-1.png" class="v_logo" alt="v-Logo" /> -->
         </a>
-        <div class="d-flex flex-column flex-row flex-nowrap bg-light2 align-items-center sticky-top">
+        <div class="d-flex flex-column flex-row flex-nowrap bg-light2 align-items-center white_bg">
           <ul
-            class="p-3 d-flex nav nav-pills nav-flush flex-column flex-row align-items-center flex-nowrap mb-auto mx-auto text-center align-items-center">
+            class=" d-flex nav nav-pills nav-flush flex-column flex-row align-items-center flex-nowrap mb-auto mx-auto text-center align-items-center ul_icon_sidebar">
             <li class="li1">
               <a href="#" class="nav-link nav-item py-3 px-2 active " title="" data-bs-toggle="tooltip"
                 data-bs-placement="right" data-bs-original-title="Home" id="Home">
                 <i class="bi bi-house fs-3"></i>
               </a>
             </li>
-            <li class="li1" onclick="toggleDiv()">
+            <li class="li2" onclick="toggleDiv()">
               <a href="#" class="nav-link nav-item py-3 px-2 detection_icon" title="" data-bs-toggle="tooltip"
                 data-bs-placement="right" data-bs-original-title="Home" id="detect">
                 <div id="icon_land"></div>
               </a>
             </li>
-            <li class="li2">
+            <li class="li3">
               <a href="#" class="nav-link nav-item py-3 px-2" title="" data-bs-toggle="tooltip"
                 data-bs-placement="right" data-bs-original-title="Dashboard">
                 <i class="bi-speedometer2 fs-3"></i>
@@ -73,70 +73,74 @@
             </ul>
           </div>
         </div>
-        <div class="list_detection">
-          <ul class="d-flex flex-column align-items-center justify-content-center shadow" id="Detection_services">
-            <li class="Montoring_project">
-              <a class="dropdown-item1 monitoring" href="#">Monitoring Projects</a>
-              <div class="list_detection2">
-                <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
-                  <li>
-                    <a class="dropdown-item1" href="#" id="Project">Tanzania Mega Mall
-                    </a>
-                  </li>
-                  <!-- <li>
-                    <a class="dropdown-item1" href="#" >Squatters Camps
-                    </a>
-                  </li> -->
-                  <li>
-                    <a class="dropdown-item1" href="#" id="Azuri_Towers_Nigeria">Azuri Towers Nigeria</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item1" href="#" id="TATU_CITY_KENYA">Tatu City Kenya</a>
-                  </li>
-                </ul>
-              </div>
 
+
+        <div class="list_detection">
+          <div class="list_Service_container">
+            <ul class="d-flex flex-column align-items-center justify-content-center shadow" id="Detection_services">
+              <li class="Montoring_project" id="Montoring_project">
+                <a class="dropdown-item1 monitoring" href="#">Monitoring Projects</a>
+              </li>
+              <li class="main_list_li">
+                <a class="dropdown-item1" id="Forest_Logging_Detection" href="#">Forest Logging Detection</a>
+              </li>
+              <li class="main_list_li">
+                <a class="dropdown-item1" href="#" id="Wildfires">Wildfires Detection</a>
+              </li>
+              <li class="main_list_li">
+                <a class="dropdown-item1" href="#" id="Squatters_Camps">Buildings Detection</a>
+              </li>
+              <li class="main_list_li">
+                <a class="dropdown-item1" href="#" id="Crop_Disease_Detection">Crop Disease Detection</a>
+              </li>
+              <li class="main_list_li"><a class="dropdown-item1" href="#" id="Crop_Health">Crop Health</a></li>
+              <li class="main_list_li">
+                <a class="dropdown-item1" href="#" id="Crop_Classification">Crop Classification</a>
+              </li>
+              <li class="main_list_li"><a class="dropdown-item1" href="#" id="Land_Use">Land Use</a></li>
+              <li class="main_list_li"><a class="dropdown-item1" href="#" id="land_cover">Land Cover</a></li>
+              <li class="main_list_li">
+                <a class="dropdown-item1" href="#" id="Oil_Spill_Detection">Oil Spill Detection</a>
+              </li>
+              <li class="main_list_li"><a class="dropdown-item1" href="#" id="Mining_Monitoring">Mining Monitoring</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="list_detection2">
+          <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
+            <li>
+              <a class="dropdown-item1" href="#" id="Project">Tanzania Mega Mall
+              </a>
             </li>
-            <li class="main_list_li">
-              <a class="dropdown-item1" id="Forest_Logging_Detection" href="#">Forest Logging Detection</a>
+            <!-- <li>
+                  <a class="dropdown-item1" href="#" >Squatters Camps
+                  </a>
+                </li> -->
+            <li>
+              <a class="dropdown-item1" href="#" id="Azuri_Towers_Nigeria">Azuri Towers Nigeria</a>
             </li>
-            <li class="main_list_li">
-              <a class="dropdown-item1" href="#" id="Wildfires">Wildfires Detection</a>
-            </li>
-            <li class="main_list_li">
-              <a class="dropdown-item1" href="#" id="Squatters_Camps">Buildings Detection</a>
-            </li>
-            <li class="main_list_li">
-              <a class="dropdown-item1" href="#" id="Crop_Disease_Detection">Crop Disease Detection</a>
-            </li>
-            <li class="main_list_li"><a class="dropdown-item1" href="#" id="Crop_Health">Crop Health</a></li>
-            <li class="main_list_li">
-              <a class="dropdown-item1" href="#" id="Crop_Classification">Crop Classification</a>
-            </li>
-            <li class="main_list_li"><a class="dropdown-item1" href="#" id="Land_Use">Land Use</a></li>
-            <li class="main_list_li"><a class="dropdown-item1" href="#" id="land_cover">Land Cover</a></li>
-            <li class="main_list_li">
-              <a class="dropdown-item1" href="#" id="Oil_Spill_Detection">Oil Spill Detection</a>
-            </li>
-            <li class="main_list_li"><a class="dropdown-item1" href="#" id="Mining_Monitoring">Mining Monitoring</a>
+            <li>
+              <a class="dropdown-item1" href="#" id="TATU_CITY_KENYA">Tatu City Kenya</a>
             </li>
           </ul>
         </div>
-        <!-- <div class="list_detection2">
-        </div> -->
       </div>
-      <!-- ^----------------------------------- End Sidebar ------------------------------------------- -->
+      <!-- <div class="list_detection2">
+        </div> -->
+    </div>
+    <!-- ^----------------------------------- End Sidebar ------------------------------------------- -->
 
-      <!-- *----------------------------------- Map ---------------------------------------------- -->
-      <div class="d-block justify-content-center align-items-center map vw-100 vh-100 overflow-hidden" id="map_section">
-        <div class="d-flex" id="map"></div>
+    <!-- *----------------------------------- Map ---------------------------------------------- -->
+    <div class="d-block justify-content-center align-items-center map vw-100 vh-100 overflow-hidden" id="map_section">
+      <div class="d-flex" id="map"></div>
 
-        <!-- ?---------------------------- Google map --------------------------------------- -->
-        <!-- <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=%20Africa+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='https://mapswebsite.org/'>add a google map to website</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=d1bbd3d928c2cd48f1d5473fa0c27375e6b932a6'></script> -->
-        <!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1wd0tnsNnaNRUzTCw17Xy4iY9olIHc4E&ehbc=2E312F" width="150%" height="150%"></iframe> -->
+      <!-- ?---------------------------- Google map --------------------------------------- -->
+      <!-- <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=%20Africa+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='https://mapswebsite.org/'>add a google map to website</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=d1bbd3d928c2cd48f1d5473fa0c27375e6b932a6'></script> -->
+      <!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1wd0tnsNnaNRUzTCw17Xy4iY9olIHc4E&ehbc=2E312F" width="150%" height="150%"></iframe> -->
 
-        <!-- ?---------------------------- Google map with out Navbar and logo --------------------------------------- -->
-        <!-- <div style="width: 100%; overflow: hidden; height: 100%;">
+      <!-- ?---------------------------- Google map with out Navbar and logo --------------------------------------- -->
+      <!-- <div style="width: 100%; overflow: hidden; height: 100%;">
                     <iframe 
                        src="https://www.google.com/maps/d/u/0/embed?mid=1wd0tnsNnaNRUzTCw17Xy4iY9olIHc4E&ehbc=2E312F"
                        width="100%"
@@ -145,13 +149,13 @@
                        style="border:0; margin-top: -60px;">
                     </iframe>
                   </div> -->
-      </div>
-      <!-- *---------------------------------- End Map ------------------------------------------- -->
     </div>
+    <!-- *---------------------------------- End Map ------------------------------------------- -->
+  </div>
   </div>
 
   <div id="dialog_detect" class="dialog_detect row">
-    <div class="container_dashbord col-md-7">
+    <div class="container_dashbord col-md-7 col-sm-7">
       <div id="page">
         <div class="news_image">
           <a id="url_news" target="blank"
@@ -166,8 +170,12 @@
               <span class="sBtn-text">Date</span>
               <i class="bx bx-chevron-down"></i>
             </div>
-            <ul class="options" id="image_date_left">
-            </ul>
+            <div class="list_date_container">
+              <div class="ul_container2">
+                <ul class="options" id="image_date_left">
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div class="select-menu1" id="right_selector">
@@ -175,8 +183,12 @@
               <span class="sBtn-text1">Date</span>
               <i class="bx bx-chevron-down"></i>
             </div>
-            <ul class="options1" id="image_date_right">
-            </ul>
+            <div class="list_date_container">
+              <div class="ul_container2">
+                <ul class="options1" id="image_date_right">
+                </ul>
+              </div>
+            </div>
           </div>
 
           <!-- &------------End Select Date ------------------ -->
@@ -198,7 +210,7 @@
         </div>
       </div>
     </div>
-    <div class="container_dash col-md-5">
+    <div class="container_dash col-md-5 col-sm-5">
       <div class="dashbord d-flex flex-column">
         <div class="timeline">
           <img id="dashbord_img1" src="Dashbord/3.png" alt="">
@@ -217,8 +229,8 @@
   <div class="watermark">
     <img src="https://i.ibb.co/tZXHjwQ/Asset-1.png" alt="" />
   </div>
-  <div class="loading ">
-    <svg id="V_logo" width="526" height="152" viewBox="0 0 726 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div class="loading">
+    <svg id="V_logo" width="35%" height="15%" viewBox="0 0 726 152" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M142.648 8.05469L144.17 3.99999H139.839H115.839H113.727L113.015 5.98851L74.4459 113.683L36.0649 5.99284L35.3547 3.99999H33.2391H8.83905H4.50202L6.03189 8.05823L58.4319 147.058L59.1639 149H61.2391H87.6391H89.717L90.4475 147.055L142.648 8.05469Z"
         stroke="white" stroke-width="6" />

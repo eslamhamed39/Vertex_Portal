@@ -14,10 +14,11 @@
 }
 
 body {
-    background-color: #080710;
+    background-color: #fcfcfc;
     background-image: url(https://i.ibb.co/G0JtHXB/satellite-imagery-of-africa-desktop-wallpaper.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;;
     overflow: hidden;
     -webkit-user-select: none;
     /* Safari */
@@ -369,7 +370,7 @@ input:-webkit-autofill:active {
 .bg-light {
     border-radius: 35px;
     --bs-bg-opacity: .5;
-    background-color: #00000065 !important;
+    background-color: #86848465 !important;
 }
 
 .bg-light2 {
@@ -379,11 +380,18 @@ input:-webkit-autofill:active {
 
 }
 
-.v_logo {
+.Side_v_logo {
     text-align: center;
     width: 80%;
-    margin: 15px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    top: 15px;
+    margin-bottom: 20px;
 }
+/* .ul_icon_sidebar{
+    /* width: 100%; 
+} */
 
 ul {
     margin-top: 20;
@@ -528,17 +536,23 @@ h5 {
 } */
 
 .Side_bar {
-    width: 100px;
+    width: 90px;
     height: inherit;
     opacity: 0;
-}
-
-.container_sidebar {
-    position: fixed;
+    position: absolute;
     top: 50%;
-    height: 70%;
+    height: auto;
     left: 10px;
     transform: translate(0, -50%);
+}
+
+.white_bg{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    /* top: 10px; */
+    width: 75px;
+    margin-bottom: 10px;
 }
 
 .map {
@@ -546,18 +560,19 @@ h5 {
     width: 100%;
 }
 
-.sticky-top {
-    /* top:15%; */
+/* .sticky-top {
+    top:15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 75%;
-}
+} */
 
-canvas[Attributes] {
+
+/* canvas[Attributes] {
     aspect-ratio: 1920 / 1080;
-}
+} */
 
 
 .logContainer {
@@ -583,7 +598,9 @@ canvas[Attributes] {
     border-radius: 30px;
     display: none;
     animation: fadeIn 0.6s;
+    bottom: 0%;
 }
+
 
 .list_detection1 {
     width: 250px;
@@ -591,7 +608,8 @@ canvas[Attributes] {
     background-color: #dde7fcd5;
     position: absolute;
     left: 100px;
-    top: 300px;
+    bottom: 5%;
+    /* transform: translateY(-50%); */
     z-index: 1019;
     border-radius: 30px;
     display: none;
@@ -603,14 +621,18 @@ canvas[Attributes] {
     height: auto;
     background-color: #dde7fcd5;
     position: absolute;
-    top: 0px;
-    left: 255px;
+    top: -50px;
+    left: 365px;
     z-index: 1019;
     border-radius: 30px;
     display: none;
     animation: fadeIn2 0.6s;
 }
+/* .list_detection2:hover .Montoring_project{
 
+        background-color: #0000003d;
+    
+} */
 /* li.Montoring_project:hover  .list_detection2{
     display: block;
 }; */
@@ -629,12 +651,12 @@ canvas[Attributes] {
 @keyframes fadeIn2 {
     from {
         opacity: 0;
-        left: 230px;
+        left: 330px;
     }
 
     to {
         opacity: 1;
-        left: 255px;
+        left: 365px;
     }
 }
 
@@ -668,6 +690,8 @@ canvas[Attributes] {
     list-style: none;
     /* width: auto; */
     padding: 10px 0;
+    overflow: auto;
+    height: auto;
 }
 
 .list_detection ul li {
@@ -737,6 +761,8 @@ canvas[Attributes] {
     list-style: none;
     width: auto;
     padding: 10px 0;
+    /* position: absolute; */
+
 }
 
 .list_detection1 ul li {
@@ -983,13 +1009,17 @@ svg {
 
 .select-menu .options {
     position: relative;
-    padding: 5px;
-    margin-top: 10px;
-    border-radius: 8px;
-    background: #fff;
+    /* padding: 5px; */
+    margin-top: 8px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     display: none;
     border-radius: 30px;
+}
+.list_date_container{
+    margin-top: 10px;
+    border-radius: 30px;
+    background: #fff;
+    width: auto;
 }
 
 .select-menu.active .options {
@@ -1068,7 +1098,7 @@ svg {
 
 .select-menu1 .options1 {
     position: relative;
-    padding: 5px;
+    /* padding: 5px; */
     margin-top: 10px;
     border-radius: 8px;
     background: #fff;
@@ -1173,29 +1203,29 @@ svg {
     overflow-x: hidden;
 }
 
-#image_date_left::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 10px;
     /* height: 250px; */
 }
 
 
-#image_date_left::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px transparent;
     border-radius: 10px;
-    /* height: 250px; */
+    height: 250px;
 
 }
 
 
-#image_date_left::-webkit-scrollbar-thumb {
-    background: transparent;
+*::-webkit-scrollbar-thumb {
+    background: #182ead9d;
     border-radius: 10px;
 
 }
 
 
-#image_date_left::-webkit-scrollbar-thumb:hover {
-    background: transparent;
+*::-webkit-scrollbar-thumb:hover {
+    background: #0000009d;
 }
 
 #image_date_right {
@@ -1204,30 +1234,7 @@ svg {
     overflow-x: hidden;
 }
 
-#image_date_right::-webkit-scrollbar {
-    width: 10px;
-    /* height: 250px; */
-}
 
-
-#image_date_right::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px transparent;
-    border-radius: 10px;
-    /* height: 250px; */
-
-}
-
-
-#image_date_right::-webkit-scrollbar-thumb {
-    background: transparent;
-    border-radius: 10px;
-
-}
-
-
-#image_date_right::-webkit-scrollbar-thumb:hover {
-    background: transparent;
-}
 
 /* .row>* {
     padding-right: 0px;

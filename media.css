@@ -63,3 +63,151 @@ nav .navbar-nav .nav-item {
     display: none;
 }}
 
+
+@media (max-height: 620px){
+.li3 {
+    display: none;
+}
+.Side_bar{
+    width: 75px;
+    height: 80vh;
+}
+.white_bg{
+    width: 55px;
+    height: 55vh;
+}
+.ul_icon_sidebar{
+    /* padding: 5px !important; */
+    width: 100%;
+    margin-top: 10px !important;
+}
+
+#dropdownUser3{
+    padding: 2px !important;
+}
+.mb-auto {
+    margin-bottom: 0 !important;
+}
+.list_detection{
+    width: auto;
+    /* height: 80%; */
+    background-color: #dde7fcd5;
+    position: absolute;
+    left: 90px;
+    z-index: 1019;
+    border-radius: 30px;
+    display: none;
+    animation: fadeIn 0.6s;
+    bottom: 0%;
+    font-size: 13px;
+    height: auto;
+    overflow: hidden;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        left: 60px;
+    }
+
+    to {
+        opacity: 1;
+        left: 90px;
+    }
+}
+.list_detection2 {
+    width: 180px;
+    height: auto;
+    background-color: #dde7fcd5;
+    position: absolute;
+    top: 54px;
+    left: 276px;
+    z-index: 1019;
+    border-radius: 30px;
+    display: none;
+    animation: fadeIn2 0.6s;
+    font-size: 13px;
+}
+@keyframes fadeIn2 {
+    from {
+        opacity: 0;
+        left: 236px;
+    }
+
+    to {
+        opacity: 1;
+        left: 276px;
+    }
+}
+.list_Service_container{
+    height: 300px;
+    width: 180px;
+    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+}
+
+.list_detection ul::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+.list_detection ul::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px transparent;
+    border-radius: 10px;
+}
+
+
+.list_detection ul::-webkit-scrollbar-thumb {
+    background: #182ead9d;
+    border-radius: 10px;
+
+}
+
+
+.list_detection ul::-webkit-scrollbar-thumb:hover {
+    background: #0000009d;
+}
+#news{
+    height: 80px !important;
+}
+
+.list_date_container{
+    height: auto !important;
+    overflow: hidden;
+    border-radius: 30px;
+    width: auto;
+}
+.ul_container2{
+    overflow: auto;
+    min-height: auto;
+    max-height: 100px;
+    /* height: auto !important; */
+    width: 100%;
+}
+.ul_container2 ul{
+    height: auto !important;
+    overflow: auto !important;
+    width: auto;
+}
+ul {
+    margin-top: 20;
+    margin-bottom: 0.2rem;
+    display: block;
+    /* list-style-type: disc; */
+    margin-block-start: 50%;
+    margin-block-end: 0.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+/* #left_selector,#right_selector{
+    height: 100%;
+    overflow: auto;
+} */
+}
+
