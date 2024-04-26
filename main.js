@@ -280,9 +280,9 @@ function mapContent() {
     let viewport_width2 = document.documentElement.getBoundingClientRect().height;
     var api_key = 'YZlbkr2ee2sbGy3dZsWG85VE4mPsibyQ';
     var latAndLong = { lat: 4.012114320491342, lng: 21.667170602629522 };
-    if(viewport_width2 < 620){
+    if (viewport_width2 < 620) {
         var zoomLevel = 1.6;
-    }else{
+    } else {
         var zoomLevel = 2.2;
     }
     var map = tt.map({
@@ -792,16 +792,16 @@ function mapContent() {
     function handleMapClick(id, newCoordinates, newZoomLevel, angle) {
         document.getElementById(id).addEventListener('click', function () {
             let viewport_width = document.documentElement.getBoundingClientRect().height;
-            if (viewport_width < 620){
+            if (viewport_width < 620) {
                 var duration = 6000;
                 map.flyTo({
-                center: newCoordinates,
-                zoom: newZoomLevel-1,
-                duration: duration,
-                pitch: angle,
-                // bearing: 0,
+                    center: newCoordinates,
+                    zoom: newZoomLevel - 1,
+                    duration: duration,
+                    pitch: angle,
+                    // bearing: 0,
                 });
-            }else{
+            } else {
                 var duration = 6000;
                 map.flyTo({
                     center: newCoordinates,
@@ -921,8 +921,8 @@ function mapContent() {
         // getLayerId();
         linkedImageWithSelect(globalvar);
     });
-    map.on('load', function() {
-        setTimeout(function() { load_map(); }, 1000);
+    map.on('load', function () {
+        setTimeout(function () { load_map(); }, 1000);
         // load_map()
     });
 }
@@ -930,8 +930,8 @@ function load_map() {
     const map = document.getElementById('map');
     map.style.opacity = "1";
     Home_section.classList.add("Home_section")
-    Home_section.style.opacity ="1";
-    side_bar.style.opacity ="1";
+    Home_section.style.opacity = "1";
+    side_bar.style.opacity = "1";
     loading.classList.add("loading_hidden")
 }
 let globalvar;
@@ -974,19 +974,19 @@ function slider() {
         active = true;
         document.querySelector('.scroller').classList.add('scrolling');
     });
-    
+
     document.body.addEventListener('touchend', function () {
         console.log('Touch end');
         active = false;
         document.querySelector('.scroller').classList.remove('scrolling');
     });
-    
+
     document.body.addEventListener('touchcancel', function () {
         console.log('Touch cancel');
         active = false;
         document.querySelector('.scroller').classList.remove('scrolling');
     });
-    
+
     document.body.addEventListener('touchmove', function (e) {
         if (!active) return;
         let x = e.touches[0].pageX;
@@ -1136,24 +1136,24 @@ const allhoverable = document.querySelectorAll('.main_list_li');
 const target = document.querySelector('.list_detection2');
 hoverable.addEventListener('mouseover', function () {
     target.style.display = 'block';
-    hoverable.style.background =' #0000003d';
-    hoverable.querySelector('a').style.color ='#ffffff';
+    hoverable.style.background = ' #0000003d';
+    hoverable.querySelector('a').style.color = '#ffffff';
 });
 target.addEventListener('mouseleave', function () {
     target.style.display = 'none';
-    hoverable.style.background =' none';
-    hoverable.querySelector('a').style.color ='#0011ff';
+    hoverable.style.background = ' none';
+    hoverable.querySelector('a').style.color = '#0011ff';
 });
 target.addEventListener('click', function () {
     target.style.display = 'none';
-    hoverable.style.background =' none';
-    hoverable.querySelector('a').style.color ='#0011ff';
+    hoverable.style.background = ' none';
+    hoverable.querySelector('a').style.color = '#0011ff';
 });
 for (let i = 0; i < allhoverable.length; i++) {
-    allhoverable[i].addEventListener("mouseover", function() {
+    allhoverable[i].addEventListener("mouseover", function () {
         target.style.display = 'none';
-        hoverable.style.background =' none';
-        hoverable.querySelector('a').style.color ='#0011ff';
+        hoverable.style.background = ' none';
+        hoverable.querySelector('a').style.color = '#0011ff';
     });
 }
 
