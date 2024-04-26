@@ -82,9 +82,6 @@ nav .navbar-nav .nav-item {
     margin-top: 10px !important;
 }
 
-#dropdownUser3{
-    padding: 2px !important;
-}
 .mb-auto {
     margin-bottom: 0 !important;
 }
@@ -209,5 +206,17 @@ ul {
     height: 100%;
     overflow: auto;
 } */
+.select-btn ,.select-btn1{
+    font-size: 13px !important;
+    font-weight: 400;
+}
+.option .option-text {
+    font-size: 13px !important;
+    color: #333;
+}
+.option1 .option-text1 {
+    font-size: 13px !important;
+    color: #333;
+}
 }
 

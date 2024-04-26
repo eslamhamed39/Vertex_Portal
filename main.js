@@ -40,6 +40,7 @@ const container_dashbord = document.querySelector(".container_dashbord ");
 const loading = document.querySelector(".loading ");
 const home_content = document.querySelector(".home_content");
 const side_bar = document.querySelector(".Side_bar");
+const bg_light = document.querySelector(".bg-light");
 
 
 // todo:------------------------- i end here ----------------------------//
@@ -917,7 +918,9 @@ function mapContent() {
     }
     map.on('click', function (e) {
         var features = map.queryRenderedFeatures(e.point);
-        globalvar = features["0"].layer["id"];
+        try{
+            globalvar = features["0"].layer["id"];
+        }catch(e){}
         // getLayerId();
         linkedImageWithSelect(globalvar);
     });
@@ -970,19 +973,16 @@ function slider() {
 
     scrollIt(250);
     document.querySelector('.scroller').addEventListener('touchstart', function () {
-        console.log('Touch start');
         active = true;
         document.querySelector('.scroller').classList.add('scrolling');
     });
 
     document.body.addEventListener('touchend', function () {
-        console.log('Touch end');
         active = false;
         document.querySelector('.scroller').classList.remove('scrolling');
     });
 
     document.body.addEventListener('touchcancel', function () {
-        console.log('Touch cancel');
         active = false;
         document.querySelector('.scroller').classList.remove('scrolling');
     });
@@ -1072,9 +1072,26 @@ function linkedImageWithSelect(idlayer) {
 // Function to handle click event of select button
 function handleSelectButtonClick() {
     optionMenu.classList.toggle("active");
+    document.addEventListener("click" , hide_Data_selctor_list)
+    hide_Data_selctor_list()
 }
 function handleSelectButtonClick1() {
     optionMenu1.classList.toggle("active");
+    document.addEventListener("click" , hide_Data_selctor_list1)
+}
+function hide_Data_selctor_list(event) {
+    try{
+        if (!optionMenu.contains(event.target)) {
+            optionMenu.classList.remove("active");
+        }
+    }catch(e){}
+}
+function hide_Data_selctor_list1(event) {
+    try{
+        if (!optionMenu1.contains(event.target)) {
+            optionMenu1.classList.remove("active");
+        }
+    }catch(e){}
 }
 
 
