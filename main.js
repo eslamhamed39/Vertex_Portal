@@ -412,7 +412,7 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/land-C-S-image-2018.jpg");
+        element1.setAttribute("src", "../Geo File/Polygon Create/land-C-S-image-2020.jpg");
         element2.setAttribute("src", "../Geo File/Polygon Create/land-C-S-image-2023.jpg");
         element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
         element8.setAttribute("src", "../Geo File/Polygon Create/land.C.barchart.jpg");
@@ -427,7 +427,7 @@ function mapContent() {
         timeline.style.height = "50%";
         element7.style.width = "100%";
         sBtn_text.innerText = "2023";
-        sBtn_text1.innerText = "2018";
+        sBtn_text1.innerText = "2020";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://www.thecitizen.co.tz/tanzania/news/national/mwanza-gets-ready-for-mega-mall-2533096");
@@ -620,35 +620,35 @@ function mapContent() {
     });
 
     // ^---------------------------------- Oil Spill Detection -----------------------------//
-    // oil_Spill_Detection.addEventListener("click", async function () {
-    //     await Refetch("Oil_Spill_Detection")
-    //     try {
-    //         removeAllSourceLayers(map)
-    //     } catch (error) {
-    //     }
-    //     await map.addLayer(layer);
-    //     await map.addLayer(layer_outline);
-    //     element1.setAttribute("src", "../Geo File/Polygon Create/oil_spill_3-8-2022.PNG");
-    //     element2.setAttribute("src", "../Geo File/Polygon Create/oil_spill_12-10-2022.PNG");
-    //     element3.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-news.jpg");
-    //     element8.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-parchart.jpg");
-    //     element9.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-pointchart.jpg");
-    //     element3.style.display = "block";
-    //     element3.style.height = "130px";
-    //     element6.style.display = 'none';
-    //     element8.style.display = "block";
-    //     element9.style.display = "block";
-    //     element10.style.display = "block";
-    //     container_row2.style.height = "48.2%";
-    //     timeline.style.height = "50%";
-    //     element7.style.width = "100%";
-    //     sBtn_text.innerText = "12-10-2022";
-    //     sBtn_text1.innerText = "3-8-2022";
-    //     image_date_left.style.height = 'auto';
-    //     image_date_right.style.height = 'auto';
-    //     element4.setAttribute("href", "https://enterprise.press/greeneconomys/when-oil-washed-up-on-dahabs-shores-local-residents-jumped-into-action/");
-    //     container_dashbord.style.removeProperty("width");
-    // });
+    oil_Spill_Detection.addEventListener("click", async function () {
+        await Refetch("Oil_Spill_Detection")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_27-7-2021.JPG");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_26-8-2021.JPG");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-news.jpg");
+        element8.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-parchart.jpg");
+        element9.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-pointchart.jpg");
+        element3.style.display = "block";
+        element3.style.height = "130px";
+        element6.style.display = 'none';
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
+        container_row2.style.height = "48.2%";
+        timeline.style.height = "50%";
+        element7.style.width = "100%";
+        sBtn_text.innerText = "26-8-2021";
+        sBtn_text1.innerText = "27-7-2021";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        element4.setAttribute("href", "https://www.egypttoday.com/Article/1/106225/Egyptian-El-Monakh-beach-in-Port-Said-cleaned-up-from");
+        container_dashbord.style.removeProperty("width");
+    });
 
     // ^---------------------------------- Wildfires Detection -----------------------------//
     wildfires.addEventListener("click", async function () {
@@ -824,7 +824,7 @@ function mapContent() {
     handleMapClick('TATU_CITY_KENYA', [36.8897801, -1.1556409], 16, 45);
     handleMapClick('Crop_Classification', [37.934, 0.927], 5.5, 45);
     handleMapClick('Mining_Monitoring', [39.379219, -7.161839], 15, 45);
-    // handleMapClick('Oil_Spill_Detection', [34.986951, 29.527043], 13, 45);
+    handleMapClick('Oil_Spill_Detection', [32.21209, 31.50670], 8.5, 45);
     handleMapClick('Wildfires', [4.82700, 36.69667], 9, 45);
     handleMapClick('Crop_Disease_Detection', [35.25887, -0.38983], 13, 45);
     handleMapClick('Crop_Health', [36.05687, -0.23038], 13, 45);
@@ -918,9 +918,9 @@ function mapContent() {
     }
     map.on('click', function (e) {
         var features = map.queryRenderedFeatures(e.point);
-        try{
+        try {
             globalvar = features["0"].layer["id"];
-        }catch(e){}
+        } catch (e) { }
         // getLayerId();
         linkedImageWithSelect(globalvar);
     });
@@ -1022,12 +1022,12 @@ function linkedImageWithSelect(idlayer) {
     const fileNamesMap = {
         'Project': ["6-2023", "2-2022"],
         'Forest_Logging_Detection': ["10-3-2024", "16-12-2023", "6-1-2023"],
-        'Land_Cover': ["2023", "2018"],
+        'Land_Cover': ["2023", "2020"],
         'Squatters_Camps': ["12-2022", "1-2020"],
         'Azuri_Towers_Nigeria': ["2-2024", "1-2020", "12-2018", "2-2018", "5-2016"],
         'TATU_CITY_KENYA': ["2-2024", "1-2023", "2-2021", "1-2020", "1-2019", "12-2017"],
         'Mining_Monitoring': ["6-2022", "6-2020", "10-2017", "6-2014", "7-2013"],
-        'Oil_Spill_Detection': ["12-10-2022", "27-9-2022", "3-8-2022"],
+        'Oil_Spill_Detection': ["26-8-2021", "21-8-2021", "16-8-2021", "11-8-2021", "6-8-2021", "1-8-2021", "27-7-2021"],
         'Wildfires': ["29-3-2024", "30-11-2023", "11-10-2023", "23-7-2023"],
         'Crop_Health': ["21-5-2022", "21-5-2022 NDVI", "11-3-2023", "11-3-2023 NDVI"]
     };
@@ -1072,26 +1072,26 @@ function linkedImageWithSelect(idlayer) {
 // Function to handle click event of select button
 function handleSelectButtonClick() {
     optionMenu.classList.toggle("active");
-    document.addEventListener("click" , hide_Data_selctor_list)
+    document.addEventListener("click", hide_Data_selctor_list)
     hide_Data_selctor_list()
 }
 function handleSelectButtonClick1() {
     optionMenu1.classList.toggle("active");
-    document.addEventListener("click" , hide_Data_selctor_list1)
+    document.addEventListener("click", hide_Data_selctor_list1)
 }
 function hide_Data_selctor_list(event) {
-    try{
+    try {
         if (!optionMenu.contains(event.target)) {
             optionMenu.classList.remove("active");
         }
-    }catch(e){}
+    } catch (e) { }
 }
 function hide_Data_selctor_list1(event) {
-    try{
+    try {
         if (!optionMenu1.contains(event.target)) {
             optionMenu1.classList.remove("active");
         }
-    }catch(e){}
+    } catch (e) { }
 }
 
 
@@ -1108,7 +1108,7 @@ function handleOptionClick(option) {
         "Azuri_Towers_Nigeria": `../Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption}.jpg`,
         "TATU_CITY_KENYA": `../Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption}.jpg`,
         "Mining_Monitoring": `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption}.jpg`,
-        "Oil_Spill_Detection": `../Geo File/Polygon Create/oil_spill_${selectedOption}.PNG`,
+        "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_${selectedOption}.jpg`,
         "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption}.jpg`,
         "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption}.jpg`
     };
@@ -1131,7 +1131,7 @@ function handleOptionClick1(option) {
         "Azuri_Towers_Nigeria": `../Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption1}.jpg`,
         "TATU_CITY_KENYA": `../Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption1}.jpg`,
         "Mining_Monitoring": `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption1}.jpg`,
-        "Oil_Spill_Detection": `../Geo File/Polygon Create/oil_spill_${selectedOption1}.PNG`,
+        "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_${selectedOption1}.jpg`,
         "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption1}.jpg`,
         "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption1}.jpg`
     };

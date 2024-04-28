@@ -32,7 +32,7 @@ def get_files_without_extension(directory):
                 file_name = file
                 file_names.append(file_name)
         return file_names
-directory_path = r"D:"
+directory_path = r"D:\Portal Changes\Oil Spill"
 
 files_without_extension = get_files_without_extension(directory_path)
 
@@ -42,5 +42,5 @@ ws = wb.active
 for idx, file_name in enumerate(files_without_extension, start=1):
     ws.cell(row=idx, column=1, value=file_name)
 
-excel_file_path = r"D:\All_File_in_partion(D)26-4-2024.xlsx"
+excel_file_path = r"D:\Portal Changes\Oil Spill\name.xlsx"
 wb.save(excel_file_path)
