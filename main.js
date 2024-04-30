@@ -1147,7 +1147,7 @@ function handleOptionClick(option) {
         "Azuri_Towers_Nigeria": `../Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption}.jpg`,
         "TATU_CITY_KENYA": `../Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption}.jpg`,
         "Mining_Monitoring": `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption}.jpg`,
-        "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_${selectedOption}.jpg`,
+        "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_${selectedOption}.JPG`,
         "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption}.jpg`,
         "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption}.jpg`,
         "Infrastructure_project": `../Geo File/Polygon Create/Infrastructure_project_${selectedOption}.jpeg`
@@ -1171,7 +1171,7 @@ function handleOptionClick1(option) {
         "Azuri_Towers_Nigeria": `../Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption1}.jpg`,
         "TATU_CITY_KENYA": `../Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption1}.jpg`,
         "Mining_Monitoring": `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption1}.jpg`,
-        "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_${selectedOption1}.jpg`,
+        "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_${selectedOption1}.JPG`,
         "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption1}.jpg`,
         "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption1}.jpg`,
         "Infrastructure_project": `../Geo File/Polygon Create/Infrastructure_project_${selectedOption1}.jpeg`
