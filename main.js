@@ -223,7 +223,7 @@ function switchPage() {
 let layer;
 let layer_outline;
 
-async function Refetch(layerID, status) {
+async function Refetch(layerID) {
     await fetch(`./Layer/${layerID}.json`)
         .then(response => response.json())
         .then(data => {
@@ -235,14 +235,14 @@ async function Refetch(layerID, status) {
         .then(data => {
             layer_outline = data;
         })
-    if (status == "Show") {
-        Crop_Health['paint']['fill-opacity'] = 0.4;
-        Crop_Health_outline['paint']['line-width'] = 3;
-    }
-    else if (status == "Hide") {
-        Crop_Health['paint']['fill-opacity'] = 0;
-        Crop_Health_outline['paint']['line-width'] = 'none';
-    }
+    // if (status == "Show") {
+    //     Crop_Health['paint']['fill-opacity'] = 0.4;
+    //     Crop_Health_outline['paint']['line-width'] = 3;
+    // }
+    // else if (status == "Hide") {
+    //     Crop_Health['paint']['fill-opacity'] = 0;
+    //     Crop_Health_outline['paint']['line-width'] = 'none';
+    // }
     // response();
 }
 
@@ -294,7 +294,7 @@ function mapContent() {
         // ================= style without label name =================//
         style: `https://api.tomtom.com/style/2/custom/style/dG9tdG9tQEBAVVRVTzI1SHRBR3MxQXRBaDtiYWI4ZjY0Yi1lZDkwLTRjYTEtYTlkYy1mYjcxODIyNzdlMzA=/drafts/0.json`,
     });
-    const layerID_use = ["Project", "Project_outline", "Forest_Logging_Detection", "Forest_Logging_Detection_outline", "Land_Cover", "Land_Cover_outline", "Squatters_Camps", "Squatters_Camps_outline", "Land_Use", "Land_Use_outline", "Azuri_Towers_Nigeria", "Azuri_Towers_Nigeria_outline", "TATU_CITY_KENYA", "TATU_CITY_KENYA_outline", "Crop_Classification", "Crop_Classification_outline", "Mining_Monitoring", "Mining_Monitoring_outline", "Oil_Spill_Detection", "Oil_Spill_Detection_outline", "Wildfires", "Wildfires_outline", "Crop_Disease_Detection", "Crop_Disease_Detection_outline", "Crop_Health", "Crop_Health_outline"]
+    const layerID_use = ["Project", "Project_outline", "Forest_Logging_Detection", "Forest_Logging_Detection_outline", "Land_Cover", "Land_Cover_outline", "Squatters_Camps", "Squatters_Camps_outline", "Land_Use", "Land_Use_outline", "Azuri_Towers_Nigeria", "Azuri_Towers_Nigeria_outline", "TATU_CITY_KENYA", "TATU_CITY_KENYA_outline", "Crop_Classification", "Crop_Classification_outline", "Mining_Monitoring", "Mining_Monitoring_outline", "Oil_Spill_Detection", "Oil_Spill_Detection_outline", "Wildfires", "Wildfires_outline", "Crop_Disease_Detection", "Crop_Disease_Detection_outline", "Crop_Health", "Crop_Health_outline" ,"Infrastructure_project","Infrastructure_project_outline"]
 
     function removeAllSourceLayers(map) {
         var mapLayers = map.getStyle().layers;
@@ -337,6 +337,8 @@ function mapContent() {
     const wildfires = document.getElementById("Wildfires");
     const crop_Disease_Detection = document.getElementById("Crop_Disease_Detection");
     const crop_Health = document.getElementById("Crop_Health");
+    const Infrastructure_project = document.getElementById("Infrastructure_project");
+
 
 
 
@@ -464,6 +466,38 @@ function mapContent() {
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://www.sciencephoto.com/media/182797/view/squatter-camp");
+    });
+
+    // ^-------------------------- Infrastructure_project ----------------------------//
+    Infrastructure_project.addEventListener("click", async function () {
+        await Refetch("Infrastructure_project")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/Infrastructure_project_1-1-2022.jpeg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Infrastructure_project_2-2-2022.jpeg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Infrastructure_project_news.png");
+        element8.setAttribute("src", "");
+        element9.setAttribute("src", "");
+        element10.setAttribute("src", "");
+        element6.style.display = 'none';
+        element3.style.display = "block";
+        element8.style.display = "none";
+        element9.style.display = "none";
+        element10.style.display = "none";
+        element3.style.height = "140px";
+        element7.style.width = "100%";
+        sBtn_text.innerText = "2-2-2022";
+        sBtn_text1.innerText = "1-1-2022";
+        container_dashbord.style.width = "100%";
+        container_dashbord.style.height = "100%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        element4.setAttribute("href", "https://feedbackoysg.com/nearly-completed-iseyin-fapote-ogbomoso-road/");
     });
 
     // ^---------------------------------- Land Use -----------------------------//
@@ -788,6 +822,7 @@ function mapContent() {
     addHoverEffect('Wildfires');
     addHoverEffect('Crop_Disease_Detection');
     addHoverEffect('Crop_Health');
+    addHoverEffect('Infrastructure_project');
 
     //--------------------------------- End polygon creation --------------------------------//
     function handleMapClick(id, newCoordinates, newZoomLevel, angle) {
@@ -828,6 +863,7 @@ function mapContent() {
     handleMapClick('Wildfires', [4.82700, 36.69667], 9, 45);
     handleMapClick('Crop_Disease_Detection', [35.25887, -0.38983], 13, 45);
     handleMapClick('Crop_Health', [36.05687, -0.23038], 13, 45);
+    handleMapClick('Infrastructure_project', [3.9154647, 8.1104762], 13, 45);
 
     // !------------- change pointer and after click  appear popup --------------------//
 
@@ -854,6 +890,7 @@ function mapContent() {
     setCursor('Wildfires');
     setCursor('Crop_Disease_Detection');
     setCursor('Crop_Health');
+    setCursor('Infrastructure_project');
 
     // &======================== click layer to appear popup Detection ========================//
 
@@ -870,7 +907,8 @@ function mapContent() {
         'Wildfires',
         'Mining_Monitoring',
         'Project',
-        'Squatters_Camps'
+        'Squatters_Camps',
+        'Infrastructure_project'
     ];
 
     // Loop through the array and bind the click event for each layer
@@ -1029,7 +1067,8 @@ function linkedImageWithSelect(idlayer) {
         'Mining_Monitoring': ["6-2022", "6-2020", "10-2017", "6-2014", "7-2013"],
         'Oil_Spill_Detection': ["26-8-2021", "21-8-2021", "16-8-2021", "11-8-2021", "6-8-2021", "1-8-2021", "27-7-2021"],
         'Wildfires': ["29-3-2024", "30-11-2023", "11-10-2023", "23-7-2023"],
-        'Crop_Health': ["21-5-2022", "21-5-2022 NDVI", "11-3-2023", "11-3-2023 NDVI"]
+        'Crop_Health': ["21-5-2022", "21-5-2022 NDVI", "11-3-2023", "11-3-2023 NDVI"],
+        'Infrastructure_project': ["1-1-2022", "2-2-2022"]
     };
     const fileNames = fileNamesMap[idlayer] || [];
     displayFileNames(fileNames);
@@ -1110,7 +1149,8 @@ function handleOptionClick(option) {
         "Mining_Monitoring": `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption}.jpg`,
         "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_${selectedOption}.jpg`,
         "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption}.jpg`,
-        "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption}.jpg`
+        "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption}.jpg`,
+        "Infrastructure_project": `../Geo File/Polygon Create/Infrastructure_project_${selectedOption}.jpeg`
     };
     const imagePath = imagePaths[globalvar];
     if (imagePath) {
@@ -1133,7 +1173,8 @@ function handleOptionClick1(option) {
         "Mining_Monitoring": `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption1}.jpg`,
         "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_${selectedOption1}.jpg`,
         "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption1}.jpg`,
-        "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption1}.jpg`
+        "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption1}.jpg`,
+        "Infrastructure_project": `../Geo File/Polygon Create/Infrastructure_project_${selectedOption1}.jpeg`
     };
     const imagePath = imagePaths[globalvar];
     if (imagePath) {
