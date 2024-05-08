@@ -589,6 +589,11 @@ h5 {
 .nav-link:focus,
 .nav-link:hover {
     color: #ffffff;
+    
+}
+.nav-item{
+    /* background-color: #0011ff; */
+    border-radius: 15px;
 }
 
 .list_detection {
@@ -1294,4 +1299,14 @@ svg {
     #icon_land {
         background-image: url("https://img.icons8.com/ios/ffffff/country--v1.png");
     }
+}
+
+#Land_Management_Menu{
+    top: 45px;
+}
+#Forestry_Menu{
+    top: 90px;
+}
+#Agriculture_Menu{
+    top: 135px;
 }

@@ -78,27 +78,17 @@
         <div class="list_detection">
           <div class="list_Service_container">
             <ul class="d-flex flex-column align-items-center justify-content-center shadow" id="Detection_services">
-              <li class="Montoring_project" id="Montoring_project">
-                <a class="dropdown-item1 monitoring" href="#">Monitoring Projects</a>
+              <li class="Montoring_project">
+                <a class="dropdown-item1 monitoring" id="Montoring_project" href="#">Monitoring Projects</a>
               </li>
-              <li class="main_list_li">
-                <a class="dropdown-item1" id="Forest_Logging_Detection" href="#">Forest Logging Detection</a>
-              </li>
-              <li class="main_list_li">
-                <a class="dropdown-item1" href="#" id="Wildfires">Wildfires Detection</a>
-              </li>
-              <li class="main_list_li">
-                <a class="dropdown-item1" href="#" id="Squatters_Camps">Buildings Detection</a>
-              </li>
-              <li class="main_list_li">
-                <a class="dropdown-item1" href="#" id="Crop_Disease_Detection">Crop Disease Detection</a>
-              </li>
-              <li class="main_list_li"><a class="dropdown-item1" href="#" id="Crop_Health">Crop Health</a></li>
-              <li class="main_list_li">
-                <a class="dropdown-item1" href="#" id="Crop_Classification">Crop Classification</a>
-              </li>
-              <li class="main_list_li"><a class="dropdown-item1" href="#" id="Land_Use">Land Use</a></li>
-              <li class="main_list_li"><a class="dropdown-item1" href="#" id="land_cover">Land Cover</a></li>
+              <li class="Land_Management"><a class="dropdown-item1" href="#" id="Land_Management">Land Management</a></li>
+
+              <li class="Forestry"><a class="dropdown-item1" href="#" id="Forestry">Forestry</a></li>
+
+              <li class="Agriculture"><a class="dropdown-item1" href="#" id="Agriculture">Agriculture</a></li>
+              
+              
+              
               <li class="main_list_li">
                 <a class="dropdown-item1" href="#" id="Oil_Spill_Detection">Oil Spill Detection</a>
               </li>
@@ -107,16 +97,21 @@
             </ul>
           </div>
         </div>
-        <div class="list_detection2">
+        <div class="list_detection2" id="Land_Management_Menu">
+          <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
+            <li>
+              <a class="dropdown-item1" href="#" id="Squatters_Camps">Buildings Detection</a>
+            </li>
+            <li><a class="dropdown-item1" href="#" id="Land_Use">Land Use</a></li>
+            <li><a class="dropdown-item1" href="#" id="land_cover">Land Cover</a></li>
+          </ul>
+        </div>
+        <div class="list_detection2" id="Montoring_project_Menu">
           <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
             <li>
               <a class="dropdown-item1" href="#" id="Project">Tanzania Mega Mall
               </a>
             </li>
-            <!-- <li>
-                  <a class="dropdown-item1" href="#" >Squatters Camps
-                  </a>
-            </li> -->
             <li>
               <a class="dropdown-item1" href="#" id="Azuri_Towers_Nigeria">Azuri Towers Nigeria</a>
             </li>
@@ -125,6 +120,27 @@
             </li>
             <li>
               <a class="dropdown-item1" href="#" id="Infrastructure_project">Infrastructure project</a>
+            </li>
+          </ul>
+        </div>
+        <div class="list_detection2" id="Forestry_Menu">
+          <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
+            <li>
+              <a class="dropdown-item1" id="Forest_Logging_Detection" href="#">Forest Logging Detection</a>
+            </li>
+            <li>
+              <a class="dropdown-item1" href="#" id="Wildfires">Wildfires Detection</a>
+            </li>
+          </ul>
+        </div>
+        <div class="list_detection2" id="Agriculture_Menu">
+          <ul class="d-flex flex-column align-items-center justify-content-center shadow ">
+            <li>
+              <a class="dropdown-item1" href="#" id="Crop_Disease_Detection">Crop Disease Detection</a>
+            </li>
+            <li><a class="dropdown-item1" href="#" id="Crop_Health">Crop Health</a></li>
+            <li>
+              <a class="dropdown-item1" href="#" id="Crop_Classification">Crop Classification</a>
             </li>
           </ul>
         </div>

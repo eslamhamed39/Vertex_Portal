@@ -41,6 +41,18 @@ const loading = document.querySelector(".loading ");
 const home_content = document.querySelector(".home_content");
 const side_bar = document.querySelector(".Side_bar");
 const bg_light = document.querySelector(".bg-light");
+const hoverable = document.querySelector('.Montoring_project');
+const allhoverable = document.querySelectorAll('.main_list_li');
+const target = document.getElementById('Montoring_project_Menu');
+const hoverable1 = document.querySelector('.Land_Management');
+const allhoverable1 = document.querySelectorAll('.main_list_li');
+const target1 = document.getElementById('Land_Management_Menu');
+const hoverable2 = document.querySelector('.Forestry');
+const allhoverable2 = document.querySelectorAll('.main_list_li');
+const target2 = document.getElementById('Forestry_Menu');
+const hoverable3 = document.querySelector('.Agriculture');
+const allhoverable3 = document.querySelectorAll('.main_list_li');
+const target3 = document.getElementById('Agriculture_Menu');
 
 
 // todo:------------------------- i end here ----------------------------//
@@ -53,78 +65,7 @@ const bg_light = document.querySelector(".bg-light");
 
 
 // -------------------------- sidebar detection list --------------------//
-function toggleDiv() {
-    var div = document.querySelector('.list_detection');
-    if (div.style.display === 'none' || div.style.display === '') {
-        div.style.display = 'block';
-        // Add event listener to hide div when clicking outside
-        setTimeout(function () {
-            document.addEventListener('click', clickOutsideDiv1);
-        }, 1);
-    } else {
-        div.style.display = 'none';
-        // Remove event listener when div is hidden
-        document.removeEventListener('click', clickOutsideDiv1);
-    }
-}
-function clickOutsideDiv1(event) {
-    var div = document.querySelector('.list_detection');
-    // console.log(event.target.innerHTML)
-    // if ((div.contains(event.target.innerHTML)) == "kkkonitoring Projects") {
-    //     div.style.display = 'block';
-    //     document.addEventListener('click', clickOutsideDiv1);
-    // }
-    if (!div.contains(event.target)) {
-        target.style.display = 'none';
-        div.style.display = 'none';
-        document.removeEventListener('click', clickOutsideDiv1);
-    }
-    else if (div.contains(event.target)) {
-        if (event.target.innerHTML == "Monitoring Projects") {
-            div.style.display = 'block';
-            document.addEventListener('click', clickOutsideDiv1);
-        } else {
-            div.style.display = 'none';
-            document.removeEventListener('click', clickOutsideDiv1);
-        }
-    }
-}
 
-function toggleDiv3() {
-    var div = document.querySelector('.list_detection1');
-    if (div.style.display === 'none' || div.style.display === '') {
-        div.style.display = 'block';
-        // Add event listener to hide div when clicking outside
-        setTimeout(function () {
-            document.addEventListener('click', clickOutsideDiv2);
-        }, 1);
-    } else {
-        div.style.display = 'none';
-        // Remove event listener when div is hidden
-        document.removeEventListener('click', clickOutsideDiv2);
-
-    }
-}
-function clickOutsideDiv2(event) {
-    var div = document.querySelector('.list_detection1');
-    if (!div.contains(event.target)) {
-        div.style.display = 'none';
-        document.removeEventListener('click', clickOutsideDiv2);
-        document.getElementById("dropdownUser3").classList.remove('active');
-        // document.getElementById("Home").classList.add('active');
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', event => {
-                setActive(event.currentTarget.id);
-            });
-        });
-
-    }
-    else if (div.contains(event.target)) {
-        div.style.display = 'none';
-        document.removeEventListener('click', clickOutsideDiv2);
-
-    }
-}
 
 // ------------------------------Get Value Function--------------------------------
 function getValue() {
@@ -481,23 +422,22 @@ function mapContent() {
         element1.setAttribute("src", "../Geo File/Polygon Create/Infrastructure_project_11-2020.jpeg");
         element2.setAttribute("src", "../Geo File/Polygon Create/Infrastructure_project_12-2023.jpeg");
         element3.setAttribute("src", "../Geo File/Polygon Create/Infrastructure_project_news.png");
-        element8.setAttribute("src", "");
-        element9.setAttribute("src", "");
-        element10.setAttribute("src", "");
-        element6.style.display = 'none';
+        element8.setAttribute("src", "../Geo File/Polygon Create/Infrastructure_project_parchart.jpeg");
+        element9.setAttribute("src", "../Geo File/Polygon Create/Infrastructure_project_liner.jpeg");
         element3.style.display = "block";
-        element8.style.display = "none";
-        element9.style.display = "none";
-        element10.style.display = "none";
-        element3.style.height = "140px";
+        element6.style.display = 'none';
+        element8.style.display = "block";
+        element9.style.display = "block";
+        element10.style.display = "block";
         element7.style.width = "100%";
+        container_row2.style.height = "50%";
+        timeline.style.height = "50%";
         sBtn_text.innerText = "12-2023";
         sBtn_text1.innerText = "11-2020";
-        container_dashbord.style.width = "100%";
-        container_dashbord.style.height = "100%";
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://feedbackoysg.com/nearly-completed-iseyin-fapote-ogbomoso-road/");
+        container_dashbord.style.removeProperty("width");
     });
 
     // ^---------------------------------- Land Use -----------------------------//
@@ -1181,17 +1121,15 @@ function handleOptionClick1(option) {
         element2.setAttribute("src", imagePath);
     }
 }
-
-
-// ====================== To show Montoring List ==================== //
 setTimeout(() => {
     selectBtn.addEventListener("click", handleSelectButtonClick);
     selectBtn1.addEventListener("click", handleSelectButtonClick1);
 }, 3000);
 
-const hoverable = document.querySelector('.Montoring_project');
-const allhoverable = document.querySelectorAll('.main_list_li');
-const target = document.querySelector('.list_detection2');
+// !====================== To show All List and all effect (hover) ==================== //
+
+
+
 hoverable.addEventListener('mouseover', function () {
     target.style.display = 'block';
     hoverable.style.background = ' #0000003d';
@@ -1216,6 +1154,219 @@ for (let i = 0; i < allhoverable.length; i++) {
 }
 
 
+
+
+hoverable1.addEventListener('mouseover', function () {
+    target1.style.display = 'block';
+    hoverable1.style.background = ' #0000003d';
+    hoverable1.querySelector('a').style.color = '#ffffff';
+});
+target1.addEventListener('mouseleave', function () {
+    target1.style.display = 'none';
+    hoverable1.style.background = ' none';
+    hoverable1.querySelector('a').style.color = '#0011ff';
+});
+target1.addEventListener('click', function () {
+    target1.style.display = 'none';
+    hoverable1.style.background = ' none';
+    hoverable1.querySelector('a').style.color = '#0011ff';
+});
+for (let i = 0; i < allhoverable1.length; i++) {
+    allhoverable1[i].addEventListener("mouseover", function () {
+        target1.style.display = 'none';
+        hoverable1.style.background = ' none';
+        hoverable1.querySelector('a').style.color = '#0011ff';
+    });
+}
+
+hoverable2.addEventListener('mouseover', function () {
+    target2.style.display = 'block';
+    hoverable2.style.background = ' #0000003d';
+    hoverable2.querySelector('a').style.color = '#ffffff';
+});
+target2.addEventListener('mouseleave', function () {
+    target2.style.display = 'none';
+    hoverable2.style.background = ' none';
+    hoverable2.querySelector('a').style.color = '#0011ff';
+});
+target2.addEventListener('click', function () {
+    target2.style.display = 'none';
+    hoverable2.style.background = ' none';
+    hoverable2.querySelector('a').style.color = '#0011ff';
+});
+for (let i = 0; i < allhoverable2.length; i++) {
+    allhoverable2[i].addEventListener("mouseover", function () {
+        target2.style.display = 'none';
+        hoverable2.style.background = ' none';
+        hoverable2.querySelector('a').style.color = '#0011ff';
+    });
+}
+
+hoverable3.addEventListener('mouseover', function () {
+    target3.style.display = 'block';
+    hoverable3.style.background = ' #0000003d';
+    hoverable3.querySelector('a').style.color = '#ffffff';
+});
+target3.addEventListener('mouseleave', function () {
+    target3.style.display = 'none';
+    hoverable3.style.background = ' none';
+    hoverable3.querySelector('a').style.color = '#0011ff';
+});
+target3.addEventListener('click', function () {
+    target3.style.display = 'none';
+    hoverable3.style.background = ' none';
+    hoverable3.querySelector('a').style.color = '#0011ff';
+});
+for (let i = 0; i < allhoverable3.length; i++) {
+    allhoverable3[i].addEventListener("mouseover", function () {
+        target3.style.display = 'none';
+        hoverable3.style.background = ' none';
+        hoverable3.querySelector('a').style.color = '#0011ff';
+    });
+}
+
+hoverable1.addEventListener("mouseover", function () {
+    target.style.display = 'none';
+    hoverable.style.background = ' none';
+    hoverable.querySelector('a').style.color = '#0011ff';
+    target2.style.display = 'none';
+    hoverable2.style.background = ' none';
+    hoverable2.querySelector('a').style.color = '#0011ff';
+    target3.style.display = 'none';
+    hoverable3.style.background = ' none';
+    hoverable3.querySelector('a').style.color = '#0011ff';
+});
+hoverable.addEventListener("mouseover", function () {
+    target1.style.display = 'none';
+    hoverable1.style.background = ' none';
+    hoverable1.querySelector('a').style.color = '#0011ff';
+    target2.style.display = 'none';
+    hoverable2.style.background = ' none';
+    hoverable2.querySelector('a').style.color = '#0011ff';
+    target3.style.display = 'none';
+    hoverable3.style.background = ' none';
+    hoverable3.querySelector('a').style.color = '#0011ff';
+});
+hoverable2.addEventListener("mouseover", function () {
+    target1.style.display = 'none';
+    hoverable1.style.background = ' none';
+    hoverable1.querySelector('a').style.color = '#0011ff';
+    target.style.display = 'none';
+    hoverable.style.background = ' none';
+    hoverable.querySelector('a').style.color = '#0011ff';
+    target3.style.display = 'none';
+    hoverable3.style.background = ' none';
+    hoverable3.querySelector('a').style.color = '#0011ff';
+});
+
+hoverable3.addEventListener("mouseover", function () {
+    target1.style.display = 'none';
+    hoverable1.style.background = ' none';
+    hoverable1.querySelector('a').style.color = '#0011ff';
+    target.style.display = 'none';
+    hoverable.style.background = ' none';
+    hoverable.querySelector('a').style.color = '#0011ff';
+    target2.style.display = 'none';
+    hoverable2.style.background = ' none';
+    hoverable2.querySelector('a').style.color = '#0011ff';
+});
+
+document.addEventListener('click', clickOutsideDiv4);
+function clickOutsideDiv4(event) {
+    var div2 = document.querySelectorAll('.list_detection2');
+    var div = document.querySelector('.list_detection');
+    for (let i = 0; i < div2.length; i++) {
+        if (!div2[i].contains(event.target)) {
+            ele_id = document.getElementById(div2[i].id)
+            ele_id.style.display = 'none';
+            // console.log(div2[i].id)
+            // document.removeEventListener('click', clickOutsideDiv4);
+        }
+    };
+};
+function toggleDiv() {
+    var div = document.querySelector('.list_detection');
+    if (div.style.display === 'none' || div.style.display === '') {
+        div.style.display = 'block';
+        // Add event listener to hide div when clicking outside
+        setTimeout(function () {
+            document.addEventListener('click', clickOutsideDiv1);
+        }, 1);
+    } else {
+        div.style.display = 'none';
+        // Remove event listener when div is hidden
+        document.removeEventListener('click', clickOutsideDiv1);
+    }
+}
+
+function clickOutsideDiv1(event) {
+    var div = document.querySelector('.list_detection');
+    // if ((div.contains(event.target.innerHTML)) == "kkkonitoring Projects") {
+    //     div.style.display = 'block';
+    //     document.addEventListener('click', clickOutsideDiv1);
+    // }
+    if (!div.contains(event.target)) {
+        // target.style.display = 'none';
+        div.style.display = 'none';
+        document.removeEventListener('click', clickOutsideDiv1);
+    }
+    else if (div.contains(event.target)) {
+        try{
+            if (event.target.innerHTML === "Monitoring Projects", "Land Management", "Forestry", "Agriculture") {
+            div.style.display = 'block';
+            ele_id = event.target.id +"_Menu"
+            ele_catch = document.getElementById(ele_id)
+            // console.log(ele_id);
+            ele_catch.style.display = 'block';
+            document.addEventListener('click', clickOutsideDiv1);
+            console.log(div.contains(event.target))
+            }
+        }catch (e){
+            div.style.display = 'none';
+            console.log("else is work")
+            document.removeEventListener('click', clickOutsideDiv1);
+        }
+    }
+}
+
+
+function toggleDiv3() {
+    var div = document.querySelector('.list_detection1');
+    if (div.style.display === 'none' || div.style.display === '') {
+        div.style.display = 'block';
+        // Add event listener to hide div when clicking outside
+        setTimeout(function () {
+            document.addEventListener('click', clickOutsideDiv2);
+        }, 1);
+    } else {
+        div.style.display = 'none';
+        // Remove event listener when div is hidden
+        document.removeEventListener('click', clickOutsideDiv2);
+
+    }
+}
+function clickOutsideDiv2(event) {
+    var div = document.querySelector('.list_detection1');
+    var div2 = document.querySelectorAll('.list_detection2');
+    if (!div.contains(event.target) || div2.contains(event.target)) {
+        div.style.display = 'none';
+        document.removeEventListener('click', clickOutsideDiv2);
+        document.getElementById("dropdownUser3").classList.remove('active');
+        // document.getElementById("Home").classList.add('active');
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', event => {
+                setActive(event.currentTarget.id);
+            });
+        });
+    }
+    else if (div.contains(event.target)) {
+        div.style.display = 'none';
+        document.removeEventListener('click', clickOutsideDiv2);
+    }
+}
+
+
+// ~----------------------------- servise icon & effect (hover)--------------------------------// 
 
 
 const detection_icon = document.querySelector('.detection_icon');

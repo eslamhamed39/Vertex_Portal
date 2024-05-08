@@ -10,5 +10,10 @@
 	],
 	"settings": {
 		"liveServer.settings.multiRootWorkspaceName": "Portal @ b9c871c"
+	},
+	"extensions": {
+		"recommendations": [
+			"ritwickdey.liveserver"
+		]
 	}
 }
