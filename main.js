@@ -240,7 +240,7 @@ function mapContent() {
         // ================= style without label name =================//
         style: `https://api.tomtom.com/style/2/custom/style/dG9tdG9tQEBAVVRVTzI1SHRBR3MxQXRBaDtiYWI4ZjY0Yi1lZDkwLTRjYTEtYTlkYy1mYjcxODIyNzdlMzA=/drafts/0.json`,
     });
-    const layerID_use = ["Project", "Project_outline", "Forest_Logging_Detection", "Forest_Logging_Detection_outline", "Land_Cover", "Land_Cover_outline", "Squatters_Camps", "Squatters_Camps_outline", "Land_Use", "Land_Use_outline", "Azuri_Towers_Nigeria", "Azuri_Towers_Nigeria_outline", "TATU_CITY_KENYA", "TATU_CITY_KENYA_outline", "Crop_Classification", "Crop_Classification_outline", "Mining_Monitoring", "Mining_Monitoring_outline", "Oil_Spill_Detection", "Oil_Spill_Detection_outline", "Wildfires", "Wildfires_outline", "Crop_Disease_Detection", "Crop_Disease_Detection_outline", "Crop_Health", "Crop_Health_outline", "Infrastructure_project", "Infrastructure_project_outline", "Libya_Flooding", "Libya_Flooding_outline", "khartoum_airport", "khartoum_airport_outline", "Renaissance_Dam", "Renaissance_Dam_outline"]
+    const layerID_use = ["Project", "Project_outline", "Forest_Logging_Detection", "Forest_Logging_Detection_outline", "Land_Cover", "Land_Cover_outline", "Squatters_Camps", "Squatters_Camps_outline", "Land_Use", "Land_Use_outline", "Azuri_Towers_Nigeria", "Azuri_Towers_Nigeria_outline", "TATU_CITY_KENYA", "TATU_CITY_KENYA_outline", "Crop_Classification", "Crop_Classification_outline", "Mining_Monitoring", "Mining_Monitoring_outline", "Oil_Spill_Detection", "Oil_Spill_Detection_outline", "Wildfires", "Wildfires_outline", "Crop_Disease_Detection", "Crop_Disease_Detection_outline", "Crop_Health", "Crop_Health_outline", "Infrastructure_project", "Infrastructure_project_outline", "Libya_Flooding", "Libya_Flooding_outline", "khartoum_airport", "khartoum_airport_outline", "Renaissance_Dam", "Renaissance_Dam_outline", "Sudan_Border", "Sudan_Border_outline"]
 
     function removeAllSourceLayers(map) {
         var mapLayers = map.getStyle().layers;
@@ -286,6 +286,7 @@ function mapContent() {
     const Infrastructure_project = document.getElementById("Infrastructure_project");
     const Libya_Flooding = document.getElementById("Libya_Flooding");
     const khartoum_airport = document.getElementById("khartoum_airport");
+    const Sudan_Border = document.getElementById("Sudan_Border");
 
 
 
@@ -480,6 +481,39 @@ function mapContent() {
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://www.water-technology.net/projects/grand-ethiopian-renaissance-dam-africa/");
+    });
+
+
+    // ^-------------------------- Crisis in Sudan Border ----------------------------//
+    Sudan_Border.addEventListener("click", async function () {
+        await Refetch("Sudan_Border")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/Sudan_Border_11-2022.JPG");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Sudan_Border_5-2023.JPG");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Sudan_Border_news.png");
+        element8.setAttribute("src", "");
+        element9.setAttribute("src", "");
+        element10.setAttribute("src", "");
+        element6.style.display = 'none';
+        element3.style.display = "block";
+        element8.style.display = "none";
+        element9.style.display = "none";
+        element10.style.display = "none";
+        element3.style.height = "140px";
+        element7.style.width = "100%";
+        sBtn_text.innerText = "11-2022";
+        sBtn_text1.innerText = "5-2013";
+        container_dashbord.style.width = "100%";
+        container_dashbord.style.height = "100%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        element4.setAttribute("href", "https://english.ahram.org.eg/News/498920.aspx");
     });
 
     // ^-------------------------- Infrastructure_project ----------------------------//
@@ -874,6 +908,7 @@ function mapContent() {
     addHoverEffect('Libya_Flooding');
     addHoverEffect('khartoum_airport');
     addHoverEffect('Renaissance_Dam');
+    addHoverEffect('Sudan_Border');
 
     //--------------------------------- End polygon creation --------------------------------//
     function handleMapClick(id, newCoordinates, newZoomLevel, angle) {
@@ -918,6 +953,7 @@ function mapContent() {
     handleMapClick('Libya_Flooding', [22.638857, 32.758258], 14, 45);
     handleMapClick('khartoum_airport', [32.552265, 15.591284], 13, 45);
     handleMapClick('Renaissance_Dam', [35.089010, 11.214324], 13.5, 45);
+    handleMapClick('Sudan_Border', [31.152342, 21.999103], 13.5, 45);
 
     // !------------- change pointer and after click  appear popup --------------------//
 
@@ -948,6 +984,7 @@ function mapContent() {
     setCursor('Libya_Flooding');
     setCursor('khartoum_airport');
     setCursor('Renaissance_Dam');
+    setCursor('Sudan_Border');
 
     // &======================== click layer to appear popup Detection ========================//
 
@@ -968,7 +1005,8 @@ function mapContent() {
         'Infrastructure_project',
         'Libya_Flooding',
         'khartoum_airport',
-        'Renaissance_Dam'
+        'Renaissance_Dam',
+        'Sudan_Border'
     ];
 
     // Loop through the array and bind the click event for each layer
@@ -1131,7 +1169,9 @@ function linkedImageWithSelect(idlayer) {
         'Infrastructure_project': ["12-2023", "11-2020"],
         'Libya_Flooding': ["9-2023", "6-2023"],
         'khartoum_airport': ["4-5-2024", "23-4-2023", "17-4-2023", "20-2-2023"],
-        'Renaissance_Dam': ["10-2023", "3-2022", "11-2020", "10-2020", "1-2016", "11-2013"]
+        'Renaissance_Dam': ["10-2023", "3-2022", "11-2020", "10-2020", "1-2016", "11-2013"],
+        'Sudan_Border': ["5-2023", "11-2022"]
+
     };
     const fileNames = fileNamesMap[idlayer] || [];
     displayFileNames(fileNames);
@@ -1216,7 +1256,8 @@ function handleOptionClick(option) {
         "Infrastructure_project": `../Geo File/Polygon Create/Infrastructure_project_${selectedOption}.jpeg`,
         "Libya_Flooding": `../Geo File/Polygon Create/Libya_Flooding_${selectedOption}.JPG`,
         "khartoum_airport": `../Geo File/Polygon Create/khartoum_airport_${selectedOption}.jpg`,
-        "Renaissance_Dam": `../Geo File/Polygon Create/Renaissance_Dam_${selectedOption}.JPG`
+        "Renaissance_Dam": `../Geo File/Polygon Create/Renaissance_Dam_${selectedOption}.JPG`,
+        "Sudan_Border": `../Geo File/Polygon Create/Sudan_Border_${selectedOption}.JPG`
     };
     const imagePath = imagePaths[globalvar];
     if (imagePath) {
@@ -1243,7 +1284,8 @@ function handleOptionClick1(option) {
         "Infrastructure_project": `../Geo File/Polygon Create/Infrastructure_project_${selectedOption1}.jpeg`,
         "Libya_Flooding": `../Geo File/Polygon Create/Libya_Flooding_${selectedOption1}.JPG`,
         "khartoum_airport": `../Geo File/Polygon Create/khartoum_airport_${selectedOption1}.jpg`,
-        "Renaissance_Dam": `../Geo File/Polygon Create/Renaissance_Dam_${selectedOption1}.JPG`
+        "Renaissance_Dam": `../Geo File/Polygon Create/Renaissance_Dam_${selectedOption1}.JPG`,
+        "Sudan_Border": `../Geo File/Polygon Create/Sudan_Border_${selectedOption1}.JPG`
     };
     const imagePath = imagePaths[globalvar];
     if (imagePath) {
