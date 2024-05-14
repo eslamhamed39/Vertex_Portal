@@ -58,10 +58,10 @@ const allhoverable4 = document.querySelectorAll('.main_list_li');
 const target4 = document.getElementById('Mineral_Resources_Menu');
 const hoverable5 = document.querySelector('.Water_Resources');
 const allhoverable5 = document.querySelectorAll('.main_list_li');
-// const target5 = document.getElementById('Water_Resources_Menu');
+const target5 = document.getElementById('Water_Resources_Menu');
 const hoverable6 = document.querySelector('.National_Security_Defense');
 const allhoverable6 = document.querySelectorAll('.main_list_li');
-// const target6 = document.getElementById('National_Security_Defense_Menu');
+const target6 = document.getElementById('National_Security_Defense_Menu');
 
 
 // todo:------------------------- i end here ----------------------------//
@@ -223,10 +223,6 @@ async function initializeMap() {
 // Call initializeMap when your page is ready
 initializeMap();
 
-
-
-
-
 function mapContent() {
     let viewport_width2 = document.documentElement.getBoundingClientRect().height;
     var api_key = 'YZlbkr2ee2sbGy3dZsWG85VE4mPsibyQ';
@@ -244,7 +240,7 @@ function mapContent() {
         // ================= style without label name =================//
         style: `https://api.tomtom.com/style/2/custom/style/dG9tdG9tQEBAVVRVTzI1SHRBR3MxQXRBaDtiYWI4ZjY0Yi1lZDkwLTRjYTEtYTlkYy1mYjcxODIyNzdlMzA=/drafts/0.json`,
     });
-    const layerID_use = ["Project", "Project_outline", "Forest_Logging_Detection", "Forest_Logging_Detection_outline", "Land_Cover", "Land_Cover_outline", "Squatters_Camps", "Squatters_Camps_outline", "Land_Use", "Land_Use_outline", "Azuri_Towers_Nigeria", "Azuri_Towers_Nigeria_outline", "TATU_CITY_KENYA", "TATU_CITY_KENYA_outline", "Crop_Classification", "Crop_Classification_outline", "Mining_Monitoring", "Mining_Monitoring_outline", "Oil_Spill_Detection", "Oil_Spill_Detection_outline", "Wildfires", "Wildfires_outline", "Crop_Disease_Detection", "Crop_Disease_Detection_outline", "Crop_Health", "Crop_Health_outline", "Infrastructure_project", "Infrastructure_project_outline", "Water_Resources", "Water_Resources_outline", "National_Security_Defense", "National_Security_Defense_outline"]
+    const layerID_use = ["Project", "Project_outline", "Forest_Logging_Detection", "Forest_Logging_Detection_outline", "Land_Cover", "Land_Cover_outline", "Squatters_Camps", "Squatters_Camps_outline", "Land_Use", "Land_Use_outline", "Azuri_Towers_Nigeria", "Azuri_Towers_Nigeria_outline", "TATU_CITY_KENYA", "TATU_CITY_KENYA_outline", "Crop_Classification", "Crop_Classification_outline", "Mining_Monitoring", "Mining_Monitoring_outline", "Oil_Spill_Detection", "Oil_Spill_Detection_outline", "Wildfires", "Wildfires_outline", "Crop_Disease_Detection", "Crop_Disease_Detection_outline", "Crop_Health", "Crop_Health_outline", "Infrastructure_project", "Infrastructure_project_outline", "Libya_Flooding", "Libya_Flooding_outline", "khartoum_airport", "khartoum_airport_outline", "Renaissance_Dam", "Renaissance_Dam_outline"]
 
     function removeAllSourceLayers(map) {
         var mapLayers = map.getStyle().layers;
@@ -288,8 +284,8 @@ function mapContent() {
     const crop_Disease_Detection = document.getElementById("Crop_Disease_Detection");
     const crop_Health = document.getElementById("Crop_Health");
     const Infrastructure_project = document.getElementById("Infrastructure_project");
-    const Water_Resources = document.getElementById("Water_Resources");
-    const National_Security_Defense = document.getElementById("National_Security_Defense");
+    const Libya_Flooding = document.getElementById("Libya_Flooding");
+    const khartoum_airport = document.getElementById("khartoum_airport");
 
 
 
@@ -421,9 +417,9 @@ function mapContent() {
         element4.setAttribute("href", "https://www.sciencephoto.com/media/182797/view/squatter-camp");
     });
 
-    // ^-------------------------- National Security & Defense ----------------------------//
-    National_Security_Defense.addEventListener("click", async function () {
-        await Refetch("National_Security_Defense")
+    // ^-------------------------- khartoum airport ----------------------------//
+    khartoum_airport.addEventListener("click", async function () {
+        await Refetch("khartoum_airport")
         try {
             removeAllSourceLayers(map)
         } catch (error) {
@@ -431,9 +427,9 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/National_Security_Defense_20-2-2023.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/National_Security_Defense_4-5-2024.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/National_Security_Defense_news.png");
+        element1.setAttribute("src", "../Geo File/Polygon Create/khartoum_airport_20-2-2023.jpg");
+        element2.setAttribute("src", "../Geo File/Polygon Create/khartoum_airport_4-5-2024.jpg");
+        element3.setAttribute("src", "../Geo File/Polygon Create/khartoum_airport_news.png");
         element8.setAttribute("src", "");
         element9.setAttribute("src", "");
         element10.setAttribute("src", "");
@@ -451,6 +447,39 @@ function mapContent() {
         image_date_left.style.height = 'auto';
         image_date_right.style.height = 'auto';
         element4.setAttribute("href", "https://www.aa.com.tr/en/africa/fire-breaks-out-at-khartoum-airport-amid-sudan-clashes/2876543");
+    });
+
+
+    // ^-------------------------- Renaissance Dam ----------------------------//
+    Renaissance_Dam.addEventListener("click", async function () {
+        await Refetch("Renaissance_Dam")
+        try {
+            removeAllSourceLayers(map)
+        } catch (error) {
+            // console.log("error")
+        }
+        await map.addLayer(layer);
+        await map.addLayer(layer_outline);
+        element1.setAttribute("src", "../Geo File/Polygon Create/Renaissance_Dam_11-2013.JPG");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Renaissance_Dam_10-2023.JPG");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Renaissance_Dam_news.png");
+        element8.setAttribute("src", "");
+        element9.setAttribute("src", "");
+        element10.setAttribute("src", "");
+        element6.style.display = 'none';
+        element3.style.display = "block";
+        element8.style.display = "none";
+        element9.style.display = "none";
+        element10.style.display = "none";
+        element3.style.height = "140px";
+        element7.style.width = "100%";
+        sBtn_text.innerText = "10-2023";
+        sBtn_text1.innerText = "11-2013";
+        container_dashbord.style.width = "100%";
+        container_dashbord.style.height = "100%";
+        image_date_left.style.height = 'auto';
+        image_date_right.style.height = 'auto';
+        element4.setAttribute("href", "https://www.water-technology.net/projects/grand-ethiopian-renaissance-dam-africa/");
     });
 
     // ^-------------------------- Infrastructure_project ----------------------------//
@@ -578,9 +607,9 @@ function mapContent() {
     });
 
 
-    // ^---------------------------------- Water Resources Management -----------------------------//
-    Water_Resources.addEventListener("click", async function () {
-        await Refetch("Water_Resources")
+    // ^---------------------------------- Libya Flooding -----------------------------//
+    Libya_Flooding.addEventListener("click", async function () {
+        await Refetch("Libya_Flooding")
         try {
             removeAllSourceLayers(map)
         } catch (error) {
@@ -588,11 +617,11 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Water_Resources_6-2023.JPG");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Water_Resources_9-2023.JPG");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Water_Resources_news.png");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Water_Resources_barchart1.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Water_Resources_barchart2.jpg");
+        element1.setAttribute("src", "../Geo File/Polygon Create/Libya_Flooding_6-2023.JPG");
+        element2.setAttribute("src", "../Geo File/Polygon Create/Libya_Flooding_9-2023.JPG");
+        element3.setAttribute("src", "../Geo File/Polygon Create/Libya_Flooding_news.png");
+        element8.setAttribute("src", "../Geo File/Polygon Create/Libya_Flooding_barchart1.jpg");
+        element9.setAttribute("src", "../Geo File/Polygon Create/Libya_Flooding_barchart2.jpg");
         element3.style.display = "block";
         element3.style.height = "135px";
         element6.style.display = 'none';
@@ -842,8 +871,9 @@ function mapContent() {
     addHoverEffect('Crop_Disease_Detection');
     addHoverEffect('Crop_Health');
     addHoverEffect('Infrastructure_project');
-    addHoverEffect('Water_Resources');
-    addHoverEffect('National_Security_Defense');
+    addHoverEffect('Libya_Flooding');
+    addHoverEffect('khartoum_airport');
+    addHoverEffect('Renaissance_Dam');
 
     //--------------------------------- End polygon creation --------------------------------//
     function handleMapClick(id, newCoordinates, newZoomLevel, angle) {
@@ -885,8 +915,9 @@ function mapContent() {
     handleMapClick('Crop_Disease_Detection', [35.25887, -0.38983], 13, 45);
     handleMapClick('Crop_Health', [36.05687, -0.23038], 13, 45);
     handleMapClick('Infrastructure_project', [3.9154647, 8.1104762], 14, 45);
-    handleMapClick('Water_Resources', [22.638857, 32.758258], 14, 45);
-    handleMapClick('National_Security_Defense', [32.552265, 15.591284], 13, 45);
+    handleMapClick('Libya_Flooding', [22.638857, 32.758258], 14, 45);
+    handleMapClick('khartoum_airport', [32.552265, 15.591284], 13, 45);
+    handleMapClick('Renaissance_Dam', [35.089010, 11.214324], 13.5, 45);
 
     // !------------- change pointer and after click  appear popup --------------------//
 
@@ -914,8 +945,9 @@ function mapContent() {
     setCursor('Crop_Disease_Detection');
     setCursor('Crop_Health');
     setCursor('Infrastructure_project');
-    setCursor('Water_Resources');
-    setCursor('National_Security_Defense');
+    setCursor('Libya_Flooding');
+    setCursor('khartoum_airport');
+    setCursor('Renaissance_Dam');
 
     // &======================== click layer to appear popup Detection ========================//
 
@@ -934,8 +966,9 @@ function mapContent() {
         'Project',
         'Squatters_Camps',
         'Infrastructure_project',
-        'Water_Resources',
-        'National_Security_Defense'
+        'Libya_Flooding',
+        'khartoum_airport',
+        'Renaissance_Dam'
     ];
 
     // Loop through the array and bind the click event for each layer
@@ -1096,8 +1129,9 @@ function linkedImageWithSelect(idlayer) {
         'Wildfires': ["29-3-2024", "30-11-2023", "11-10-2023", "23-7-2023"],
         'Crop_Health': ["21-5-2022", "21-5-2022 NDVI", "11-3-2023", "11-3-2023 NDVI"],
         'Infrastructure_project': ["12-2023", "11-2020"],
-        'Water_Resources': ["9-2023", "6-2023"],
-        'National_Security_Defense': ["4-5-2024", "23-4-2023", "17-4-2023", "20-2-2023"]
+        'Libya_Flooding': ["9-2023", "6-2023"],
+        'khartoum_airport': ["4-5-2024", "23-4-2023", "17-4-2023", "20-2-2023"],
+        'Renaissance_Dam': ["10-2023", "3-2022", "11-2020", "10-2020", "1-2016", "11-2013"]
     };
     const fileNames = fileNamesMap[idlayer] || [];
     displayFileNames(fileNames);
@@ -1180,8 +1214,9 @@ function handleOptionClick(option) {
         "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption}.jpg`,
         "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption}.jpg`,
         "Infrastructure_project": `../Geo File/Polygon Create/Infrastructure_project_${selectedOption}.jpeg`,
-        "Water_Resources": `../Geo File/Polygon Create/Water_Resources_${selectedOption}.JPG`,
-        "National_Security_Defense": `../Geo File/Polygon Create/National_Security_Defense_${selectedOption}.jpg`
+        "Libya_Flooding": `../Geo File/Polygon Create/Libya_Flooding_${selectedOption}.JPG`,
+        "khartoum_airport": `../Geo File/Polygon Create/khartoum_airport_${selectedOption}.jpg`,
+        "Renaissance_Dam": `../Geo File/Polygon Create/Renaissance_Dam_${selectedOption}.JPG`
     };
     const imagePath = imagePaths[globalvar];
     if (imagePath) {
@@ -1206,8 +1241,9 @@ function handleOptionClick1(option) {
         "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption1}.jpg`,
         "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption1}.jpg`,
         "Infrastructure_project": `../Geo File/Polygon Create/Infrastructure_project_${selectedOption1}.jpeg`,
-        "Water_Resources": `../Geo File/Polygon Create/Water_Resources_${selectedOption1}.JPG`,
-        "National_Security_Defense": `../Geo File/Polygon Create/National_Security_Defense_${selectedOption1}.jpg`
+        "Libya_Flooding": `../Geo File/Polygon Create/Libya_Flooding_${selectedOption1}.JPG`,
+        "khartoum_airport": `../Geo File/Polygon Create/khartoum_airport_${selectedOption1}.jpg`,
+        "Renaissance_Dam": `../Geo File/Polygon Create/Renaissance_Dam_${selectedOption1}.JPG`
     };
     const imagePath = imagePaths[globalvar];
     if (imagePath) {
@@ -1340,16 +1376,54 @@ for (let i = 0; i < allhoverable4.length; i++) {
         hoverable4.querySelector('a').style.color = '#0011ff';
     });
 }
+
 hoverable5.addEventListener('mouseover', function () {
-    // target4.style.display = 'block';
+    target5.style.display = 'block';
     hoverable5.style.background = ' #0000003d';
     hoverable5.querySelector('a').style.color = '#ffffff';
 });
+target5.addEventListener('mouseleave', function () {
+    target5.style.display = 'none';
+    hoverable5.style.background = ' none';
+    hoverable5.querySelector('a').style.color = '#0011ff';
+});
+target5.addEventListener('click', function () {
+    target5.style.display = 'none';
+    hoverable5.style.background = ' none';
+    hoverable5.querySelector('a').style.color = '#0011ff';
+});
+for (let i = 0; i < allhoverable5.length; i++) {
+    allhoverable5[i].addEventListener("mouseover", function () {
+        target5.style.display = 'none';
+        hoverable5.style.background = ' none';
+        hoverable5.querySelector('a').style.color = '#0011ff';
+    });
+}
+
+
 hoverable6.addEventListener('mouseover', function () {
-    // target4.style.display = 'block';
+    target6.style.display = 'block';
     hoverable6.style.background = ' #0000003d';
     hoverable6.querySelector('a').style.color = '#ffffff';
 });
+target6.addEventListener('mouseleave', function () {
+    target6.style.display = 'none';
+    hoverable6.style.background = ' none';
+    hoverable6.querySelector('a').style.color = '#0011ff';
+});
+target6.addEventListener('click', function () {
+    target6.style.display = 'none';
+    hoverable6.style.background = ' none';
+    hoverable6.querySelector('a').style.color = '#0011ff';
+});
+for (let i = 0; i < allhoverable6.length; i++) {
+    allhoverable6[i].addEventListener("mouseover", function () {
+        target6.style.display = 'none';
+        hoverable6.style.background = ' none';
+        hoverable6.querySelector('a').style.color = '#0011ff';
+    });
+}
+
 
 
 hoverable1.addEventListener("mouseover", function () {
@@ -1365,8 +1439,10 @@ hoverable1.addEventListener("mouseover", function () {
     target4.style.display = 'none';
     hoverable4.style.background = ' none';
     hoverable4.querySelector('a').style.color = '#0011ff'
+    target5.style.display = 'none';
     hoverable5.style.background = ' none';
     hoverable5.querySelector('a').style.color = '#0011ff';
+    target6.style.display = 'none';
     hoverable6.style.background = ' none';
     hoverable6.querySelector('a').style.color = '#0011ff';
 });
@@ -1383,8 +1459,10 @@ hoverable.addEventListener("mouseover", function () {
     target4.style.display = 'none';
     hoverable4.style.background = ' none';
     hoverable4.querySelector('a').style.color = '#0011ff'
+    target5.style.display = 'none';
     hoverable5.style.background = ' none';
     hoverable5.querySelector('a').style.color = '#0011ff';
+    target6.style.display = 'none';
     hoverable6.style.background = ' none';
     hoverable6.querySelector('a').style.color = '#0011ff';
 
@@ -1402,8 +1480,10 @@ hoverable2.addEventListener("mouseover", function () {
     target4.style.display = 'none';
     hoverable4.style.background = ' none';
     hoverable4.querySelector('a').style.color = '#0011ff'
+    target5.style.display = 'none';
     hoverable5.style.background = ' none';
     hoverable5.querySelector('a').style.color = '#0011ff';
+    target6.style.display = 'none';
     hoverable6.style.background = ' none';
     hoverable6.querySelector('a').style.color = '#0011ff';
 
@@ -1422,8 +1502,10 @@ hoverable3.addEventListener("mouseover", function () {
     target4.style.display = 'none';
     hoverable4.style.background = ' none';
     hoverable4.querySelector('a').style.color = '#0011ff';
+    target5.style.display = 'none';
     hoverable5.style.background = ' none';
     hoverable5.querySelector('a').style.color = '#0011ff';
+    target6.style.display = 'none';
     hoverable6.style.background = ' none';
     hoverable6.querySelector('a').style.color = '#0011ff';
 
@@ -1441,8 +1523,10 @@ hoverable4.addEventListener("mouseover", function () {
     target3.style.display = 'none';
     hoverable3.style.background = ' none';
     hoverable3.querySelector('a').style.color = '#0011ff';
+    target5.style.display = 'none';
     hoverable5.style.background = ' none';
     hoverable5.querySelector('a').style.color = '#0011ff';
+    target6.style.display = 'none';
     hoverable6.style.background = ' none';
     hoverable6.querySelector('a').style.color = '#0011ff';
 
@@ -1465,6 +1549,7 @@ hoverable5.addEventListener("mouseover", function () {
     target4.style.display = 'none';
     hoverable4.style.background = ' none';
     hoverable4.querySelector('a').style.color = '#0011ff';
+    target6.style.display = 'none';
     hoverable6.style.background = ' none';
     hoverable6.querySelector('a').style.color = '#0011ff';
 });
@@ -1485,6 +1570,7 @@ hoverable6.addEventListener("mouseover", function () {
     target4.style.display = 'none';
     hoverable4.style.background = ' none';
     hoverable4.querySelector('a').style.color = '#0011ff';
+    target5.style.display = 'none';
     hoverable5.style.background = ' none';
     hoverable5.querySelector('a').style.color = '#0011ff';
 });
