@@ -151,7 +151,7 @@ function time() {
 //-------------------- function to Switch login & logout page ----------------------//
 function switchPage() {
     loginPage.classList.replace("d-block", "loading_hidden");
-    window.location.pathname = "/Home.html";
+    window.location.pathname = "/Vertex_Portal/Home.html";
     // window.location.pathname = "http://85.31.237.210:8080/portal_v1/Home.html";
 }
 
@@ -304,12 +304,12 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/2-2022.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/6-2023.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
-        element8.setAttribute("src", "/Dashbord/3.png");
-        element9.setAttribute("src", "/Dashbord/4.png");
-        element10.setAttribute("src", "/Dashbord/6.png");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/2-2022.jpg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/6-2023.jpg");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Screenshot.png");
+        element8.setAttribute("src", "/Vertex_Portal/Dashbord/3.png");
+        element9.setAttribute("src", "/Vertex_Portal/Dashbord/4.png");
+        element10.setAttribute("src", "/Vertex_Portal/Dashbord/6.png");
         element6.style.display = 'block';
         element3.style.display = "block";
         element8.style.display = "block";
@@ -336,11 +336,11 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/6-1-2023.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/10-3-2024.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Forest_Logging_News.png");
-        element8.setAttribute("src", "Data/Forest_Logging_Detection/Dashboed/11.png");
-        element9.setAttribute("src", "Data/Forest_Logging_Detection/Dashboed/13.png");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/6-1-2023.jpg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/10-3-2024.jpg");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Forest_Logging_News.png");
+        element8.setAttribute("src", "/Vertex_Portal/Data/Forest_Logging_Detection/Dashboed/11.png");
+        element9.setAttribute("src", "/Vertex_Portal/Data/Forest_Logging_Detection/Dashboed/13.png");
         element6.style.display = 'none';
         element8.style.display = "block";
         element9.style.display = "block";
@@ -367,12 +367,12 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/land-C-S-image-2020.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/land-C-S-image-2023.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
-        element8.setAttribute("src", "../Geo File/Polygon Create/land.C.barchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/land.C.Chart.2015.jpg");
-        element10.setAttribute("src", "../Geo File/Polygon Create/land.C.Chart.2020.jpg");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/land-C-S-image-2020.jpg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/land-C-S-image-2023.jpg");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Screenshot.png");
+        element8.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/land.C.barchart.jpg");
+        element9.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/land.C.Chart.2015.jpg");
+        element10.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/land.C.Chart.2020.jpg");
         element3.style.display = "none";
         element6.style.display = 'none';
         element8.style.display = "block";
@@ -399,9 +399,9 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Squatters_Camps-1-2020.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Squatters_Camps-12-2022.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Squatters_Camps_new.jpg");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Squatters_Camps-1-2020.jpg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Squatters_Camps-12-2022.jpg");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Squatters_Camps_new.jpg");
         element8.setAttribute("src", "");
         element9.setAttribute("src", "");
         element10.setAttribute("src", "");
@@ -431,9 +431,9 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/National_Security_Defense_20-2-2023.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/National_Security_Defense_4-5-2024.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/National_Security_Defense_news.png");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/National_Security_Defense_20-2-2023.jpg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/National_Security_Defense_4-5-2024.jpg");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/National_Security_Defense_news.png");
         element8.setAttribute("src", "");
         element9.setAttribute("src", "");
         element10.setAttribute("src", "");
@@ -463,11 +463,11 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Infrastructure_project_11-2020.jpeg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Infrastructure_project_12-2023.jpeg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Infrastructure_project_news.png");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Infrastructure_project_parchart.jpeg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Infrastructure_project_liner.jpeg");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Infrastructure_project_11-2020.jpeg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Infrastructure_project_12-2023.jpeg");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Infrastructure_project_news.png");
+        element8.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Infrastructure_project_parchart.jpeg");
+        element9.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Infrastructure_project_liner.jpeg");
         element3.style.display = "block";
         element6.style.display = 'none';
         element8.style.display = "block";
@@ -494,11 +494,11 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Libya_satelliteImage1.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Land-use-image1.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Screenshot.png");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Land-use-barchart1.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Land-use-barchart2.jpg");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Libya_satelliteImage1.jpg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Land-use-image1.jpg");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Screenshot.png");
+        element8.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Land-use-barchart1.jpg");
+        element9.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Land-use-barchart2.jpg");
         element3.style.display = "none";
         element6.style.display = 'none';
         element8.style.display = "block";
@@ -524,11 +524,11 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-5-2016.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-2-2024.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-new.png");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-barchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Azuri_Towers_Nigeria-pointchart.jpg");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Azuri_Towers_Nigeria-5-2016.jpg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Azuri_Towers_Nigeria-2-2024.jpg");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Azuri_Towers_Nigeria-new.png");
+        element8.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Azuri_Towers_Nigeria-barchart.jpg");
+        element9.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Azuri_Towers_Nigeria-pointchart.jpg");
         element3.style.display = "block";
         element6.style.display = 'none';
         element8.style.display = "block";
@@ -555,11 +555,11 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-12-2017.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-2-2024.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-News.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-Barchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/TATU_CITY_KENYA-pointchart.jpg");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/TATU_CITY_KENYA-12-2017.jpg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/TATU_CITY_KENYA-2-2024.jpg");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/TATU_CITY_KENYA-News.jpg");
+        element8.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/TATU_CITY_KENYA-Barchart.jpg");
+        element9.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/TATU_CITY_KENYA-pointchart.jpg");
         element3.style.display = "block";
         element3.style.height = "135px";
         element6.style.display = 'none';
@@ -588,11 +588,11 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Water_Resources_6-2023.JPG");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Water_Resources_9-2023.JPG");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Water_Resources_news.png");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Water_Resources_barchart1.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Water_Resources_barchart2.jpg");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Water_Resources_6-2023.JPG");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Water_Resources_9-2023.JPG");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Water_Resources_news.png");
+        element8.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Water_Resources_barchart1.jpg");
+        element9.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Water_Resources_barchart2.jpg");
         element3.style.display = "block";
         element3.style.height = "135px";
         element6.style.display = 'none';
@@ -621,10 +621,10 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_satelliteImage.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_Classification.png");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_parchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Crop_Classification_piechart.jpg");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Classification_satelliteImage.jpg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Classification_Classification.png");
+        element8.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Classification_parchart.jpg");
+        element9.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Classification_piechart.jpg");
         element3.style.display = "none";
         element6.style.display = 'none';
         element8.style.display = "block";
@@ -650,11 +650,11 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring-7-2013.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring-6-2022.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring_news.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring-barchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Mining_Monitoring-circalchart.jpg");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Mining_Monitoring-7-2013.jpg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Mining_Monitoring-6-2022.jpg");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Mining_Monitoring_news.jpg");
+        element8.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Mining_Monitoring-barchart.jpg");
+        element9.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Mining_Monitoring-circalchart.jpg");
         element3.style.display = "block";
         element6.style.display = 'none';
         element8.style.display = "block";
@@ -681,11 +681,11 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_27-7-2021.JPG");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_26-8-2021.JPG");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-news.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-parchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Oil_Spill_Detection-pointchart.jpg");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Oil_Spill_27-7-2021.JPG");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Oil_Spill_26-8-2021.JPG");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Oil_Spill_Detection-news.jpg");
+        element8.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Oil_Spill_Detection-parchart.jpg");
+        element9.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Oil_Spill_Detection-pointchart.jpg");
         element3.style.display = "block";
         element3.style.height = "130px";
         element6.style.display = 'none';
@@ -713,11 +713,11 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Wildfires-23-7-2023.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Wildfires-29-3-2024.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Wildfires-News.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Wildfires-barchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Wildfires-saidebarchart.jpg");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Wildfires-23-7-2023.jpg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Wildfires-29-3-2024.jpg");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Wildfires-News.jpg");
+        element8.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Wildfires-barchart.jpg");
+        element9.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Wildfires-saidebarchart.jpg");
         element3.style.display = "block";
         element3.style.height = "130px";
         element6.style.display = 'none';
@@ -745,11 +745,11 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection_Satellite-image.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection-News.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection-Circelchart.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Crop_Disease_Detection-Linechart.jpg");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Disease_Detection_Satellite-image.jpg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Disease_Detection.jpg");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Disease_Detection-News.jpg");
+        element8.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Disease_Detection-Circelchart.jpg");
+        element9.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Disease_Detection-Linechart.jpg");
         element3.style.display = "block";
         element3.style.height = "135px";
         element6.style.display = 'none';
@@ -777,11 +777,11 @@ function mapContent() {
         }
         await map.addLayer(layer);
         await map.addLayer(layer_outline);
-        element1.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-11-3-2023.jpg");
-        element2.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-11-3-2023 NDVI.jpg");
-        element3.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-News.jpg");
-        element8.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-Digram1.jpg");
-        element9.setAttribute("src", "../Geo File/Polygon Create/Crop_Health-Digram2.jpg");
+        element1.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Health-11-3-2023.jpg");
+        element2.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Health-11-3-2023 NDVI.jpg");
+        element3.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Health-News.jpg");
+        element8.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Health-Digram1.jpg");
+        element9.setAttribute("src", "../Vertex_Portal/Geo File/Polygon Create/Crop_Health-Digram2.jpg");
         element3.style.display = "block";
         element3.style.height = "135px";
         element6.style.display = 'none';
@@ -1169,19 +1169,19 @@ function handleOptionClick(option) {
     optionMenu.classList.remove("active");
     const element1 = document.getElementById("img_right");
     const imagePaths = {
-        "Land_Cover": `../Geo File/Polygon Create/land-C-S-image-${selectedOption}.jpg`,
-        "Project": `../Geo File/Polygon Create/${selectedOption}.jpg`,
-        "Forest_Logging_Detection": `../Geo File/Polygon Create/${selectedOption}.jpg`,
-        "Squatters_Camps": `../Geo File/Polygon Create/Squatters_Camps-${selectedOption}.jpg`,
-        "Azuri_Towers_Nigeria": `../Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption}.jpg`,
-        "TATU_CITY_KENYA": `../Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption}.jpg`,
-        "Mining_Monitoring": `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption}.jpg`,
-        "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_${selectedOption}.JPG`,
-        "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption}.jpg`,
-        "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption}.jpg`,
-        "Infrastructure_project": `../Geo File/Polygon Create/Infrastructure_project_${selectedOption}.jpeg`,
-        "Water_Resources": `../Geo File/Polygon Create/Water_Resources_${selectedOption}.JPG`,
-        "National_Security_Defense": `../Geo File/Polygon Create/National_Security_Defense_${selectedOption}.jpg`
+        "Land_Cover": `../Vertex_Portal/Geo File/Polygon Create/land-C-S-image-${selectedOption}.jpg`,
+        "Project": `../Vertex_Portal/Geo File/Polygon Create/${selectedOption}.jpg`,
+        "Forest_Logging_Detection": `../Vertex_Portal/Geo File/Polygon Create/${selectedOption}.jpg`,
+        "Squatters_Camps": `../Vertex_Portal/Geo File/Polygon Create/Squatters_Camps-${selectedOption}.jpg`,
+        "Azuri_Towers_Nigeria": `../Vertex_Portal/Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption}.jpg`,
+        "TATU_CITY_KENYA": `../Vertex_Portal/Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption}.jpg`,
+        "Mining_Monitoring": `../Vertex_Portal/Geo File/Polygon Create/Mining_Monitoring-${selectedOption}.jpg`,
+        "Oil_Spill_Detection": `../Vertex_Portal/Geo File/Polygon Create/Oil_Spill_${selectedOption}.JPG`,
+        "Wildfires": `../Vertex_Portal/Geo File/Polygon Create/Wildfires-${selectedOption}.jpg`,
+        "Crop_Health": `../Vertex_Portal/Geo File/Polygon Create/Crop_Health-${selectedOption}.jpg`,
+        "Infrastructure_project": `../Vertex_Portal/Geo File/Polygon Create/Infrastructure_project_${selectedOption}.jpeg`,
+        "Water_Resources": `../Vertex_Portal/Geo File/Polygon Create/Water_Resources_${selectedOption}.JPG`,
+        "National_Security_Defense": `../Vertex_Portal/Geo File/Polygon Create/National_Security_Defense_${selectedOption}.jpg`
     };
     const imagePath = imagePaths[globalvar];
     if (imagePath) {
@@ -1195,19 +1195,19 @@ function handleOptionClick1(option) {
     optionMenu1.classList.remove("active");
     const element2 = document.getElementById("img_left");
     const imagePaths = {
-        "Land_Cover": `../Geo File/Polygon Create/land-C-S-image-${selectedOption1}.jpg`,
-        "Project": `../Geo File/Polygon Create/${selectedOption1}.jpg`,
-        "Forest_Logging_Detection": `../Geo File/Polygon Create/${selectedOption1}.jpg`,
-        "Squatters_Camps": `../Geo File/Polygon Create/Squatters_Camps-${selectedOption1}.jpg`,
-        "Azuri_Towers_Nigeria": `../Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption1}.jpg`,
-        "TATU_CITY_KENYA": `../Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption1}.jpg`,
-        "Mining_Monitoring": `../Geo File/Polygon Create/Mining_Monitoring-${selectedOption1}.jpg`,
-        "Oil_Spill_Detection": `../Geo File/Polygon Create/Oil_Spill_${selectedOption1}.JPG`,
-        "Wildfires": `../Geo File/Polygon Create/Wildfires-${selectedOption1}.jpg`,
-        "Crop_Health": `../Geo File/Polygon Create/Crop_Health-${selectedOption1}.jpg`,
-        "Infrastructure_project": `../Geo File/Polygon Create/Infrastructure_project_${selectedOption1}.jpeg`,
-        "Water_Resources": `../Geo File/Polygon Create/Water_Resources_${selectedOption1}.JPG`,
-        "National_Security_Defense": `../Geo File/Polygon Create/National_Security_Defense_${selectedOption1}.jpg`
+        "Land_Cover": `../Vertex_Portal/Geo File/Polygon Create/land-C-S-image-${selectedOption1}.jpg`,
+        "Project": `../Vertex_Portal/Geo File/Polygon Create/${selectedOption1}.jpg`,
+        "Forest_Logging_Detection": `../Vertex_Portal/Geo File/Polygon Create/${selectedOption1}.jpg`,
+        "Squatters_Camps": `../Vertex_Portal/Geo File/Polygon Create/Squatters_Camps-${selectedOption1}.jpg`,
+        "Azuri_Towers_Nigeria": `../Vertex_Portal/Geo File/Polygon Create/Azuri_Towers_Nigeria-${selectedOption1}.jpg`,
+        "TATU_CITY_KENYA": `../Vertex_Portal/Geo File/Polygon Create/TATU_CITY_KENYA-${selectedOption1}.jpg`,
+        "Mining_Monitoring": `../Vertex_Portal/Geo File/Polygon Create/Mining_Monitoring-${selectedOption1}.jpg`,
+        "Oil_Spill_Detection": `../Vertex_Portal/Geo File/Polygon Create/Oil_Spill_${selectedOption1}.JPG`,
+        "Wildfires": `../Vertex_Portal/Geo File/Polygon Create/Wildfires-${selectedOption1}.jpg`,
+        "Crop_Health": `../Vertex_Portal/Geo File/Polygon Create/Crop_Health-${selectedOption1}.jpg`,
+        "Infrastructure_project": `../Vertex_Portal/Geo File/Polygon Create/Infrastructure_project_${selectedOption1}.jpeg`,
+        "Water_Resources": `../Vertex_Portal/Geo File/Polygon Create/Water_Resources_${selectedOption1}.JPG`,
+        "National_Security_Defense": `../Vertex_Portal/Geo File/Polygon Create/National_Security_Defense_${selectedOption1}.jpg`
     };
     const imagePath = imagePaths[globalvar];
     if (imagePath) {
